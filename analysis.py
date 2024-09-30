@@ -11,10 +11,13 @@ import os
 import math
 
 # Define the data directory for saving data and graphs
-DATA_DIRECTORY = './src/app/assets/data'
+DATA_DIRECTORY = './src/assets'
 
 # Define the cache directory for storing fetched data
 CACHE_DIRECTORY = './cache'
+
+# Main execution
+league_id = 7639
 
 def fetch_player_data(json_file=f'{DATA_DIRECTORY}/player_data.json'):
     """
@@ -264,9 +267,6 @@ def create_weighted_vector(team, all_player_ids, player_prices, captain, vice_ca
           vector[index] = scaled_price * position_weight
   return vector
 
-# Main execution
-league_id = 7639
-
 # Usage
 player_data, current_gameweek = fetch_player_data()
 
@@ -278,7 +278,7 @@ managers = fetch_all_managers(league_id)
 
 print(current_gameweek)
 
-for gameweek in range(1, current_gameweek+1):  # Loop through gameweeks (change to (1,Max gameweek+1) if you want to rerun all weeks)
+for gameweek in range(current_gameweek, current_gameweek+1):  # Loop through gameweeks (change to (1,Max gameweek+1) if you want to rerun all weeks)
   print(f"Processing Gameweek {gameweek}")
   current_gameweek = gameweek
 
@@ -325,12 +325,27 @@ for gameweek in range(1, current_gameweek+1):  # Loop through gameweeks (change 
       'tsne_y': tsne_result[:, 1]
   })
 
+  # Convert DataFrame to JSON
+  results_json = results_df.to_json(orient='records', indent=4)
+
   # Construct the filename using league ID and gameweek
-  filename = f'{DATA_DIRECTORY}/fpl_team_similarity_{league_id}_gw{current_gameweek}.csv'
+  filename = f'{DATA_DIRECTORY}/fpl_team_similarity_{league_id}_gw{current_gameweek}.json'
+
+    # Save JSON to file
+  with open(filename, 'w') as file:
+    file.write(results_json)
+
+    print(f"Data saved to '{filename}'")
+
+
+
+
+  # Construct the filename using league ID and gameweek
+#   filename = f'{DATA_DIRECTORY}/fpl_team_similarity_{league_id}_gw{current_gameweek}.csv'
 
   # Save to CSV
-  results_df.to_csv(filename, index=False)
-  print(f"Data saved to '{filename}'")
+#   results_df.to_csv(filename, index=False)
+#   print(f"Data saved to '{filename}'")
 
 
   # Plotting with improved label placement
