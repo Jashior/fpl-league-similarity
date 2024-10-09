@@ -1,12 +1,15 @@
-<h1>Manager Data</h1>
-
-<app-gameweek-picker></app-gameweek-picker>
-
-@if (managerData()){
-<p>Number of managers: {{ managerData().length }}</p>
+<div class="w-64">
+  <app-league-picker></app-league-picker>
+  <app-gameweek-picker></app-gameweek-picker>
+</div>
+@if (managerData() && !loading()){
 <ul>
   @for (manager of managerData().slice(0, 10); track manager.team_id){
-  <li>{{ manager.manager_name }}</li>
+  <li>
+    {{ manager.manager_name }}, Rank: {{ manager.rank }}, Points
+    {{ manager.total_points }}, ID: {{ manager.team_id }}
+  </li>
   }
 </ul>
+<app-graph></app-graph>
 } @else{ Loading manager data... }

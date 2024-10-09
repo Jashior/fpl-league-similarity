@@ -17,7 +17,8 @@ DATA_DIRECTORY = './src/assets'
 CACHE_DIRECTORY = './cache'
 
 # Main execution
-league_id = 7639
+# league_ids = [7639, 8497]
+league_ids = [7639]
 
 def fetch_player_data(json_file=f'{DATA_DIRECTORY}/player_data.json'):
     """
@@ -67,8 +68,6 @@ def fetch_player_data(json_file=f'{DATA_DIRECTORY}/player_data.json'):
 
     return player_data, current_gameweek
 
-
-# Function to fetch league standings
 def fetch_league_standings(league_id, page=1):
     """
     Fetches league standings for a given league ID and page number.
@@ -84,8 +83,6 @@ def fetch_league_standings(league_id, page=1):
     response = requests.get(url)
     return response.json()
 
-
-# Function to fetch team picks
 def fetch_team_picks(team_id, gameweek):
     """
     Fetches team picks for a given team ID and gameweek.
@@ -101,8 +98,6 @@ def fetch_team_picks(team_id, gameweek):
     response = requests.get(url)
     return response.json()
 
-
-# Function to extract manager data from league standings
 def extract_manager_data(standings_data):
     """
     Extracts manager data from league standings data.
@@ -122,7 +117,6 @@ def extract_manager_data(standings_data):
         })
     return managers
 
-# Function to fetch all managers (with caching)
 def fetch_all_managers(league_id, cache_file=f'{CACHE_DIRECTORY}/managers.json'):
     """Fetches all managers from a league and caches them.
 
@@ -205,7 +199,6 @@ def fetch_all_team_picks(managers, league_id, gameweek, cache_file=f'{CACHE_DIRE
 
     return all_picks
 
-# Process the picks data
 def process_picks(picks):
     """
     Processes team picks data to extract relevant information.
@@ -226,8 +219,10 @@ def process_picks(picks):
         captain = picks['picks'][picks['picks'].index(next((pick for pick in picks['picks'] if pick['is_captain']), None))]['element']
         vice_captain = picks['picks'][picks['picks'].index(next((pick for pick in picks['picks'] if pick['is_vice_captain']), None))]['element']
         total_points = picks['entry_history']['total_points']  # Extract total_points
-        rank = picks['entry_history']['rank']  # Extract rank
-        return team, captain, vice_captain, total_points, rank  # Return additional data
+        rank = picks['entry_history']['overall_rank']  # Extract rank
+        gw_points = picks['entry_history']['points']  # Extract points for the current gameweek
+        gw_rank = picks['entry_history']['rank']  # Extract gw rank
+        return team, captain, vice_captain, total_points, rank, gw_points, gw_rank  # Return additional data
     else:
         print(picks)
         print(f"Warning: 'picks' key missing for this manager. Returning None values.")
@@ -267,137 +262,183 @@ def create_weighted_vector(team, all_player_ids, player_prices, captain, vice_ca
           vector[index] = scaled_price * position_weight
   return vector
 
-# Usage
+def fetch_league_names(league_ids, cache_file=f'{DATA_DIRECTORY}/leagues.json'):
+  """
+  Fetches the names of the leagues specified in league_ids and saves them to a JSON file.
+
+  Args:
+      league_ids (list): A list of league IDs.
+      cache_file (str): The filename for the cached league data. Defaults to 'leagues.json'.
+  """
+
+  cache_key = 'leagues'
+  cached_data = {}
+
+  if os.path.exists(cache_file):
+      # Load cached data
+      with open(cache_file, 'r') as f:
+          cached_data = json.load(f)
+
+  # Fetch from API and cache
+  leagues = []
+  for league_id in league_ids:
+      print(f"Fetching league name for league ID {league_id}...")
+      standings_data = fetch_league_standings(league_id)
+      league_name = standings_data['league']['name']
+      leagues.append({'id': league_id, 'name': league_name})
+      time.sleep(1)  # Delay to avoid overloading the server
+
+  # Store in cache
+  cached_data[cache_key] = leagues
+  with open(cache_file, 'w') as f:
+      json.dump(cached_data, f)
+
+  # Update available_leagues.json
+  available_leagues_file = f'{DATA_DIRECTORY}/available_leagues.json'
+  with open(available_leagues_file, 'w', encoding='utf-8') as f:
+      json.dump(leagues, f, indent=2)
+  print(f"League names saved to {available_leagues_file}")
+
+
 player_data, current_gameweek = fetch_player_data()
 
 # Extract player prices from player_data
 player_prices = {int(player_id): info['now_cost'] for player_id, info in player_data.items()}
 
-# Fetch all managers
-managers = fetch_all_managers(league_id)
+leagues = fetch_league_names(league_ids)
 
-print(current_gameweek)
+for league_id in league_ids:
+  print(f"Processing league {league_id}")
 
-for gameweek in range(current_gameweek, current_gameweek+1):  # Loop through gameweeks (change to (1,Max gameweek+1) if you want to rerun all weeks)
-  print(f"Processing Gameweek {gameweek}")
-  current_gameweek = gameweek
+  # Fetch all managers
+  managers = fetch_all_managers(league_id)
 
-  # Fetch team picks for all managers
-  all_picks = fetch_all_team_picks(managers, league_id, current_gameweek)
+  print(current_gameweek)
 
-  processed_picks = [pick for pick in [process_picks(picks) for picks in all_picks]]
+  for gameweek in range(1, current_gameweek+1):  # Loop through gameweeks (change to (1,Max gameweek+1) if you want to rerun all weeks)
+    print(f"Processing Gameweek {gameweek}")
+    current_gameweek = gameweek
 
-  # Create a set of all unique player IDs (updated each gameweek)
-  all_player_ids = set()
-  for team in processed_picks:
-      if team is not None:  # Only include teams with data
-          team_list = team[0]  # The team is the first element of the tuple
-          all_player_ids.update(team_list)
-  all_player_ids = list(all_player_ids)
+    # Fetch team picks for all managers
+    all_picks = fetch_all_team_picks(managers, league_id, current_gameweek)
 
-  # Pass player_prices when creating weighted_teams
-  weighted_teams = np.array([create_weighted_vector(team[0], all_player_ids, player_prices, team[1], team[2]) for team in processed_picks if team is not None])
+    processed_picks = [pick for pick in [process_picks(picks) for picks in all_picks]]
 
-  # Using PCA to reduce dimensions
-  pca = PCA(n_components=2)
-  pca_result = pca.fit_transform(weighted_teams)
+    # Create a set of all unique player IDs (updated each gameweek)
+    all_player_ids = set()
+    for team in processed_picks:
+        if team is not None:  # Only include teams with data
+            team_list = team[0]  # The team is the first element of the tuple
+            all_player_ids.update(team_list)
+    all_player_ids = list(all_player_ids)
 
-  # Using t-SNE to reduce dimensions
-  tsne = TSNE(n_components=2, perplexity=10, n_iter=10000)
-  tsne_result = tsne.fit_transform(weighted_teams)
+    # Pass player_prices when creating weighted_teams
+    weighted_teams = np.array([create_weighted_vector(team[0], all_player_ids, player_prices, team[1], team[2]) for team in processed_picks if team is not None])
 
-  # Calculate the number of managers with data
-  num_managers_with_data = len(processed_picks) - processed_picks.count(None)
+    # Calculate the number of managers with data
+    num_managers_with_data = len(processed_picks) - processed_picks.count(None)
 
-  # Create the DataFrame, filling missing values with None
-  results_df = pd.DataFrame({
-      'manager_name': [m['name'] for m in managers][:num_managers_with_data],
-      'team_name': [m['team_name'] for m in managers][:num_managers_with_data],
-      'team_id': [m['team_id'] for m in managers][:num_managers_with_data],
-      'captain': [pick[1] for pick in processed_picks if pick is not None],  # Extract captain IDs
-      'vice_captain': [pick[2] for pick in processed_picks if pick is not None],  # Extract vice-captain IDs
-      'total_points': [pick[3] for pick in processed_picks if pick is not None],  # Extract total_points
-      'rank': [pick[4] for pick in processed_picks if pick is not None],  # Extract rank
-      'players_owned': [pick[0] for pick in processed_picks if pick is not None],  # Add players owned
-      'pca_x': pca_result[:, 0],
-      'pca_y': pca_result[:, 1],
-      'tsne_x': tsne_result[:, 0],
-      'tsne_y': tsne_result[:, 1]
-  })
+    # Using PCA to reduce dimensions
+    pca = PCA(n_components=2)
+    pca_result = pca.fit_transform(weighted_teams)
 
-  # Convert DataFrame to JSON
-  results_json = results_df.to_json(orient='records', indent=4)
+    # Using t-SNE to reduce dimensions
+    perplexity = min(num_managers_with_data - 1, 10)
+    tsne = TSNE(n_components=2, perplexity=perplexity, max_iter=10000)
+    tsne_result = tsne.fit_transform(weighted_teams)
 
-  # Construct the filename using league ID and gameweek
-  filename = f'{DATA_DIRECTORY}/fpl_team_similarity_{league_id}_gw{current_gameweek}.json'
+
+    # Create the DataFrame, filling missing values with None
+    results_df = pd.DataFrame({
+        'manager_name': [m['name'] for m in managers][:num_managers_with_data],
+        'team_name': [m['team_name'] for m in managers][:num_managers_with_data],
+        'team_id': [m['team_id'] for m in managers][:num_managers_with_data],
+        'captain': [pick[1] for pick in processed_picks if pick is not None],  # Extract captain IDs
+        'vice_captain': [pick[2] for pick in processed_picks if pick is not None],  # Extract vice-captain IDs
+        'total_points': [pick[3] for pick in processed_picks if pick is not None],  # Extract total_points
+        'rank': [pick[4] for pick in processed_picks if pick is not None],  # Extract rank
+        'gw_points': [pick[5] for pick in processed_picks if pick is not None],
+        'gw_rank': [pick[6] for pick in processed_picks if pick is not None],
+        'players_owned': [pick[0] for pick in processed_picks if pick is not None],  # Add players owned
+        'pca_x': pca_result[:, 0],
+        'pca_y': pca_result[:, 1],
+        'tsne_x': tsne_result[:, 0],
+        'tsne_y': tsne_result[:, 1]
+    })
+
+    # Convert DataFrame to JSON
+    results_json = results_df.to_json(orient='records', indent=4)
+
+    # Construct the filename using league ID and gameweek
+    filename = f'{DATA_DIRECTORY}/fpl_team_similarity_{league_id}_gw{current_gameweek}.json'
 
     # Save JSON to file
-  with open(filename, 'w') as file:
-    file.write(results_json)
+    with open(filename, 'w') as file:
+        file.write(results_json)
 
-    print(f"Data saved to '{filename}'")
-
-
+        print(f"Data saved to '{filename}'")
 
 
-  # Construct the filename using league ID and gameweek
-#   filename = f'{DATA_DIRECTORY}/fpl_team_similarity_{league_id}_gw{current_gameweek}.csv'
-
-  # Save to CSV
-#   results_df.to_csv(filename, index=False)
-#   print(f"Data saved to '{filename}'")
 
 
-  # Plotting with improved label placement
-  plt.figure(figsize=(20, 10))
+    # Construct the filename using league ID and gameweek
+    #   filename = f'{DATA_DIRECTORY}/fpl_team_similarity_{league_id}_gw{current_gameweek}.csv'
 
-  def plot_with_labels(ax, x, y, labels, highlight_ids, managers_with_player_328):
-      """
-      Plots a scatter plot with labels and highlights specific managers.
+    # Save to CSV
+    #   results_df.to_csv(filename, index=False)
+    #   print(f"Data saved to '{filename}'")
 
-      Args:
-          ax: The matplotlib axes object.
-          x: The x-coordinates of the points.
-          y: The y-coordinates of the points.
-          labels: The labels for each point.
-          highlight_ids: A list of team IDs to highlight in green.
-          managers_with_player_328: A list of team IDs to highlight in red.
-      """
-      ax.scatter(x, y)
-      texts = []
-      for i, label in enumerate(labels):
-          if results_df['team_id'][i] in highlight_ids:
+
+    # Plotting with improved label placement
+    plt.figure(figsize=(20, 10))
+
+    def plot_with_labels(ax, x, y, labels, highlight_ids, managers_with_player_328):
+        """
+        Plots a scatter plot with labels and highlights specific managers.
+
+        Args:
+            ax: The matplotlib axes object.
+            x: The x-coordinates of the points.
+            y: The y-coordinates of the points.
+            labels: The labels for each point.
+            highlight_ids: A list of team IDs to highlight in green.
+            managers_with_player_328: A list of team IDs to highlight in red.
+        """
+        ax.scatter(x, y)
+        texts = []
+        for i, label in enumerate(labels):
+            if results_df['team_id'][i] in highlight_ids:
+                if results_df['team_id'][i] in managers_with_player_328:
+                  ax.scatter(x[i], y[i], c='yellow', s=100, marker='o')
+                else: 
+                  ax.scatter(x[i], y[i], c='green', s=100, marker='o')
+            else: 
               if results_df['team_id'][i] in managers_with_player_328:
-                ax.scatter(x[i], y[i], c='yellow', s=100, marker='o')
-              else: 
-                ax.scatter(x[i], y[i], c='green', s=100, marker='o')
-          else: 
-            if results_df['team_id'][i] in managers_with_player_328:
-                ax.scatter(x[i], y[i], c='red', s=100, marker='o') 
-          texts.append(ax.text(x[i], y[i], label, fontsize=8, ha='center', va='bottom'))  # Add text labels
+                  ax.scatter(x[i], y[i], c='red', s=100, marker='o') 
+            texts.append(ax.text(x[i], y[i], label, fontsize=8, ha='center', va='bottom'))  # Add text labels
 
-  # Find managers who own player 351
-  managers_with_player_haaland = []
-  for i, team in enumerate(processed_picks):
-      if 351 in team[0]:
-          managers_with_player_haaland.append(results_df['team_id'][i])
+    # Find managers who own player 351
+    managers_with_player_haaland = []
+    for i, team in enumerate(processed_picks):
+        if 351 in team[0]:
+            managers_with_player_haaland.append(results_df['team_id'][i])
 
-  # Find managers who own player 351
-  managers_with_player_salah = []
-  for i, team in enumerate(processed_picks):
-      if 328 in team[0]:
-          managers_with_player_salah.append(results_df['team_id'][i])
+    # Find managers who own player 351
+    managers_with_player_salah = []
+    for i, team in enumerate(processed_picks):
+        if 328 in team[0]:
+            managers_with_player_salah.append(results_df['team_id'][i])
 
-  plt.subplot(1, 2, 1)
-  plot_with_labels(plt.gca(), results_df['pca_x'], results_df['pca_y'], results_df['manager_name'], managers_with_player_haaland, managers_with_player_salah)
-  plt.title('PCA Result')
+    plt.subplot(1, 2, 1)
+    plot_with_labels(plt.gca(), results_df['pca_x'], results_df['pca_y'], results_df['manager_name'], managers_with_player_haaland, managers_with_player_salah)
+    plt.title('PCA Result')
 
-  plt.subplot(1, 2, 2)
-  plot_with_labels(plt.gca(), results_df['tsne_x'], results_df['tsne_y'], results_df['manager_name'], managers_with_player_haaland, managers_with_player_salah)
-  plt.title('t-SNE Result')
+    plt.subplot(1, 2, 2)
+    plot_with_labels(plt.gca(), results_df['tsne_x'], results_df['tsne_y'], results_df['manager_name'], managers_with_player_haaland, managers_with_player_salah)
+    plt.title('t-SNE Result')
 
-  plt.tight_layout()
+    plt.tight_layout()
 
-  figure_filename = f'./graphs/fpl_team_similarity_{league_id}_gw{current_gameweek}.png'
-  plt.savefig(figure_filename, dpi=300, bbox_inches='tight')
-  print(f'Graph saved as ${figure_filename}')
+    figure_filename = f'./graphs/fpl_team_similarity_{league_id}_gw{current_gameweek}.png'
+    plt.savefig(figure_filename, dpi=300, bbox_inches='tight')
+    print(f'Graph saved as ${figure_filename}')
