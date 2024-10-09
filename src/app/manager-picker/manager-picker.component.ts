@@ -113,7 +113,7 @@ export class ManagerPickerComponent implements OnInit {
     this.managerControl.valueChanges
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((newValue) => {
-        this.dataService.setHighlightedMangers(
+        this.dataService.setHighlightedManagers(
           newValue.map((manager) => manager.team_id)
         );
       });

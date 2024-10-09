@@ -13,11 +13,17 @@ import {
   TuiMultiSelectModule,
   TuiTextfieldControllerModule,
 } from '@taiga-ui/legacy';
-import { TuiDataList } from '@taiga-ui/core';
+import { TuiDataList, TuiScrollable, TuiScrollbar } from '@taiga-ui/core';
 import { Observable, Subject, combineLatest, map, startWith } from 'rxjs';
 import { DataService, PlayerData } from '../services/data.service';
 import { TuiLet } from '@taiga-ui/cdk';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import {
+  CdkFixedSizeVirtualScroll,
+  CdkVirtualForOf,
+  CdkVirtualScrollViewport,
+  ScrollingModule,
+} from '@angular/cdk/scrolling';
 
 @Component({
   standalone: true,
@@ -30,13 +36,20 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
       [tuiTextfieldLabelOutside]="true"
       (searchChange)="onSearch($event)"
     >
-      Player
-      <tui-data-list-wrapper
+      Highlight Player Owned
+      <cdk-virtual-scroll-viewport
         *tuiDataList
-        [items]="items"
-        [itemContent]="itemContent"
-        tuiMultiSelectGroup
-      ></tui-data-list-wrapper>
+        appendOnly
+        itemSize="20"
+        class="viewport"
+      >
+        <tui-data-list-wrapper
+          tuiDataList
+          [items]="items"
+          [itemContent]="itemContent"
+          tuiMultiSelectGroup
+        ></tui-data-list-wrapper>
+      </cdk-virtual-scroll-viewport>
     </tui-multi-select>
 
     <ng-template #itemContent let-data>
@@ -50,6 +63,9 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
+    CdkFixedSizeVirtualScroll,
+    CdkVirtualForOf,
+    CdkVirtualScrollViewport,
     AsyncPipe,
     ReactiveFormsModule,
     TuiDataList,
@@ -57,7 +73,11 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
     TuiMultiSelectModule,
     TuiTextfieldControllerModule,
     TuiLet,
+    ScrollingModule,
+    TuiScrollable,
+    TuiScrollbar,
   ],
+  styleUrl: './player-picker.component.scss',
 })
 export class PlayerPickerComponent implements OnInit {
   private dataService: DataService = inject(DataService);

@@ -1,9 +1,23 @@
-<div class="flex h-screen">
-  <div class="w-80 p-4 overflow-y-auto">
-    <app-league-picker class="mb-4"></app-league-picker>
-    <app-gameweek-picker class="mb-4"></app-gameweek-picker>
-    <app-manager-picker></app-manager-picker>
-    <app-player-picker></app-player-picker>
+<div class="flex h-screen flex-col sm:flex-row">
+  <div class="w-80 p-4 overflow-y-auto flex flex-col sm:justify-between">
+    <div>
+      <app-league-picker class="mb-4"></app-league-picker>
+      <app-gameweek-picker class="mb-4"></app-gameweek-picker>
+      <app-manager-picker></app-manager-picker>
+      <app-player-picker></app-player-picker>
+    </div>
+    <div class="flex justify-center mt-4 mb-2">
+      <a
+        href="https://github.com/Jashior/fpl_league_similarity"
+        target="_blank"
+      >
+        <img
+          src="https://img.icons8.com/?size=100&id=AZOZNnY73haj&format=png&color=000000"
+          alt="GitHub"
+          class="h-8 w-8"
+        />
+      </a>
+    </div>
   </div>
 
   <div class="flex-1 p-4 overflow-hidden">

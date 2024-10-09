@@ -51,9 +51,7 @@ export class DataService {
   private availableLeaguesSubject = new BehaviorSubject<League[]>([]);
   private loadingCounter = 0;
   private loadingSubject = new BehaviorSubject<boolean>(false);
-  private highlightedManagersSubject = new BehaviorSubject<number[]>([
-    129, 98873,
-  ]);
+  private highlightedManagersSubject = new BehaviorSubject<number[]>([]);
   private highlightedPlayersSubject = new BehaviorSubject<number[]>([351]);
 
   loading$: Observable<boolean> = this.loadingSubject.asObservable();
@@ -171,8 +169,22 @@ export class DataService {
     this.currentLeagueSubject.next(league);
   }
 
-  setHighlightedMangers(teamIds: number[]): void {
+  setHighlightedManagers(teamIds: number[]): void {
     this.highlightedManagersSubject.next(teamIds);
+  }
+
+  toggleHighlightedManager(teamId: number) {
+    const currentHighlightedManagers =
+      this.highlightedManagersSubject.getValue();
+    const index = currentHighlightedManagers.indexOf(teamId);
+
+    if (index > -1) {
+      currentHighlightedManagers.splice(index, 1);
+    } else {
+      currentHighlightedManagers.push(teamId);
+    }
+
+    this.highlightedManagersSubject.next([...currentHighlightedManagers]);
   }
 
   setHighlightedPlayers(playerIds: number[]): void {
@@ -181,5 +193,12 @@ export class DataService {
 
   getAvailableLeagues(): League[] {
     return this.availableLeaguesSubject.getValue();
+  }
+
+  getNameFromId(id: number): string {
+    return (
+      this.playerDataSubject.getValue().find((player) => player.id === id)
+        ?.web_name || ''
+    );
   }
 }

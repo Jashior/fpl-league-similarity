@@ -65,6 +65,7 @@ export class GraphComponent {
             gw_points: manager.gw_points,
             gw_rank: manager.gw_rank,
             players: manager.players_owned,
+            captain: manager.captain,
             itemStyle: {
               color: '#ffffff',
             },
@@ -78,6 +79,7 @@ export class GraphComponent {
                 fontSize: 8,
               },
             },
+            z: 2,
           };
         } else {
           const ownsHighlightedPlayers = manager.players_owned.some(
@@ -94,6 +96,7 @@ export class GraphComponent {
             gw_points: manager.gw_points,
             gw_rank: manager.gw_rank,
             players: manager.players_owned,
+            captain: manager.captain,
             itemStyle: {
               color: ownsHighlightedPlayers ? '#3bda55' : '#5470C6',
             },
@@ -110,8 +113,10 @@ export class GraphComponent {
           show: true,
           formatter: (params: any) => {
             return `<b>${params.data.name}</b><br/>
-                    Team: ${params.data.team_name}<br/>
                     <small>
+                    Team: ${params.data.team_name}<br/>
+                    </small>
+                    Captain: ${this.getCaptainFromId(params.data.captain)}<br/>
                     Rank: ${this.formatNumber(params.data.rank)}<br/>
                     Total Points: ${this.formatNumber(
                       params.data.totalPoints
@@ -119,9 +124,7 @@ export class GraphComponent {
                     Gameweek Points: ${this.formatNumber(
                       params.data.gw_points
                     )}<br/>
-                    Gameweek Rank: ${this.formatNumber(
-                      params.data.gw_rank
-                    )}</small>`;
+                    Gameweek Rank: ${this.formatNumber(params.data.gw_rank)}`;
           },
         },
         xAxis: {
@@ -189,10 +192,25 @@ export class GraphComponent {
 
   onChartClick(event: any) {
     if (event.data && event.data.team_id) {
-      const url = `https://fantasy.premierleague.com/entry/${
-        event.data.team_id
-      }/event/${this.currentGameweek()}`;
-      window.open(url, '_blank');
+      // Detect if it's a mobile device
+      const isMobile =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        );
+
+      if (isMobile) {
+        this.dataService.toggleHighlightedManager(event.data.team_id);
+      } else {
+        // Open the FPL link in a new tab on desktop
+        const url = `https://fantasy.premierleague.com/entry/${
+          event.data.team_id
+        }/event/${this.currentGameweek()}`;
+        window.open(url, '_blank');
+      }
     }
+  }
+
+  getCaptainFromId(id: number) {
+    return this.dataService.getNameFromId(id);
   }
 }
