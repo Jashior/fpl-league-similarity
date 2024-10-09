@@ -5,6 +5,8 @@
 
 Group Fantasy Premier League (FPL) managers based on their team compositions. It visually represents the differences in team selections, helping users understand the strategies and choices made by different managers.
 
+Employs embedding techniques (t-SNE) to transform complex team data into a lower-dimensional space. The use of weighted vectors ensures that the representation captures important aspects of team composition: player prices, captains, vice-captains, benching. 
+
 ## Features
 
 - **Manager Grouping**: Automatically groups FPL managers according to their team composition.
