@@ -1,3 +1,12 @@
-<hr />
-
-<p>graph works!</p>
+@if(!loading()){
+<div class="w-full h-full">
+  <div
+    echarts
+    [options]="chartOption()"
+    (chartClick)="onChartClick($event)"
+    class="chart-container w-full h-full"
+  ></div>
+</div>
+}@else {
+<p>Loading...</p>
+}

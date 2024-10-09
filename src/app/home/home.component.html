@@ -1,15 +1,18 @@
-<div class="w-64">
-  <app-league-picker></app-league-picker>
-  <app-gameweek-picker></app-gameweek-picker>
+<div class="flex h-screen">
+  <div class="w-80 p-4 overflow-y-auto">
+    <app-league-picker class="mb-4"></app-league-picker>
+    <app-gameweek-picker class="mb-4"></app-gameweek-picker>
+    <app-manager-picker></app-manager-picker>
+    <app-player-picker></app-player-picker>
+  </div>
+
+  <div class="flex-1 p-4 overflow-hidden">
+    @if (managerData() && !loading()) {
+    <app-graph class="w-full h-full"></app-graph>
+    } @else {
+    <div class="flex items-center justify-center h-full">
+      <p class="text-xl text-gray-600">Loading manager data...</p>
+    </div>
+    }
+  </div>
 </div>
-@if (managerData() && !loading()){
-<ul>
-  @for (manager of managerData().slice(0, 10); track manager.team_id){
-  <li>
-    {{ manager.manager_name }}, Rank: {{ manager.rank }}, Points
-    {{ manager.total_points }}, ID: {{ manager.team_id }}
-  </li>
-  }
-</ul>
-<app-graph></app-graph>
-} @else{ Loading manager data... }

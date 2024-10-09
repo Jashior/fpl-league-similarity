@@ -7,14 +7,13 @@ import {
 } from 'rxjs';
 
 export interface PlayerData {
-  number: {
-    web_name: string;
-    now_cost: number;
-  };
+  id: number;
+  web_name: string;
+  now_cost: number;
 }
 
 export interface PlayerDataResponse {
-  player_data: PlayerData[];
+  player_data: { [key: string]: { web_name: string; now_cost: number } };
   current_gameweek: number;
 }
 
@@ -26,6 +25,8 @@ export interface ManagerData {
   vice_captain: number;
   total_points: number;
   rank: number;
+  gw_points: number;
+  gw_rank: number;
   players_owned: number[];
   pca_x: number;
   pca_y: number;
@@ -50,6 +51,10 @@ export class DataService {
   private availableLeaguesSubject = new BehaviorSubject<League[]>([]);
   private loadingCounter = 0;
   private loadingSubject = new BehaviorSubject<boolean>(false);
+  private highlightedManagersSubject = new BehaviorSubject<number[]>([
+    129, 98873,
+  ]);
+  private highlightedPlayersSubject = new BehaviorSubject<number[]>([351]);
 
   loading$: Observable<boolean> = this.loadingSubject.asObservable();
   playerData$: Observable<PlayerData[]> = this.playerDataSubject.asObservable();
@@ -62,6 +67,10 @@ export class DataService {
     this.currentLeagueSubject.asObservable();
   availableLeagues$: Observable<League[]> =
     this.availableLeaguesSubject.asObservable();
+  highlightedManagers$: Observable<number[]> =
+    this.highlightedManagersSubject.asObservable();
+  highlightedPlayers$: Observable<number[]> =
+    this.highlightedPlayersSubject.asObservable();
 
   constructor() {
     this.loadPlayerData();
@@ -83,7 +92,17 @@ export class DataService {
       .then((response) => response.json())
       .then((data: PlayerDataResponse) => {
         console.log('Player data loaded:', data);
-        this.playerDataSubject.next(data.player_data);
+
+        // Transform the player_data object into an array of PlayerData
+        const transformedPlayerData = Object.entries(data.player_data).map(
+          ([id, player]) => ({
+            id: Number(id),
+            web_name: player.web_name,
+            now_cost: player.now_cost,
+          })
+        );
+
+        this.playerDataSubject.next(transformedPlayerData);
         this.maxGameweekSubject.next(data.current_gameweek);
         this.currentGameweekSubject.next(data.current_gameweek);
       })
@@ -150,6 +169,14 @@ export class DataService {
 
   setCurrentLeague(league: League): void {
     this.currentLeagueSubject.next(league);
+  }
+
+  setHighlightedMangers(teamIds: number[]): void {
+    this.highlightedManagersSubject.next(teamIds);
+  }
+
+  setHighlightedPlayers(playerIds: number[]): void {
+    this.highlightedPlayersSubject.next(playerIds);
   }
 
   getAvailableLeagues(): League[] {
