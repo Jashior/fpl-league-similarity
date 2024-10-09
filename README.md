@@ -1,27 +1,14 @@
-# FplLeagueSimilarity
+![acohGTU](https://github.com/user-attachments/assets/039aaff7-2958-47cb-841d-5397b68c2099)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.0.
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Group Fantasy Premier League (FPL) managers based on their team compositions. It visually represents the differences in team selections, helping users understand the strategies and choices made by different managers.
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Manager Grouping**: Automatically groups FPL managers according to their team composition.
+- **Graphical Representation**: Provides visual insights into the similarities and differences between teams, highlighting key player selections and overall strategies.
+- **Interactive Interface**: Users can easily interact with the data, filtering and exploring different team compositions.
+- **Search Functionality**: Quickly search for specific managers or players to see how they compare against others.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
