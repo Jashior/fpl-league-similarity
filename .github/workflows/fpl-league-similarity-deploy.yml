@@ -3,7 +3,7 @@ name: Deploy fpl-league-similarity to domain fpl-league-similarity.zanaris.dev
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
