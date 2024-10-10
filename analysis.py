@@ -353,7 +353,7 @@ for league_id in league_ids:
   print(current_gameweek)
   print(current_gameweek_finished)
 
-  for gameweek in range(1, current_gameweek+1):  # Loop through gameweeks (change to (1,Max gameweek+1) if you want to rerun all weeks)
+  for gameweek in range(current_gameweek, current_gameweek+1):  # Loop through gameweeks (change to (1,Max gameweek+1) if you want to rerun all weeks)
     print(f"Processing Gameweek {gameweek}")
 
 
