@@ -7,6 +7,7 @@ import { LeaguePickerComponent } from '../league-picker/league-picker.component'
 import { GraphComponent } from '../graph/graph.component';
 import { ManagerPickerComponent } from '../manager-picker/manager-picker.component';
 import { PlayerPickerComponent } from '../player-picker/player-picker.component';
+import { TuiIcon } from '@taiga-ui/core';
 
 @Component({
   selector: 'app-home',
@@ -18,9 +19,11 @@ import { PlayerPickerComponent } from '../player-picker/player-picker.component'
     GraphComponent,
     ManagerPickerComponent,
     PlayerPickerComponent,
+    TuiIcon,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
+  providers: [],
 })
 export class HomeComponent {
   private dataService: DataService = inject(DataService);

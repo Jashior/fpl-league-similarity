@@ -114,11 +114,17 @@ export class GraphComponent {
           formatter: (params: any) => {
             return `<b>${params.data.name}</b><br/>
                     <small>
-                    Team: ${params.data.team_name}<br/>
+                    ${params.data.team_name}<br/>
                     </small>
                     Captain: ${this.getCaptainFromId(params.data.captain)}<br/>
                     Rank: ${this.formatNumber(params.data.rank)}<br/>
-                    Total Points: ${this.formatNumber(params.data.totalPoints)}
+                    Total Points: ${this.formatNumber(
+                      params.data.totalPoints
+                    )}<br/>
+                    Gameweek Points: ${this.formatNumber(
+                      params.data.gw_points
+                    )}<br/>
+                    Gameweek Rank: ${this.formatNumber(params.data.gw_rank)}
                     `;
             /*
                     <br/>
