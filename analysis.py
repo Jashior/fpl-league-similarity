@@ -47,6 +47,8 @@ def fetch_player_data(json_file=f'{DATA_DIRECTORY}/player_data.json'):
     data = response.json()
 
     current_gameweek = next(event['id'] for event in data['events'] if event['is_current'])
+    current_gameweek_finished = data['events'][current_gameweek - 1]['finished']
+
     player_data = {
         element['id']: {
             'web_name': element['web_name'],
@@ -66,7 +68,7 @@ def fetch_player_data(json_file=f'{DATA_DIRECTORY}/player_data.json'):
 
     print(f"Player data and current gameweek saved to {json_file}")
 
-    return player_data, current_gameweek
+    return player_data, current_gameweek, current_gameweek_finished
 
 def fetch_league_standings(league_id, page=1):
     """
@@ -302,7 +304,7 @@ def fetch_league_names(league_ids, cache_file=f'{DATA_DIRECTORY}/leagues.json'):
 
 make_plots = False
 
-player_data, current_gameweek = fetch_player_data()
+player_data, current_gameweek, current_gameweek_finished = fetch_player_data()
 
 # Extract player prices from player_data
 player_prices = {int(player_id): info['now_cost'] for player_id, info in player_data.items()}
@@ -316,6 +318,7 @@ for league_id in league_ids:
   managers = fetch_all_managers(league_id)
 
   print(current_gameweek)
+  print(current_gameweek_finished)
 
   for gameweek in range(current_gameweek, current_gameweek+1):  # Loop through gameweeks (change to (1,Max gameweek+1) if you want to rerun all weeks)
     print(f"Processing Gameweek {gameweek}")

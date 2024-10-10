@@ -118,13 +118,15 @@ export class GraphComponent {
                     </small>
                     Captain: ${this.getCaptainFromId(params.data.captain)}<br/>
                     Rank: ${this.formatNumber(params.data.rank)}<br/>
-                    Total Points: ${this.formatNumber(
-                      params.data.totalPoints
-                    )}<br/>
+                    Total Points: ${this.formatNumber(params.data.totalPoints)}
+                    `;
+            /*
+                    <br/>
                     Gameweek Points: ${this.formatNumber(
                       params.data.gw_points
                     )}<br/>
-                    Gameweek Rank: ${this.formatNumber(params.data.gw_rank)}`;
+                    Gameweek Rank: ${this.formatNumber(params.data.gw_rank)}
+                    */
           },
         },
         xAxis: {
