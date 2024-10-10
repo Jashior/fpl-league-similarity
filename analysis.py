@@ -19,6 +19,7 @@ CACHE_DIRECTORY = './cache'
 # Main execution
 # league_ids = [7639, 8497]
 league_ids = [7639]
+# league_ids = [8497]
 
 def fetch_player_data(json_file=f'{DATA_DIRECTORY}/player_data.json'):
     """
@@ -160,46 +161,78 @@ def fetch_all_managers(league_id, cache_file=f'{CACHE_DIRECTORY}/managers.json')
 
     return all_managers
 
-def fetch_all_team_picks(managers, league_id, gameweek, cache_file=f'{CACHE_DIRECTORY}/gameweek_picks.json'):
+def fetch_all_team_picks(managers, league_id, gameweek, current_gameweek, current_gameweek_finished, cache_file=f'{CACHE_DIRECTORY}/gameweek_picks.json'):
     """Fetches team picks for all managers for a given league and gameweek and caches them.
 
     Args:
         managers: A list of manager dictionaries.
         league_id: The ID of the league.
-        gameweek: The gameweek number.
+        gameweek: The gameweek number to fetch data for.
+        current_gameweek: The current gameweek number.
+        current_gameweek_finished: Boolean indicating if the current gameweek has finished.
         cache_file: The filename for the cached picks data.
     """
+    cache_key = f"{league_id}_{gameweek}_picks"
+    metadata_key = f"{league_id}_{gameweek}_metadata"
 
-    cache_key = f"{league_id}_{gameweek}_picks"  # Include league ID in the cache key
     if os.path.exists(cache_file):
-        # Load cached data
         with open(cache_file, 'r') as f:
-            cached_picks = json.load(f)
-        if cache_key in cached_picks:
-            return cached_picks[cache_key]
+            cached_data = json.load(f)
+        # print(f"Debug: Loaded existing cache file. Keys: {list(cached_data.keys())}")
+    else:
+        cached_data = {}
+        # print("Debug: No existing cache file found. Created new cache.")
 
-    # Fetch from API and cache
+
+    # For previous gameweeks, always use cached data if available
+    if gameweek < current_gameweek:
+        if cache_key in cached_data:
+            print(f"Using cached data for previous gameweek {gameweek}")
+            return cached_data[cache_key]
+        else:
+            print(f"No cached data found for previous gameweek {gameweek}. Fetching from API.")
+    else:
+        # For current gameweek, check if we need to refetch
+        print(f"gameweek: {gameweek}, current_gameweek: {current_gameweek}, current_gameweek_finished: {current_gameweek_finished}")
+        metadata = cached_data.get(metadata_key, {})
+        if cache_key in cached_data and (not current_gameweek_finished or metadata.get('fetched_after_finished', False)):
+            print(f"Using cached data for current gameweek {gameweek}")
+            return cached_data[cache_key]
+        else:
+            print(f"Fetching fresh data for current gameweek {gameweek}")
+
+    # Fetch from API
     all_picks = []
     for manager in managers:
         print(f"Fetching picks for {manager['name']}...")
         picks = fetch_team_picks(manager['team_id'], gameweek)
-        if 'picks' in picks:  # Check if 'picks' key exists
+        if 'picks' in picks:
             all_picks.append(picks)
         else:
-            print(f"Warning: 'picks' key missing for manager {manager['team_id']} gameweek ${gameweek}. Skipping this manager.")
+            print(f"Warning: 'picks' key missing for manager {manager['team_id']} gameweek {gameweek}. Skipping this manager.")
         time.sleep(1)  # Delay to avoid overloading the server
 
-    # Store in cache
-    if os.path.exists(cache_file):
-        with open(cache_file, 'r') as f:
-            cached_picks = json.load(f)
-    else:
-        cached_picks = {}
-    cached_picks[cache_key] = all_picks
+    # Update cache
+    cached_data[cache_key] = all_picks
+    if gameweek == current_gameweek:
+        cached_data[metadata_key] = {
+            'fetched_after_finished': current_gameweek_finished,
+            'last_fetch_time': time.time()
+        }
+        # print(f"Debug: Updated metadata for gameweek {gameweek}: {cached_data[metadata_key]}")
+
+    # print(f"Debug: Cache keys before saving: {list(cached_data.keys())}")
     with open(cache_file, 'w') as f:
-        json.dump(cached_picks, f)
+        json.dump(cached_data, f)
+
+    # Verify saved data
+    with open(cache_file, 'r') as f:
+        saved_data = json.load(f)
+    print(f"Debug: Saved cache keys: {list(saved_data.keys())}")
+    print(f"Debug: Saved metadata for gameweek {gameweek}: {saved_data.get(metadata_key)}")
 
     return all_picks
+
 
 def process_picks(picks):
     """
@@ -320,12 +353,12 @@ for league_id in league_ids:
   print(current_gameweek)
   print(current_gameweek_finished)
 
-  for gameweek in range(current_gameweek, current_gameweek+1):  # Loop through gameweeks (change to (1,Max gameweek+1) if you want to rerun all weeks)
+  for gameweek in range(1, current_gameweek+1):  # Loop through gameweeks (change to (1,Max gameweek+1) if you want to rerun all weeks)
     print(f"Processing Gameweek {gameweek}")
-    current_gameweek = gameweek
+
 
     # Fetch team picks for all managers
-    all_picks = fetch_all_team_picks(managers, league_id, current_gameweek)
+    all_picks = fetch_all_team_picks(managers, league_id, gameweek, current_gameweek, current_gameweek_finished)
 
     processed_picks = [pick for pick in [process_picks(picks) for picks in all_picks]]
 
@@ -375,7 +408,7 @@ for league_id in league_ids:
     results_json = results_df.to_json(orient='records', indent=4)
 
     # Construct the filename using league ID and gameweek
-    filename = f'{DATA_DIRECTORY}/fpl_team_similarity_{league_id}_gw{current_gameweek}.json'
+    filename = f'{DATA_DIRECTORY}/fpl_team_similarity_{league_id}_gw{gameweek}.json'
 
     # Save JSON to file
     with open(filename, 'w') as file:
@@ -387,7 +420,7 @@ for league_id in league_ids:
 
 
     # Construct the filename using league ID and gameweek
-    #   filename = f'{DATA_DIRECTORY}/fpl_team_similarity_{league_id}_gw{current_gameweek}.csv'
+    #   filename = f'{DATA_DIRECTORY}/fpl_team_similarity_{league_id}_gw{gameweek}.csv'
 
     # Save to CSV
     #   results_df.to_csv(filename, index=False)
@@ -447,6 +480,6 @@ for league_id in league_ids:
 
         plt.tight_layout()
 
-        figure_filename = f'./graphs/fpl_team_similarity_{league_id}_gw{current_gameweek}.png'
+        figure_filename = f'./graphs/fpl_team_similarity_{league_id}_gw{gameweek}.png'
         plt.savefig(figure_filename, dpi=300, bbox_inches='tight')
         print(f'Graph saved as ${figure_filename}')
