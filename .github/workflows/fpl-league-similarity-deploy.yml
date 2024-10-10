@@ -1,0 +1,61 @@
+name: Deploy fpl-league-similarity to domain fpl-league-similarity.zanaris.dev
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Add Host Key
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H 65.109.8.91 >> ~/.ssh/known_hosts
+          
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@master
+        with:
+          host: 65.109.8.91
+          username: jason
+          key: ${{ secrets.DEPLOY_USER_SSH_KEY }}
+          port: 22 
+          debug: true
+          script: |
+            echo "Connection successful"
+            echo "Deploying commit: $GITHUB_SHA"
+            echo "Repository: $GITHUB_REPOSITORY"
+            cd /home/dev/fpl-league-similarity
+            git fetch
+            git reset --hard origin/master
+            npm i
+            npm run build
+
+            # Check if FPL-XY is running in PM2
+            if pm2 list | grep -q "fpl-league-similarity"; then
+              echo "fpl-league-similarity is already running, restarting..."
+              pm2 restart fpl-league-similarity
+            else
+              echo "fpl-league-similarity is not running, starting..."
+              pm2 start ecosystem.config.js  # Or the appropriate command to start your app
+            fi
+
+
+     # Add steps here to configure Nginx/Apache for subdomain deployment
+      # - Create/modify virtual host for fpl.zanaris.dev
+      # - Point to the build output directory
+      # - Reload/restart the web server
