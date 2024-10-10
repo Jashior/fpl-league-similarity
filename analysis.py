@@ -300,6 +300,8 @@ def fetch_league_names(league_ids, cache_file=f'{DATA_DIRECTORY}/leagues.json'):
   print(f"League names saved to {available_leagues_file}")
 
 
+make_plots = False
+
 player_data, current_gameweek = fetch_player_data()
 
 # Extract player prices from player_data
@@ -389,56 +391,59 @@ for league_id in league_ids:
     #   print(f"Data saved to '{filename}'")
 
 
-    # Plotting with improved label placement
-    plt.figure(figsize=(20, 10))
 
-    def plot_with_labels(ax, x, y, labels, highlight_ids, managers_with_player_328):
-        """
-        Plots a scatter plot with labels and highlights specific managers.
 
-        Args:
-            ax: The matplotlib axes object.
-            x: The x-coordinates of the points.
-            y: The y-coordinates of the points.
-            labels: The labels for each point.
-            highlight_ids: A list of team IDs to highlight in green.
-            managers_with_player_328: A list of team IDs to highlight in red.
-        """
-        ax.scatter(x, y)
-        texts = []
-        for i, label in enumerate(labels):
-            if results_df['team_id'][i] in highlight_ids:
-                if results_df['team_id'][i] in managers_with_player_328:
-                  ax.scatter(x[i], y[i], c='yellow', s=100, marker='o')
+    if (make_plots):
+        # Plotting with improved label placement
+        plt.figure(figsize=(20, 10))
+
+        def plot_with_labels(ax, x, y, labels, highlight_ids, managers_with_player_328):
+            """
+            Plots a scatter plot with labels and highlights specific managers.
+
+            Args:
+                ax: The matplotlib axes object.
+                x: The x-coordinates of the points.
+                y: The y-coordinates of the points.
+                labels: The labels for each point.
+                highlight_ids: A list of team IDs to highlight in green.
+                managers_with_player_328: A list of team IDs to highlight in red.
+            """
+            ax.scatter(x, y)
+            texts = []
+            for i, label in enumerate(labels):
+                if results_df['team_id'][i] in highlight_ids:
+                    if results_df['team_id'][i] in managers_with_player_328:
+                        ax.scatter(x[i], y[i], c='yellow', s=100, marker='o')
+                    else: 
+                        ax.scatter(x[i], y[i], c='green', s=100, marker='o')
                 else: 
-                  ax.scatter(x[i], y[i], c='green', s=100, marker='o')
-            else: 
-              if results_df['team_id'][i] in managers_with_player_328:
-                  ax.scatter(x[i], y[i], c='red', s=100, marker='o') 
-            texts.append(ax.text(x[i], y[i], label, fontsize=8, ha='center', va='bottom'))  # Add text labels
+                    if results_df['team_id'][i] in managers_with_player_328:
+                        ax.scatter(x[i], y[i], c='red', s=100, marker='o') 
+                texts.append(ax.text(x[i], y[i], label, fontsize=8, ha='center', va='bottom'))  # Add text labels
 
-    # Find managers who own player 351
-    managers_with_player_haaland = []
-    for i, team in enumerate(processed_picks):
-        if 351 in team[0]:
-            managers_with_player_haaland.append(results_df['team_id'][i])
+        # Find managers who own player 351
+        managers_with_player_haaland = []
+        for i, team in enumerate(processed_picks):
+            if 351 in team[0]:
+                managers_with_player_haaland.append(results_df['team_id'][i])
 
-    # Find managers who own player 351
-    managers_with_player_salah = []
-    for i, team in enumerate(processed_picks):
-        if 328 in team[0]:
-            managers_with_player_salah.append(results_df['team_id'][i])
+        # Find managers who own player 351
+        managers_with_player_salah = []
+        for i, team in enumerate(processed_picks):
+            if 328 in team[0]:
+                managers_with_player_salah.append(results_df['team_id'][i])
 
-    plt.subplot(1, 2, 1)
-    plot_with_labels(plt.gca(), results_df['pca_x'], results_df['pca_y'], results_df['manager_name'], managers_with_player_haaland, managers_with_player_salah)
-    plt.title('PCA Result')
+        plt.subplot(1, 2, 1)
+        plot_with_labels(plt.gca(), results_df['pca_x'], results_df['pca_y'], results_df['manager_name'], managers_with_player_haaland, managers_with_player_salah)
+        plt.title('PCA Result')
 
-    plt.subplot(1, 2, 2)
-    plot_with_labels(plt.gca(), results_df['tsne_x'], results_df['tsne_y'], results_df['manager_name'], managers_with_player_haaland, managers_with_player_salah)
-    plt.title('t-SNE Result')
+        plt.subplot(1, 2, 2)
+        plot_with_labels(plt.gca(), results_df['tsne_x'], results_df['tsne_y'], results_df['manager_name'], managers_with_player_haaland, managers_with_player_salah)
+        plt.title('t-SNE Result')
 
-    plt.tight_layout()
+        plt.tight_layout()
 
-    figure_filename = f'./graphs/fpl_team_similarity_{league_id}_gw{current_gameweek}.png'
-    plt.savefig(figure_filename, dpi=300, bbox_inches='tight')
-    print(f'Graph saved as ${figure_filename}')
+        figure_filename = f'./graphs/fpl_team_similarity_{league_id}_gw{current_gameweek}.png'
+        plt.savefig(figure_filename, dpi=300, bbox_inches='tight')
+        print(f'Graph saved as ${figure_filename}')

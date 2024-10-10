@@ -2,7 +2,8 @@
 
 /cache/*
 !cache/.gitkeep
-/graphs
+/graphs/*
+!graphs/.gitkeep
 /venv
 
 # Compiled output
