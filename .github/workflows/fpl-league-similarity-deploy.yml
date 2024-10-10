@@ -41,7 +41,7 @@ jobs:
             echo "Repository: $GITHUB_REPOSITORY"
             cd /home/dev/fpl-league-similarity
             git fetch
-            git reset --hard origin/master
+            git reset --hard origin/main
             npm i
             npm run build
 
