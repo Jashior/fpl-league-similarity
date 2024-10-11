@@ -4,6 +4,7 @@ import {
   Observable,
   distinctUntilChanged,
   combineLatest,
+  shareReplay,
 } from 'rxjs';
 
 export interface PlayerData {
@@ -55,12 +56,16 @@ export class DataService {
   private highlightedPlayersSubject = new BehaviorSubject<number[]>([351]);
 
   loading$: Observable<boolean> = this.loadingSubject.asObservable();
-  playerData$: Observable<PlayerData[]> = this.playerDataSubject.asObservable();
+
+  playerData$: Observable<PlayerData[]> = this.playerDataSubject
+    .asObservable()
+    .pipe(shareReplay(1));
   currentGameweek$: Observable<number> =
     this.currentGameweekSubject.asObservable();
   maxGameweek$: Observable<number> = this.maxGameweekSubject.asObservable();
-  managerData$: Observable<ManagerData[]> =
-    this.managerDataSubject.asObservable();
+  managerData$: Observable<ManagerData[]> = this.managerDataSubject
+    .asObservable()
+    .pipe(shareReplay(1));
   currentLeague$: Observable<League | null> =
     this.currentLeagueSubject.asObservable();
   availableLeagues$: Observable<League[]> =
@@ -173,6 +178,10 @@ export class DataService {
     this.highlightedManagersSubject.next(teamIds);
   }
 
+  setHighlightedPlayers(playerIds: number[]): void {
+    this.highlightedPlayersSubject.next(playerIds);
+  }
+
   toggleHighlightedManager(teamId: number) {
     const currentHighlightedManagers =
       this.highlightedManagersSubject.getValue();
@@ -185,10 +194,6 @@ export class DataService {
     }
 
     this.highlightedManagersSubject.next([...currentHighlightedManagers]);
-  }
-
-  setHighlightedPlayers(playerIds: number[]): void {
-    this.highlightedPlayersSubject.next(playerIds);
   }
 
   getAvailableLeagues(): League[] {

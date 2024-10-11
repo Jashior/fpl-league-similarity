@@ -1,11 +1,4 @@
-import { TuiDataListWrapper } from '@taiga-ui/kit';
-import {
-  Component,
-  OnInit,
-  ChangeDetectionStrategy,
-  inject,
-  DestroyRef,
-} from '@angular/core';
+import { Component, OnInit, inject, DestroyRef } from '@angular/core';
 import { AsyncPipe, JsonPipe } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TuiStringHandler } from '@taiga-ui/cdk';
@@ -13,11 +6,15 @@ import {
   TuiMultiSelectModule,
   TuiTextfieldControllerModule,
 } from '@taiga-ui/legacy';
-import { TuiDataList } from '@taiga-ui/core';
 import { Observable, Subject, combineLatest, map, startWith } from 'rxjs';
 import { DataService, ManagerData } from '../services/data.service';
 import { TuiLet } from '@taiga-ui/cdk';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import {
+  CdkFixedSizeVirtualScroll,
+  CdkVirtualForOf,
+  CdkVirtualScrollViewport,
+} from '@angular/cdk/scrolling';
 
 @Component({
   standalone: true,
@@ -30,34 +27,39 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
       [tuiTextfieldLabelOutside]="true"
       (searchChange)="onSearch($event)"
     >
-      Manager
-      <tui-data-list-wrapper
+      <small>Highlight Manager</small>
+      <cdk-virtual-scroll-viewport
         *tuiDataList
-        [items]="items"
-        [itemContent]="itemContent"
-        tuiMultiSelectGroup
-      ></tui-data-list-wrapper>
+        appendOnly
+        class="viewport"
+        [itemSize]="15"
+      >
+        <tui-data-list tuiMultiSelectGroup>
+          <button
+            *cdkVirtualFor="let item of items"
+            tuiOption
+            type="button"
+            [value]="item"
+          >
+            {{ item.manager_name }}
+          </button>
+        </tui-data-list>
+      </cdk-virtual-scroll-viewport>
     </tui-multi-select>
-
-    <ng-template #itemContent let-data>
-      <div class="template">
-        <div class="flex w-full flex-col justify-between"></div>
-        <span>{{ data.manager_name }}</span>
-      </div>
-    </ng-template>
-
     <br />
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
+    CdkFixedSizeVirtualScroll,
+    CdkVirtualForOf,
+    CdkVirtualScrollViewport,
     AsyncPipe,
     ReactiveFormsModule,
-    TuiDataList,
-    TuiDataListWrapper,
     TuiMultiSelectModule,
     TuiTextfieldControllerModule,
     TuiLet,
+    JsonPipe,
   ],
+  styleUrl: './manager-picker.component.scss',
 })
 export class ManagerPickerComponent implements OnInit {
   private dataService: DataService = inject(DataService);

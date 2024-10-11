@@ -126,13 +126,6 @@ export class GraphComponent {
                     )}<br/>
                     Gameweek Rank: ${this.formatNumber(params.data.gw_rank)}
                     `;
-            /*
-                    <br/>
-                    Gameweek Points: ${this.formatNumber(
-                      params.data.gw_points
-                    )}<br/>
-                    Gameweek Rank: ${this.formatNumber(params.data.gw_rank)}
-                    */
           },
         },
         xAxis: {

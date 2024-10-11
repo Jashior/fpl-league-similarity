@@ -1,19 +1,11 @@
-import { TuiDataListWrapper } from '@taiga-ui/kit';
-import {
-  Component,
-  OnInit,
-  ChangeDetectionStrategy,
-  inject,
-  DestroyRef,
-} from '@angular/core';
-import { AsyncPipe, JsonPipe } from '@angular/common';
+import { Component, OnInit, inject, DestroyRef } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TuiStringHandler } from '@taiga-ui/cdk';
 import {
   TuiMultiSelectModule,
   TuiTextfieldControllerModule,
 } from '@taiga-ui/legacy';
-import { TuiDataList, TuiScrollable, TuiScrollbar } from '@taiga-ui/core';
 import { Observable, Subject, combineLatest, map, startWith } from 'rxjs';
 import { DataService, PlayerData } from '../services/data.service';
 import { TuiLet } from '@taiga-ui/cdk';
@@ -22,7 +14,6 @@ import {
   CdkFixedSizeVirtualScroll,
   CdkVirtualForOf,
   CdkVirtualScrollViewport,
-  ScrollingModule,
 } from '@angular/cdk/scrolling';
 
 @Component({
@@ -36,46 +27,36 @@ import {
       [tuiTextfieldLabelOutside]="true"
       (searchChange)="onSearch($event)"
     >
-      Highlight Player Owned
+      <small>Highlight Player Owned</small>
       <cdk-virtual-scroll-viewport
         *tuiDataList
         appendOnly
-        itemSize="20"
+        [itemSize]="15"
         class="viewport"
       >
-        <tui-data-list-wrapper
-          tuiDataList
-          [items]="items"
-          [itemContent]="itemContent"
-          tuiMultiSelectGroup
-        ></tui-data-list-wrapper>
+        <tui-data-list tuiMultiSelectGroup>
+          <button
+            *cdkVirtualFor="let item of items"
+            tuiOption
+            type="button"
+            [value]="item"
+          >
+            {{ item.web_name }}
+          </button>
+        </tui-data-list>
       </cdk-virtual-scroll-viewport>
     </tui-multi-select>
-
-    <ng-template #itemContent let-data>
-      <div class="template">
-        <div class="flex w-full flex-col justify-between"></div>
-        <span>{{ data.web_name }}</span>
-      </div>
-    </ng-template>
-
     <br />
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CdkFixedSizeVirtualScroll,
     CdkVirtualForOf,
     CdkVirtualScrollViewport,
     AsyncPipe,
     ReactiveFormsModule,
-    TuiDataList,
-    TuiDataListWrapper,
     TuiMultiSelectModule,
     TuiTextfieldControllerModule,
     TuiLet,
-    ScrollingModule,
-    TuiScrollable,
-    TuiScrollbar,
   ],
   styleUrl: './player-picker.component.scss',
 })
@@ -89,9 +70,11 @@ export class PlayerPickerComponent implements OnInit {
     this.dataService.playerData$,
   ]).pipe(
     map(([search, players]) =>
-      players.filter(({ web_name }) =>
-        web_name.toLowerCase().includes(search.toLowerCase())
-      )
+      players
+        .filter(({ web_name }) =>
+          web_name.toLowerCase().includes(search.toLowerCase())
+        )
+        .sort((a, b) => b.now_cost - a.now_cost)
     ),
     startWith([])
   );
