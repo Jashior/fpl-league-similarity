@@ -1,4 +1,14 @@
-import { Component, OnInit, inject, DestroyRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  inject,
+  DestroyRef,
+  computed,
+  signal,
+  effect,
+  Signal,
+  WritableSignal,
+} from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TuiStringHandler } from '@taiga-ui/cdk';
@@ -6,10 +16,9 @@ import {
   TuiMultiSelectModule,
   TuiTextfieldControllerModule,
 } from '@taiga-ui/legacy';
-import { Observable, Subject, combineLatest, map, startWith } from 'rxjs';
 import { DataService, PlayerData } from '../services/data.service';
 import { TuiLet } from '@taiga-ui/cdk';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
 import {
   CdkFixedSizeVirtualScroll,
   CdkVirtualForOf,
@@ -21,7 +30,6 @@ import {
   selector: 'app-player-picker',
   template: `
     <tui-multi-select
-      *tuiLet="items$ | async as items"
       [formControl]="playerControl"
       [stringify]="stringify"
       [tuiTextfieldLabelOutside]="true"
@@ -36,7 +44,7 @@ import {
       >
         <tui-data-list tuiMultiSelectGroup>
           <button
-            *cdkVirtualFor="let item of items"
+            *cdkVirtualFor="let item of filteredItems()"
             tuiOption
             type="button"
             [value]="item"
@@ -62,24 +70,24 @@ import {
 })
 export class PlayerPickerComponent implements OnInit {
   private dataService: DataService = inject(DataService);
-  private destroyRef = inject(DestroyRef);
-  private readonly search$ = new Subject<string>();
+  private destroyRef: DestroyRef = inject(DestroyRef);
 
-  protected readonly items$: Observable<PlayerData[]> = combineLatest([
-    this.search$.pipe(startWith('')),
+  private players: Signal<PlayerData[]> = toSignal(
     this.dataService.playerData$,
-  ]).pipe(
-    map(([search, players]) =>
-      players
-        .filter(({ web_name }) =>
-          web_name.toLowerCase().includes(search.toLowerCase())
-        )
-        .sort((a, b) => b.now_cost - a.now_cost)
-    ),
-    startWith([])
+    {
+      initialValue: [],
+    }
+  );
+  private highlightedPlayerIds: Signal<number[]> = toSignal(
+    this.dataService.highlightedPlayers$,
+    { initialValue: [] }
   );
 
-  protected readonly playerControl = new FormControl<PlayerData[]>([], {
+  private searchQuery: WritableSignal<string> = signal<string>('');
+
+  protected readonly playerControl: FormControl<PlayerData[]> = new FormControl<
+    PlayerData[]
+  >([], {
     nonNullable: true,
   });
 
@@ -87,29 +95,28 @@ export class PlayerPickerComponent implements OnInit {
     player: PlayerData
   ) => player.web_name;
 
+  protected filteredItems: Signal<PlayerData[]> = computed(() => {
+    const search = this.searchQuery().toLowerCase();
+    return this.players()
+      .filter(({ web_name }) => web_name.toLowerCase().includes(search))
+      .sort((a, b) => b.now_cost - a.now_cost);
+  });
+
+  constructor() {
+    effect(() => {
+      const highlightedPlayers: PlayerData[] = this.players().filter((player) =>
+        this.highlightedPlayerIds().includes(player.id)
+      );
+      this.playerControl.setValue(highlightedPlayers, { emitEvent: false });
+    });
+  }
+
   ngOnInit() {
-    this.initializeHighlightedPlayers();
     this.handlePlayerControlChanges();
   }
 
   protected onSearch(search: string | null): void {
-    this.search$.next(search || '');
-  }
-
-  private initializeHighlightedPlayers(): void {
-    combineLatest([
-      this.dataService.highlightedPlayers$,
-      this.dataService.playerData$,
-    ])
-      .pipe(
-        map(([highlightedIds, players]) =>
-          players.filter((player) => highlightedIds.includes(player.id))
-        ),
-        takeUntilDestroyed(this.destroyRef)
-      )
-      .subscribe((highlightedPlayers) => {
-        this.playerControl.setValue(highlightedPlayers, { emitEvent: false });
-      });
+    this.searchQuery.set(search || '');
   }
 
   private handlePlayerControlChanges(): void {
