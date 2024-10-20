@@ -156,7 +156,8 @@ export class PointDistributionGraphComponent {
     }
   }
 
-  private formatNumber(num: number): string {
+  private formatNumber(num: number | null): string {
+    if (num === null) return 'N/A';
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
 }

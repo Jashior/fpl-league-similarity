@@ -187,10 +187,10 @@ export class GraphComponent {
     });
   }
 
-  private formatNumber(num: number): string {
+  private formatNumber(num: number | null): string {
+    if (num === null) return 'N/A';
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
-
   onChartClick(event: any) {
     if (event.data && event.data.team_id) {
       // Detect if it's a mobile device
