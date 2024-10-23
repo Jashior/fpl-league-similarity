@@ -2,7 +2,9 @@
 
 https://fpl-league-similarity.zanaris.dev/
 
-![acohGTU](https://github.com/user-attachments/assets/039aaff7-2958-47cb-841d-5397b68c2099)
+![sim1](https://github.com/user-attachments/assets/dfd62496-2ce6-4d55-a2d1-8d9ebee9748d)
+
+![sim2](https://github.com/user-attachments/assets/ed773d88-867d-4cd9-91f4-cab71e91e91c)
 
 ## Overview
 
