@@ -65,14 +65,7 @@ export class GraphComponent {
           return {
             value: [manager.tsne_x, manager.tsne_y],
             name: manager.manager_name,
-            team_name: manager.team_name,
-            team_id: manager.team_id,
-            rank: manager.rank,
-            totalPoints: manager.total_points,
-            gw_points: manager.gw_points,
-            gw_rank: manager.gw_rank,
-            players: manager.players_owned,
-            captain: manager.captain,
+            manager: manager,
             itemStyle: {
               color: '#ffffff',
             },
@@ -103,15 +96,7 @@ export class GraphComponent {
 
           return {
             value: [manager.tsne_x, manager.tsne_y],
-            name: manager.manager_name,
-            team_name: manager.team_name,
-            team_id: manager.team_id,
-            rank: manager.rank,
-            totalPoints: manager.total_points,
-            gw_points: manager.gw_points,
-            gw_rank: manager.gw_rank,
-            players: manager.players_owned,
-            captain: manager.captain,
+            manager: manager,
             itemStyle: {
               color: ownsHighlightedPlayers ? '#3bda55' : '#5470C6',
             },
@@ -129,21 +114,65 @@ export class GraphComponent {
           trigger: 'item',
           triggerOn: this.isMobileDevice() ? 'click' : 'mousemove',
           enterable: true,
+          confine: true,
           formatter: (params: any) => {
-            const teamId = params.data.team_id;
+            const manager = params.data.manager;
             const gameweek = this.currentGameweek();
-            const teamLink = `https://fantasy.premierleague.com/entry/${teamId}/event/${gameweek}`;
+            const teamLink = `https://fantasy.premierleague.com/entry/${params.data.team_id}/event/${gameweek}`;
+            const isMobile = this.isMobileDevice();
+
+            const commonStyles = `
+              .tooltip-container { 
+                font-size: ${isMobile ? '11px' : '14px'};
+                position: relative;
+              }
+              .tooltip-container b { 
+                font-size: ${isMobile ? '12px' : '14px'}; 
+              }
+              .tooltip-container small {
+                font-size: ${isMobile ? '10px' : '12px'};
+                opacity: 0.8;
+              }
+              .tooltip-container .row {
+                line-height: ${isMobile ? '1.2' : '1.4'};
+                margin: ${isMobile ? '1px 0' : '3px 0'};
+              }
+              .tooltip-container .link {
+                color: #5470C6;
+                font-size: ${isMobile ? '10px' : '12px'};
+                text-decoration: italic;
+              }
+              .tooltip-container .label {
+                text-decoration: underline;
+                text-decoration-style: dotted;
+                opacity: 0.9;
+              }
+            `;
+
             return `
-            <b>${params.data.name}</b><br/>
-            <small>${params.data.team_name}</small><br/>
-            Captain: ${this.getCaptainFromId(params.data.captain)}<br/>
-            Rank: ${this.formatNumber(params.data.rank)}<br/>
-            Total Points: ${this.formatNumber(params.data.totalPoints)}<br/>
-            GW Points: ${this.formatNumber(params.data.gw_points)}<br/>
-            GW Rank: ${this.formatNumber(params.data.gw_rank)}<br/>
-            <a href="${teamLink}" target="_blank" style="color: #5470C6; text-decoration: underline;">
-                View Team →  </a>
-        `;
+            <style>${commonStyles}</style>
+            <div class="tooltip-container">
+              <div class="row"><b>${manager.manager_name}</b></div>
+              <hr/>
+              <div class="row"><small>${manager.team_name}</small></div>
+              <div class="row"><span class="label">Captain</span>: ${this.getCaptainFromId(
+                params.data.captain
+              )}</div>
+              <div class="row"><span class="label">Rank</span>: ${this.formatNumber(
+                manager.rank
+              )}</div>
+              <div class="row"><span class="label">Total Points</span>: ${this.formatNumber(
+                manager.total_points
+              )}</div>
+              <div class="row"><span class="label">GW Points</span>: ${this.formatNumber(
+                manager.gw_points
+              )}</div>
+              <div class="row"><span class="label">GW Rank</span>: ${this.formatNumber(
+                manager.gw_rank
+              )}</div>
+              <a href="${teamLink}" target="_blank" class="link">➡️View Team</a>
+            </div>
+          `;
           },
         },
         xAxis: {
@@ -184,18 +213,6 @@ export class GraphComponent {
           },
           {
             type: 'inside',
-            yAxisIndex: [0],
-            start: 0,
-            end: 100,
-          },
-          {
-            type: 'slider',
-            xAxisIndex: [0],
-            start: 0,
-            end: 100,
-          },
-          {
-            type: 'slider',
             yAxisIndex: [0],
             start: 0,
             end: 100,

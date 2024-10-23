@@ -1,3 +1,4 @@
+import { tuiItemsHandlersProvider } from '@taiga-ui/kit';
 import { CommonModule } from '@angular/common';
 import { Component, inject, Signal, computed } from '@angular/core';
 import { EChartsOption } from 'echarts';
@@ -83,7 +84,6 @@ export class PointDistributionGraphComponent {
           return {
             value: [points, index],
             name: manager.manager_name,
-            team_id: manager.team_id,
             manager: manager,
             itemStyle: {
               color: isHighlighted
@@ -95,7 +95,7 @@ export class PointDistributionGraphComponent {
             symbolSize: isHighlighted ? highlightedSize : normalSize,
             label: {
               show: isHighlighted,
-              position: 'right',
+              position: 'top',
               formatter: '{b}',
               textStyle: {
                 color: '#ffffff',
@@ -105,7 +105,7 @@ export class PointDistributionGraphComponent {
                 textShadowBlur: 3,
                 textShadowOffsetX: 1,
                 textShadowOffsetY: 1,
-                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                backgroundColor: 'rgba(0, 0, 0, 1)',
                 padding: [2, 4],
                 borderRadius: 2,
               },
@@ -136,21 +136,65 @@ export class PointDistributionGraphComponent {
         trigger: 'item',
         triggerOn: this.isMobileDevice() ? 'click' : 'mousemove',
         enterable: true,
+        confine: true,
         formatter: (params: any) => {
           const manager = params.data.manager;
-          const teamId = params.data.team_id;
           const gameweek = this.currentGameweek();
-          const teamLink = `https://fantasy.premierleague.com/entry/${teamId}/event/${gameweek}`;
-          return `
-            <b><span class="math-inline">${manager.manager_name}</span></b><br/>
-            <small>${manager.team_name}</small><br/>
-            Rank: ${this.formatNumber(manager.rank)}<br/>
-            Total Points: ${this.formatNumber(manager.total_points)}<br/>
-            GW Points: ${this.formatNumber(manager.gw_points)}<br/>
-            GW Rank: ${this.formatNumber(manager.gw_rank)}<br/>
-            <a href="${teamLink}" target="_blank" style="color: #5470C6; text-decoration: underline;">
-                View Team →  </a>
+          const teamLink = `https://fantasy.premierleague.com/entry/${params.data.team_id}/event/${gameweek}`;
+          const isMobile = this.isMobileDevice();
+
+          const commonStyles = `
+            .tooltip-container { 
+              font-size: ${isMobile ? '11px' : '14px'};
+              position: relative;
+            }
+            .tooltip-container b { 
+              font-size: ${isMobile ? '12px' : '14px'}; 
+            }
+            .tooltip-container small {
+              font-size: ${isMobile ? '10px' : '12px'};
+              opacity: 0.8;
+            }
+            .tooltip-container .row {
+              line-height: ${isMobile ? '1.2' : '1.4'};
+              margin: ${isMobile ? '1px 0' : '3px 0'};
+            }
+            .tooltip-container .link {
+              color: #5470C6;
+              font-size: ${isMobile ? '10px' : '12px'};
+              text-decoration: italic;
+            }
+            .tooltip-container .label {
+              text-decoration: underline;
+              text-decoration-style: dotted;
+              opacity: 0.9;
+            }
           `;
+
+          return `
+          <style>${commonStyles}</style>
+          <div class="tooltip-container">
+            <div class="row"><b>${manager.manager_name}</b></div>
+            <hr/>
+            <div class="row"><small>${manager.team_name}</small></div>
+            <div class="row"><span class="label">Captain</span>: ${this.getCaptainFromId(
+              params.data.captain
+            )}</div>
+            <div class="row"><span class="label">Rank</span>: ${this.formatNumber(
+              manager.rank
+            )}</div>
+            <div class="row"><span class="label">Total Points</span>: ${this.formatNumber(
+              manager.total_points
+            )}</div>
+            <div class="row"><span class="label">GW Points</span>: ${this.formatNumber(
+              manager.gw_points
+            )}</div>
+            <div class="row"><span class="label">GW Rank</span>: ${this.formatNumber(
+              manager.gw_rank
+            )}</div>
+            <a href="${teamLink}" target="_blank" class="link">➡️View Team</a>
+          </div>
+        `;
         },
       },
       xAxis: {
@@ -218,5 +262,9 @@ export class PointDistributionGraphComponent {
   private formatNumber(num: number | null): string {
     if (num === null) return 'N/A';
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  getCaptainFromId(id: number) {
+    return this.dataService.getNameFromId(id);
   }
 }
