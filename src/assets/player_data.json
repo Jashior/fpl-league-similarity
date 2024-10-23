@@ -54,7 +54,7 @@
     },
     "17": {
       "web_name": "Saka",
-      "now_cost": 10.1
+      "now_cost": 10.0
     },
     "18": {
       "web_name": "Saliba",
@@ -238,7 +238,7 @@
     },
     "54": {
       "web_name": "Rogers",
-      "now_cost": 5.3
+      "now_cost": 5.4
     },
     "55": {
       "web_name": "Sinisalo",
@@ -282,7 +282,7 @@
     },
     "59": {
       "web_name": "Aarons",
-      "now_cost": 4.4
+      "now_cost": 4.3
     },
     "60": {
       "web_name": "Adams",
@@ -354,7 +354,7 @@
     },
     "78": {
       "web_name": "Semenyo",
-      "now_cost": 5.7
+      "now_cost": 5.6
     },
     "79": {
       "web_name": "Senesi",
@@ -418,7 +418,7 @@
     },
     "90": {
       "web_name": "Dasilva",
-      "now_cost": 4.9
+      "now_cost": 4.8
     },
     "91": {
       "web_name": "Flekken",
@@ -454,7 +454,7 @@
     },
     "99": {
       "web_name": "Mbeumo",
-      "now_cost": 7.5
+      "now_cost": 7.6
     },
     "100": {
       "web_name": "Mee",
@@ -602,7 +602,7 @@
     },
     "131": {
       "web_name": "Lamptey",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "132": {
       "web_name": "March",
@@ -762,7 +762,7 @@
     },
     "166": {
       "web_name": "Dewsbury-Hall",
-      "now_cost": 5.7
+      "now_cost": 5.6
     },
     "167": {
       "web_name": "Disasi",
@@ -866,7 +866,7 @@
     },
     "621": {
       "web_name": "Jo\u00e3o F\u00e9lix",
-      "now_cost": 6.2
+      "now_cost": 6.1
     },
     "11": {
       "web_name": "Nketiah",
@@ -962,7 +962,7 @@
     },
     "215": {
       "web_name": "Ward",
-      "now_cost": 4.4
+      "now_cost": 4.3
     },
     "216": {
       "web_name": "Wharton",
@@ -1058,7 +1058,7 @@
     },
     "230": {
       "web_name": "McNeil",
-      "now_cost": 5.7
+      "now_cost": 5.8
     },
     "231": {
       "web_name": "Mykolenko",
@@ -1178,7 +1178,7 @@
     },
     "251": {
       "web_name": "Muniz",
-      "now_cost": 5.8
+      "now_cost": 5.7
     },
     "252": {
       "web_name": "Ra\u00fal",
@@ -1498,7 +1498,7 @@
     },
     "310": {
       "web_name": "A.Becker",
-      "now_cost": 5.5
+      "now_cost": 5.4
     },
     "311": {
       "web_name": "Alexander-Arnold",
@@ -1562,7 +1562,7 @@
     },
     "327": {
       "web_name": "Luis D\u00edaz",
-      "now_cost": 8.0
+      "now_cost": 7.9
     },
     "328": {
       "web_name": "M.Salah",
@@ -1570,7 +1570,7 @@
     },
     "329": {
       "web_name": "Mac Allister",
-      "now_cost": 6.3
+      "now_cost": 6.2
     },
     "330": {
       "web_name": "McConnell",
@@ -1602,7 +1602,7 @@
     },
     "337": {
       "web_name": "Tsimikas",
-      "now_cost": 4.7
+      "now_cost": 4.6
     },
     "339": {
       "web_name": "Virgil",
@@ -1658,7 +1658,7 @@
     },
     "350": {
       "web_name": "Gvardiol",
-      "now_cost": 6.0
+      "now_cost": 6.1
     },
     "351": {
       "web_name": "Haaland",
@@ -1730,7 +1730,7 @@
     },
     "365": {
       "web_name": "Antony",
-      "now_cost": 5.8
+      "now_cost": 5.7
     },
     "366": {
       "web_name": "B.Fernandes",
@@ -1866,7 +1866,7 @@
     },
     "394": {
       "web_name": "Bruno G.",
-      "now_cost": 6.3
+      "now_cost": 6.2
     },
     "395": {
       "web_name": "Burn",
@@ -2170,7 +2170,7 @@
     },
     "460": {
       "web_name": "Edwards",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "461": {
       "web_name": "Harwood-Bellis",
@@ -2250,7 +2250,7 @@
     },
     "584": {
       "web_name": "Brereton D\u00edaz",
-      "now_cost": 5.2
+      "now_cost": 5.1
     },
     "608": {
       "web_name": "Dibling",
@@ -2310,7 +2310,7 @@
     },
     "489": {
       "web_name": "Gray",
-      "now_cost": 4.8
+      "now_cost": 4.7
     },
     "490": {
       "web_name": "H\u00f8jbjerg",
@@ -2318,7 +2318,7 @@
     },
     "491": {
       "web_name": "Johnson",
-      "now_cost": 6.6
+      "now_cost": 6.7
     },
     "492": {
       "web_name": "Kulusevski",
@@ -2362,7 +2362,7 @@
     },
     "503": {
       "web_name": "Son",
-      "now_cost": 9.8
+      "now_cost": 9.9
     },
     "504": {
       "web_name": "Spence",
@@ -2374,7 +2374,7 @@
     },
     "506": {
       "web_name": "Van de Ven",
-      "now_cost": 4.6
+      "now_cost": 4.7
     },
     "507": {
       "web_name": "Veliz",
@@ -2402,11 +2402,11 @@
     },
     "612": {
       "web_name": "Odobert",
-      "now_cost": 5.4
+      "now_cost": 5.3
     },
     "388": {
       "web_name": "Wan-Bissaka",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "511": {
       "web_name": "\u00c1lvarez",
@@ -2418,7 +2418,7 @@
     },
     "513": {
       "web_name": "Areola",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "514": {
       "web_name": "Bowen",
