@@ -64,20 +64,48 @@ export class PointDistributionGraphComponent {
 
     const scatterData = Array.from(pointsMap.entries()).flatMap(
       ([points, managers]) =>
-        managers.map((manager, index) => ({
-          value: [points, index],
-          manager: manager,
-          itemStyle: {
-            color: highlightedManagers.includes(manager.team_id)
-              ? '#ffffff'
-              : highlightedPlayers.some((playerId) =>
-                  manager.players_owned.includes(playerId)
-                )
-              ? '#3bda55'
-              : '#5470C6',
-            symbolSize: 50,
-          },
-        }))
+        managers.map((manager, index) => {
+          const isHighlighted = highlightedManagers.includes(manager.team_id);
+          const hasHighlightedPlayers = highlightedPlayers.some((playerId) =>
+            manager.players_owned.includes(playerId)
+          );
+
+          return {
+            value: [points, index],
+            name: manager.manager_name,
+            manager: manager,
+            itemStyle: {
+              color: isHighlighted
+                ? '#ffffff'
+                : hasHighlightedPlayers
+                ? '#3bda55'
+                : '#5470C6',
+            },
+            symbolSize: isHighlighted ? 15 : 10,
+            label: {
+              show: isHighlighted,
+              position: 'right',
+              formatter: '{b}',
+              textStyle: {
+                color: '#ffffff',
+                fontSize: 12,
+                fontWeight: 'bold',
+                textShadowColor: 'rgba(0, 0, 0, 0.8)',
+                textShadowBlur: 3,
+                textShadowOffsetX: 1,
+                textShadowOffsetY: 1,
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                padding: [2, 4],
+                borderRadius: 2,
+              },
+            },
+            labelLayout: {
+              hideOverlap: true,
+              moveOverlap: 'shiftY',
+            },
+            z: isHighlighted ? 2 : 1,
+          };
+        })
     );
 
     const maxCount = Math.max(
@@ -134,7 +162,16 @@ export class PointDistributionGraphComponent {
         {
           type: 'scatter',
           data: scatterData,
-          symbolSize: 10,
+          symbolSize: (data: any) => data.symbolSize,
+          label: {
+            show: (params: any) => params.data.label.show,
+            position: 'right',
+            formatter: '{b}',
+            textStyle: {
+              color: '#ffffff',
+              fontSize: 12,
+            },
+          },
         },
       ],
     };
