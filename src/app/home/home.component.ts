@@ -33,7 +33,7 @@ import { TuiLink } from '@taiga-ui/core';
   template: `
     <div class="flex h-screen flex-col lg:flex-row">
       <div
-        class="lg:w-80 w-full p-4 overflow-y-auto flex flex-col sm:justify-between "
+        class="lg:w-80 w-full p-4 overflow-y-auto flex flex-col sm:justify-between order-last lg:order-first "
       >
         <div>
           <app-league-picker class="mb-4"></app-league-picker>
