@@ -221,18 +221,18 @@ export class GraphComponent {
             start: 0,
             end: 100,
           },
-          {
-            type: 'slider',
-            xAxisIndex: [0],
-            start: 0,
-            end: 100,
-          },
-          {
-            type: 'slider',
-            yAxisIndex: [0],
-            start: 0,
-            end: 100,
-          },
+          // {
+          //   type: 'slider',
+          //   xAxisIndex: [0],
+          //   start: 0,
+          //   end: 100,
+          // },
+          // {
+          //   type: 'slider',
+          //   yAxisIndex: [0],
+          //   start: 0,
+          //   end: 100,
+          // },
         ],
       };
     });
