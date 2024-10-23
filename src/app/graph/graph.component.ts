@@ -1,5 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, Signal, effect, computed } from '@angular/core';
+import {
+  Component,
+  inject,
+  Signal,
+  effect,
+  computed,
+  signal,
+  WritableSignal,
+} from '@angular/core';
 import { ECElementEvent, EChartsOption } from 'echarts';
 import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
 import { DataService, ManagerData } from '../services/data.service';
@@ -116,6 +124,12 @@ export class GraphComponent {
         tooltip: {
           show: true,
           trigger: 'item',
+          axisPointer: {
+            type: 'shadow',
+            label: {
+              show: true,
+            },
+          },
           triggerOn: this.isMobileDevice() ? 'click' : 'mousemove',
           enterable: true,
           confine: true,
@@ -246,12 +260,13 @@ export class GraphComponent {
   onChartClick(event: any) {
     if (event.data && event.data.team_id) {
       const isMobile = this.isMobileDevice();
-      console.log(`mobile: ${isMobile}`);
       if (!isMobile) {
         const url = `https://fantasy.premierleague.com/entry/${
           event.data.team_id
         }/event/${this.currentGameweek()}`;
         window.open(url, '_blank');
+      } else {
+        //
       }
     }
   }

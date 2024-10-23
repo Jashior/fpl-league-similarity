@@ -78,8 +78,8 @@ export class PointDistributionGraphComponent {
             );
 
           // Adjust sizes based on device type
-          const normalSize = isMobile ? 5 : 10;
-          const highlightedSize = isMobile ? 8 : 15;
+          const normalSize = isMobile ? 6 : 10;
+          const highlightedSize = isMobile ? 9 : 15;
 
           return {
             value: [points, index],
@@ -247,7 +247,6 @@ export class PointDistributionGraphComponent {
     if (event.data && event.data.manager) {
       const teamId = event.data.manager.team_id;
       const isMobile = this.isMobileDevice();
-
       if (!isMobile) {
         const url = `https://fantasy.premierleague.com/entry/${teamId}/event/${this.currentGameweek()}`;
         window.open(url, '_blank');

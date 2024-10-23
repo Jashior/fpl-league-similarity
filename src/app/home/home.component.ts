@@ -62,7 +62,9 @@ import { TuiLink } from '@taiga-ui/core';
           </a>
         </div>
       </div>
-      <div class="flex-1 p-4 overflow-hidden">
+      <div
+        class="flex-1 p-4 m-2 border-dashed border-2 rounded border-gray-500 border-opacity-25 "
+      >
         @if (managerData() && !loading()) { @if (isPointDistribution) {
         <app-point-distribution-graph
           class="w-full h-full"
