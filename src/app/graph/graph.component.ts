@@ -54,6 +54,13 @@ export class GraphComponent {
           manager.team_id
         );
 
+        // Add mobile detection
+        const isMobile = this.isMobileDevice();
+
+        // Adjust sizes based on device type
+        const normalSize = isMobile ? 5 : 10;
+        const highlightedSize = isMobile ? 8 : 14;
+
         if (isHighlightedManager) {
           return {
             value: [manager.tsne_x, manager.tsne_y],
@@ -69,7 +76,7 @@ export class GraphComponent {
             itemStyle: {
               color: '#ffffff',
             },
-            symbolSize: 14,
+            symbolSize: highlightedSize,
             label: {
               show: true,
               position: 'right',
@@ -108,7 +115,7 @@ export class GraphComponent {
             itemStyle: {
               color: ownsHighlightedPlayers ? '#3bda55' : '#5470C6',
             },
-            symbolSize: 10,
+            symbolSize: normalSize,
             label: {
               show: false,
             },
@@ -119,21 +126,24 @@ export class GraphComponent {
       return {
         tooltip: {
           show: true,
+          trigger: 'item',
+          triggerOn: this.isMobileDevice() ? 'click' : 'mousemove',
+          enterable: true,
           formatter: (params: any) => {
-            return `<b>${params.data.name}</b><br/>
-                    <small>
-                    ${params.data.team_name}<br/>
-                    </small>
-                    Captain: ${this.getCaptainFromId(params.data.captain)}<br/>
-                    Rank: ${this.formatNumber(params.data.rank)}<br/>
-                    Total Points: ${this.formatNumber(
-                      params.data.totalPoints
-                    )}<br/>
-                    Gameweek Points: ${this.formatNumber(
-                      params.data.gw_points
-                    )}<br/>
-                    Gameweek Rank: ${this.formatNumber(params.data.gw_rank)}
-                    `;
+            const teamId = params.data.team_id;
+            const gameweek = this.currentGameweek();
+            const teamLink = `https://fantasy.premierleague.com/entry/${teamId}/event/${gameweek}`;
+            return `
+            <b>${params.data.name}</b><br/>
+            <small>${params.data.team_name}</small><br/>
+            Captain: ${this.getCaptainFromId(params.data.captain)}<br/>
+            Rank: ${this.formatNumber(params.data.rank)}<br/>
+            Total Points: ${this.formatNumber(params.data.totalPoints)}<br/>
+            GW Points: ${this.formatNumber(params.data.gw_points)}<br/>
+            GW Rank: ${this.formatNumber(params.data.gw_rank)}<br/>
+            <a href="${teamLink}" target="_blank" style="color: #5470C6; text-decoration: underline;">
+                View Team →  </a>
+        `;
           },
         },
         xAxis: {
@@ -201,22 +211,21 @@ export class GraphComponent {
   }
   onChartClick(event: any) {
     if (event.data && event.data.team_id) {
-      // Detect if it's a mobile device
-      const isMobile =
-        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent
-        );
+      const isMobile = this.isMobileDevice();
 
-      if (isMobile) {
-        this.dataService.toggleHighlightedManager(event.data.team_id);
-      } else {
-        // Open the FPL link in a new tab on desktop
+      if (!isMobile) {
         const url = `https://fantasy.premierleague.com/entry/${
           event.data.team_id
         }/event/${this.currentGameweek()}`;
         window.open(url, '_blank');
       }
     }
+  }
+
+  private isMobileDevice(): boolean {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
   }
 
   getCaptainFromId(id: number) {

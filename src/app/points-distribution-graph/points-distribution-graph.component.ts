@@ -70,9 +70,20 @@ export class PointDistributionGraphComponent {
             manager.players_owned.includes(playerId)
           );
 
+          // Check if device is mobile
+          const isMobile =
+            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+              navigator.userAgent
+            );
+
+          // Adjust sizes based on device type
+          const normalSize = isMobile ? 5 : 10;
+          const highlightedSize = isMobile ? 8 : 15;
+
           return {
             value: [points, index],
             name: manager.manager_name,
+            team_id: manager.team_id,
             manager: manager,
             itemStyle: {
               color: isHighlighted
@@ -81,7 +92,7 @@ export class PointDistributionGraphComponent {
                 ? '#3bda55'
                 : '#5470C6',
             },
-            symbolSize: isHighlighted ? 15 : 10,
+            symbolSize: isHighlighted ? highlightedSize : normalSize,
             label: {
               show: isHighlighted,
               position: 'right',
@@ -121,15 +132,24 @@ export class PointDistributionGraphComponent {
         left: 'center',
       },
       tooltip: {
+        show: true,
+        trigger: 'item',
+        triggerOn: this.isMobileDevice() ? 'click' : 'mousemove',
+        enterable: true,
         formatter: (params: any) => {
           const manager = params.data.manager;
+          const teamId = params.data.team_id;
+          const gameweek = this.currentGameweek();
+          const teamLink = `https://fantasy.premierleague.com/entry/${teamId}/event/${gameweek}`;
           return `
             <b><span class="math-inline">${manager.manager_name}</span></b><br/>
             <small>${manager.team_name}</small><br/>
             Rank: ${this.formatNumber(manager.rank)}<br/>
             Total Points: ${this.formatNumber(manager.total_points)}<br/>
-            Gameweek Points: ${this.formatNumber(manager.gw_points)}<br/>
-            Gameweek Rank: ${this.formatNumber(manager.gw_rank)}
+            GW Points: ${this.formatNumber(manager.gw_points)}<br/>
+            GW Rank: ${this.formatNumber(manager.gw_rank)}<br/>
+            <a href="${teamLink}" target="_blank" style="color: #5470C6; text-decoration: underline;">
+                View Team →  </a>
           `;
         },
       },
@@ -174,23 +194,51 @@ export class PointDistributionGraphComponent {
           },
         },
       ],
+      dataZoom: [
+        {
+          type: 'inside',
+          xAxisIndex: [0],
+          start: 0,
+          end: 100,
+        },
+        {
+          type: 'inside',
+          yAxisIndex: [0],
+          start: 0,
+          end: 100,
+        },
+        {
+          type: 'slider',
+          xAxisIndex: [0],
+          start: 0,
+          end: 100,
+        },
+        {
+          type: 'slider',
+          yAxisIndex: [0],
+          start: 0,
+          end: 100,
+        },
+      ],
     };
   });
 
   onChartClick(event: any) {
     if (event.data && event.data.manager) {
       const teamId = event.data.manager.team_id;
-      if (
-        !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent
-        )
-      ) {
+      const isMobile = this.isMobileDevice();
+
+      if (!isMobile) {
         const url = `https://fantasy.premierleague.com/entry/${teamId}/event/${this.currentGameweek()}`;
         window.open(url, '_blank');
-      } else {
-        this.dataService.toggleHighlightedManager(teamId);
       }
     }
+  }
+
+  private isMobileDevice(): boolean {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
   }
 
   private formatNumber(num: number | null): string {
