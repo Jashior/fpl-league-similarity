@@ -82,7 +82,7 @@ export class GraphComponent {
             symbolSize: highlightedSize,
             label: {
               show: true,
-              position: 'right',
+              position: 'insideTop',
               formatter: '{b}',
               textStyle: {
                 color: '#ffffff',
@@ -214,7 +214,7 @@ export class GraphComponent {
             },
             label: {
               show: (params: any) => params.data.label.show,
-              position: 'right',
+              position: 'insideTop',
               formatter: '{b}',
               textStyle: {
                 color: '#ffffff',
