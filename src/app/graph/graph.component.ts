@@ -220,6 +220,16 @@ export class GraphComponent {
                 fontSize: 15,
               },
             },
+            emphasis: {
+              itemStyle: {
+                shadowBlur: 10,
+                shadowColor: 'rgba(255, 251, 0, 1)',
+                shadowOffsetX: 0,
+                shadowOffsetY: 0,
+                color: 'rgba(255, 251, 0, 1)',
+              },
+              scale: 1.3,
+            },
           },
         ],
         dataZoom: [
@@ -235,18 +245,18 @@ export class GraphComponent {
             start: 0,
             end: 100,
           },
-          // {
-          //   type: 'slider',
-          //   xAxisIndex: [0],
-          //   start: 0,
-          //   end: 100,
-          // },
-          // {
-          //   type: 'slider',
-          //   yAxisIndex: [0],
-          //   start: 0,
-          //   end: 100,
-          // },
+          {
+            type: 'slider',
+            xAxisIndex: [0],
+            handleSize: 75,
+            height: 30,
+          },
+          {
+            type: 'slider',
+            yAxisIndex: [0],
+            handleSize: 75,
+            width: 30,
+          },
         ],
       };
     });

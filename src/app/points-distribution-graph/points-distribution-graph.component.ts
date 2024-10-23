@@ -1,6 +1,13 @@
 import { tuiItemsHandlersProvider } from '@taiga-ui/kit';
 import { CommonModule } from '@angular/common';
-import { Component, inject, Signal, computed } from '@angular/core';
+import {
+  Component,
+  inject,
+  Signal,
+  computed,
+  WritableSignal,
+  signal,
+} from '@angular/core';
 import { EChartsOption } from 'echarts';
 import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
 import { DataService, ManagerData } from '../services/data.service';
@@ -48,7 +55,6 @@ export class PointDistributionGraphComponent {
     const highlightedManagers = this.highlightedManagers();
     const currentGameweek = this.currentGameweek();
     const highlightedPlayers = this.highlightedPlayers();
-
     const pointsMap = new Map<number, ManagerData[]>();
     let minPoints = Infinity;
     let maxPoints = -Infinity;
@@ -238,6 +244,16 @@ export class PointDistributionGraphComponent {
               fontSize: 12,
             },
           },
+          emphasis: {
+            itemStyle: {
+              shadowBlur: 10,
+              shadowColor: 'rgba(255, 251, 0, 1)',
+              shadowOffsetX: 0,
+              shadowOffsetY: 0,
+              color: 'rgba(255, 251, 0, 1)',
+            },
+            scale: 1.3,
+          },
         },
       ],
     };
@@ -250,6 +266,7 @@ export class PointDistributionGraphComponent {
       if (!isMobile) {
         const url = `https://fantasy.premierleague.com/entry/${teamId}/event/${this.currentGameweek()}`;
         window.open(url, '_blank');
+      } else {
       }
     }
   }
