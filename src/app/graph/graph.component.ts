@@ -109,6 +109,7 @@ export class GraphComponent {
             manager: manager,
             name: manager.manager_name,
             team_id: manager.team_id,
+            captain: manager.captain,
             itemStyle: {
               color: ownsHighlightedPlayers ? '#3bda55' : '#5470C6',
             },
