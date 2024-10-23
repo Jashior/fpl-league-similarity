@@ -65,7 +65,9 @@ export class GraphComponent {
           return {
             value: [manager.tsne_x, manager.tsne_y],
             name: manager.manager_name,
+            team_id: manager.team_id,
             manager: manager,
+            captain: manager.captain,
             itemStyle: {
               color: '#ffffff',
             },
@@ -97,6 +99,8 @@ export class GraphComponent {
           return {
             value: [manager.tsne_x, manager.tsne_y],
             manager: manager,
+            name: manager.manager_name,
+            team_id: manager.team_id,
             itemStyle: {
               color: ownsHighlightedPlayers ? '#3bda55' : '#5470C6',
             },
@@ -217,6 +221,18 @@ export class GraphComponent {
             start: 0,
             end: 100,
           },
+          {
+            type: 'slider',
+            xAxisIndex: [0],
+            start: 0,
+            end: 100,
+          },
+          {
+            type: 'slider',
+            yAxisIndex: [0],
+            start: 0,
+            end: 100,
+          },
         ],
       };
     });
@@ -226,10 +242,11 @@ export class GraphComponent {
     if (num === null) return 'N/A';
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
+
   onChartClick(event: any) {
     if (event.data && event.data.team_id) {
       const isMobile = this.isMobileDevice();
-
+      console.log(`mobile: ${isMobile}`);
       if (!isMobile) {
         const url = `https://fantasy.premierleague.com/entry/${
           event.data.team_id

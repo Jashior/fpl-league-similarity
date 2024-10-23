@@ -84,7 +84,9 @@ export class PointDistributionGraphComponent {
           return {
             value: [points, index],
             name: manager.manager_name,
+            team_id: manager.team_id,
             manager: manager,
+            captain: manager.captain,
             itemStyle: {
               color: isHighlighted
                 ? '#ffffff'
