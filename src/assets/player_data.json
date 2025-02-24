@@ -6,7 +6,7 @@
     },
     "2": {
       "web_name": "G.Jesus",
-      "now_cost": 6.8
+      "now_cost": 6.5
     },
     "3": {
       "web_name": "Gabriel",
@@ -14,7 +14,7 @@
     },
     "4": {
       "web_name": "Havertz",
-      "now_cost": 8.3
+      "now_cost": 7.8
     },
     "5": {
       "web_name": "Hein",
@@ -22,11 +22,11 @@
     },
     "6": {
       "web_name": "J.Timber",
-      "now_cost": 5.5
+      "now_cost": 5.6
     },
     "7": {
       "web_name": "Jorginho",
-      "now_cost": 4.8
+      "now_cost": 4.7
     },
     "8": {
       "web_name": "Kiwior",
@@ -34,11 +34,11 @@
     },
     "9": {
       "web_name": "Martinelli",
-      "now_cost": 7.0
+      "now_cost": 6.6
     },
     "12": {
       "web_name": "Nwaneri",
-      "now_cost": 4.5
+      "now_cost": 4.6
     },
     "13": {
       "web_name": "\u00d8degaard",
@@ -46,23 +46,23 @@
     },
     "15": {
       "web_name": "Raya",
-      "now_cost": 5.7
+      "now_cost": 5.5
     },
     "16": {
       "web_name": "Rice",
-      "now_cost": 6.3
+      "now_cost": 6.2
     },
     "17": {
       "web_name": "Saka",
-      "now_cost": 10.0
+      "now_cost": 10.2
     },
     "18": {
       "web_name": "Saliba",
-      "now_cost": 6.0
+      "now_cost": 6.2
     },
     "20": {
       "web_name": "Thomas",
-      "now_cost": 5.0
+      "now_cost": 4.9
     },
     "21": {
       "web_name": "Tierney",
@@ -78,7 +78,7 @@
     },
     "24": {
       "web_name": "White",
-      "now_cost": 6.3
+      "now_cost": 6.1
     },
     "25": {
       "web_name": "Zinchenko",
@@ -86,7 +86,7 @@
     },
     "73": {
       "web_name": "Neto",
-      "now_cost": 4.3
+      "now_cost": 4.1
     },
     "186": {
       "web_name": "Sterling",
@@ -116,10 +116,6 @@
       "web_name": "Kacurri",
       "now_cost": 4.0
     },
-    "658": {
-      "web_name": "Heaven",
-      "now_cost": 4.0
-    },
     "659": {
       "web_name": "Kabia",
       "now_cost": 4.5
@@ -132,9 +128,17 @@
       "web_name": "Butler-Oyedeji",
       "now_cost": 4.5
     },
+    "735": {
+      "web_name": "Arteta",
+      "now_cost": 1.5
+    },
+    "756": {
+      "web_name": "Porter",
+      "now_cost": 4.0
+    },
     "28": {
       "web_name": "Bailey",
-      "now_cost": 6.3
+      "now_cost": 6.2
     },
     "29": {
       "web_name": "Barkley",
@@ -146,7 +150,7 @@
     },
     "31": {
       "web_name": "Buendia",
-      "now_cost": 5.3
+      "now_cost": 5.1
     },
     "32": {
       "web_name": "Cash",
@@ -174,7 +178,7 @@
     },
     "38": {
       "web_name": "Duran",
-      "now_cost": 6.2
+      "now_cost": 5.7
     },
     "39": {
       "web_name": "Gauci",
@@ -182,7 +186,7 @@
     },
     "40": {
       "web_name": "Hause",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "41": {
       "web_name": "Iling Jr",
@@ -198,11 +202,11 @@
     },
     "44": {
       "web_name": "Konsa",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "45": {
       "web_name": "Maatsen",
-      "now_cost": 4.8
+      "now_cost": 4.5
     },
     "46": {
       "web_name": "Marschall",
@@ -222,7 +226,7 @@
     },
     "50": {
       "web_name": "Nedeljkovic",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "51": {
       "web_name": "Olsen",
@@ -230,7 +234,7 @@
     },
     "52": {
       "web_name": "Pau",
-      "now_cost": 4.5
+      "now_cost": 4.2
     },
     "53": {
       "web_name": "Ramsey",
@@ -238,7 +242,7 @@
     },
     "54": {
       "web_name": "Rogers",
-      "now_cost": 5.4
+      "now_cost": 5.7
     },
     "55": {
       "web_name": "Sinisalo",
@@ -254,15 +258,19 @@
     },
     "58": {
       "web_name": "Watkins",
-      "now_cost": 9.1
+      "now_cost": 8.9
+    },
+    "167": {
+      "web_name": "Disasi",
+      "now_cost": 4.2
     },
     "233": {
       "web_name": "Onana",
-      "now_cost": 5.1
+      "now_cost": 4.8
     },
-    "569": {
-      "web_name": "Jaden",
-      "now_cost": 5.3
+    "385": {
+      "web_name": "Rashford",
+      "now_cost": 6.7
     },
     "598": {
       "web_name": "Bogarde",
@@ -279,6 +287,30 @@
     "656": {
       "web_name": "Young",
       "now_cost": 4.5
+    },
+    "679": {
+      "web_name": "Broggio",
+      "now_cost": 4.5
+    },
+    "710": {
+      "web_name": "Jimoh",
+      "now_cost": 4.5
+    },
+    "725": {
+      "web_name": "Malen",
+      "now_cost": 5.5
+    },
+    "731": {
+      "web_name": "A. Garcia",
+      "now_cost": 4.5
+    },
+    "737": {
+      "web_name": "Emery",
+      "now_cost": 0.8
+    },
+    "762": {
+      "web_name": "M.Asensio",
+      "now_cost": 6.0
     },
     "59": {
       "web_name": "Aarons",
@@ -318,7 +350,7 @@
     },
     "68": {
       "web_name": "Hill",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "69": {
       "web_name": "Jebbison",
@@ -326,11 +358,11 @@
     },
     "70": {
       "web_name": "Kerkez",
-      "now_cost": 4.4
+      "now_cost": 5.0
     },
     "71": {
       "web_name": "Kluivert",
-      "now_cost": 5.3
+      "now_cost": 6.0
     },
     "72": {
       "web_name": "Mepham",
@@ -338,7 +370,7 @@
     },
     "74": {
       "web_name": "O.Dango",
-      "now_cost": 5.0
+      "now_cost": 5.2
     },
     "75": {
       "web_name": "Paulsen",
@@ -350,27 +382,27 @@
     },
     "77": {
       "web_name": "Scott",
-      "now_cost": 4.8
+      "now_cost": 4.7
     },
     "78": {
       "web_name": "Semenyo",
-      "now_cost": 5.6
+      "now_cost": 5.7
     },
     "79": {
       "web_name": "Senesi",
-      "now_cost": 4.8
+      "now_cost": 4.6
     },
     "80": {
       "web_name": "Sinisterra",
-      "now_cost": 5.0
+      "now_cost": 4.8
     },
     "81": {
       "web_name": "Smith",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "83": {
       "web_name": "Tavernier",
-      "now_cost": 5.5
+      "now_cost": 5.4
     },
     "84": {
       "web_name": "Travers",
@@ -382,15 +414,15 @@
     },
     "152": {
       "web_name": "Arrizabalaga",
-      "now_cost": 4.5
+      "now_cost": 4.6
     },
     "580": {
       "web_name": "Huijsen",
-      "now_cost": 4.4
+      "now_cost": 4.5
     },
     "592": {
       "web_name": "J.Araujo",
-      "now_cost": 4.5
+      "now_cost": 4.3
     },
     "599": {
       "web_name": "Dennis",
@@ -398,15 +430,59 @@
     },
     "617": {
       "web_name": "Evanilson",
-      "now_cost": 5.9
+      "now_cost": 5.6
+    },
+    "680": {
+      "web_name": "Kinsey",
+      "now_cost": 4.0
+    },
+    "687": {
+      "web_name": "Winterburn",
+      "now_cost": 4.5
+    },
+    "702": {
+      "web_name": "Harris",
+      "now_cost": 4.0
+    },
+    "707": {
+      "web_name": "Rees-Dottin",
+      "now_cost": 4.5
+    },
+    "712": {
+      "web_name": "Akinmboni",
+      "now_cost": 4.0
+    },
+    "713": {
+      "web_name": "Soler",
+      "now_cost": 3.9
+    },
+    "722": {
+      "web_name": "Adu-Adjei",
+      "now_cost": 4.5
+    },
+    "723": {
+      "web_name": "Sadi",
+      "now_cost": 4.5
+    },
+    "727": {
+      "web_name": "McKenna",
+      "now_cost": 4.0
+    },
+    "728": {
+      "web_name": "Silcott-Duberry",
+      "now_cost": 4.5
+    },
+    "738": {
+      "web_name": "Iraola",
+      "now_cost": 1.1
     },
     "86": {
       "web_name": "Ajer",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "87": {
       "web_name": "Brierley",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "88": {
       "web_name": "Collins",
@@ -414,7 +490,7 @@
     },
     "89": {
       "web_name": "Damsgaard",
-      "now_cost": 5.0
+      "now_cost": 5.1
     },
     "90": {
       "web_name": "Dasilva",
@@ -422,7 +498,7 @@
     },
     "91": {
       "web_name": "Flekken",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "92": {
       "web_name": "Henry",
@@ -430,7 +506,7 @@
     },
     "93": {
       "web_name": "Hickey",
-      "now_cost": 4.4
+      "now_cost": 4.3
     },
     "94": {
       "web_name": "Janelt",
@@ -446,7 +522,7 @@
     },
     "97": {
       "web_name": "Konak",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "98": {
       "web_name": "Lewis-Potter",
@@ -454,11 +530,11 @@
     },
     "99": {
       "web_name": "Mbeumo",
-      "now_cost": 7.6
+      "now_cost": 8.0
     },
     "100": {
       "web_name": "Mee",
-      "now_cost": 4.3
+      "now_cost": 4.2
     },
     "101": {
       "web_name": "N\u00f8rgaard",
@@ -474,15 +550,15 @@
     },
     "104": {
       "web_name": "Pinnock",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "105": {
       "web_name": "Roerslev",
-      "now_cost": 4.4
+      "now_cost": 4.3
     },
     "106": {
       "web_name": "Schade",
-      "now_cost": 5.3
+      "now_cost": 5.1
     },
     "107": {
       "web_name": "Thiago",
@@ -494,11 +570,11 @@
     },
     "109": {
       "web_name": "Valdimarsson",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "110": {
       "web_name": "Wissa",
-      "now_cost": 5.9
+      "now_cost": 6.4
     },
     "111": {
       "web_name": "Yarmoliuk",
@@ -510,15 +586,15 @@
     },
     "314": {
       "web_name": "Carvalho",
-      "now_cost": 4.8
+      "now_cost": 4.5
     },
     "338": {
       "web_name": "Van den Berg",
-      "now_cost": 4.0
+      "now_cost": 4.1
     },
     "602": {
       "web_name": "Trevitt",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "634": {
       "web_name": "G.Nunes",
@@ -532,9 +608,33 @@
       "web_name": "Yogane",
       "now_cost": 4.5
     },
+    "674": {
+      "web_name": "Maghoma",
+      "now_cost": 4.5
+    },
+    "705": {
+      "web_name": "Arthur",
+      "now_cost": 4.0
+    },
+    "752": {
+      "web_name": "Frank",
+      "now_cost": 0.8
+    },
+    "757": {
+      "web_name": "Kayode",
+      "now_cost": 4.5
+    },
+    "759": {
+      "web_name": "Eyestone",
+      "now_cost": 4.0
+    },
+    "780": {
+      "web_name": "Morgan",
+      "now_cost": 4.5
+    },
     "113": {
       "web_name": "Adingra",
-      "now_cost": 5.4
+      "now_cost": 5.1
     },
     "114": {
       "web_name": "Baker-Boaitey",
@@ -558,19 +658,11 @@
     },
     "120": {
       "web_name": "Dunk",
-      "now_cost": 4.5
-    },
-    "121": {
-      "web_name": "Enciso",
-      "now_cost": 5.4
+      "now_cost": 4.2
     },
     "122": {
       "web_name": "Estupi\u00f1an",
-      "now_cost": 5.0
-    },
-    "123": {
-      "web_name": "Ferguson",
-      "now_cost": 5.5
+      "now_cost": 4.9
     },
     "124": {
       "web_name": "Gilmour",
@@ -582,7 +674,7 @@
     },
     "126": {
       "web_name": "Hinshelwood",
-      "now_cost": 5.0
+      "now_cost": 4.9
     },
     "127": {
       "web_name": "I.Osman",
@@ -590,7 +682,7 @@
     },
     "128": {
       "web_name": "Igor",
-      "now_cost": 4.4
+      "now_cost": 4.3
     },
     "129": {
       "web_name": "Jo\u00e3o Pedro",
@@ -618,11 +710,11 @@
     },
     "135": {
       "web_name": "Minteh",
-      "now_cost": 5.4
+      "now_cost": 5.0
     },
     "136": {
       "web_name": "Mitoma",
-      "now_cost": 6.6
+      "now_cost": 6.4
     },
     "137": {
       "web_name": "Moder",
@@ -638,7 +730,7 @@
     },
     "140": {
       "web_name": "Peupion",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "141": {
       "web_name": "Sarmiento",
@@ -646,7 +738,7 @@
     },
     "142": {
       "web_name": "Steele",
-      "now_cost": 4.4
+      "now_cost": 4.1
     },
     "143": {
       "web_name": "Undav",
@@ -658,7 +750,7 @@
     },
     "145": {
       "web_name": "Veltman",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "146": {
       "web_name": "Verbruggen",
@@ -666,15 +758,15 @@
     },
     "147": {
       "web_name": "Webster",
-      "now_cost": 4.4
+      "now_cost": 4.3
     },
     "148": {
       "web_name": "Welbeck",
-      "now_cost": 5.9
+      "now_cost": 5.5
     },
     "149": {
       "web_name": "Wieffer",
-      "now_cost": 4.8
+      "now_cost": 4.7
     },
     "595": {
       "web_name": "Gruda",
@@ -690,15 +782,15 @@
     },
     "615": {
       "web_name": "Rushworth",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "618": {
       "web_name": "Georginio",
-      "now_cost": 5.5
+      "now_cost": 5.1
     },
     "628": {
       "web_name": "F.Kad\u0131o\u011flu",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "629": {
       "web_name": "O'Riley",
@@ -707,6 +799,34 @@
     "663": {
       "web_name": "Samuels",
       "now_cost": 4.0
+    },
+    "668": {
+      "web_name": "Cahill",
+      "now_cost": 3.9
+    },
+    "681": {
+      "web_name": "McConville",
+      "now_cost": 4.0
+    },
+    "685": {
+      "web_name": "Slater",
+      "now_cost": 4.0
+    },
+    "714": {
+      "web_name": "G\u00f3mez",
+      "now_cost": 5.5
+    },
+    "739": {
+      "web_name": "H\u00fcrzeler",
+      "now_cost": 1.1
+    },
+    "758": {
+      "web_name": "Knight",
+      "now_cost": 4.5
+    },
+    "763": {
+      "web_name": "Cashin",
+      "now_cost": 4.5
     },
     "150": {
       "web_name": "Andrey Santos",
@@ -718,15 +838,15 @@
     },
     "153": {
       "web_name": "B.Badiashile",
-      "now_cost": 4.3
+      "now_cost": 4.2
     },
     "154": {
       "web_name": "Bergstr\u00f6m",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "155": {
       "web_name": "Bettinelli",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "157": {
       "web_name": "Caicedo",
@@ -734,23 +854,23 @@
     },
     "158": {
       "web_name": "Casadei",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
-    "160": {
-      "web_name": "Chilwell",
-      "now_cost": 4.7
+    "159": {
+      "web_name": "Chalobah",
+      "now_cost": 4.4
     },
     "161": {
       "web_name": "Chukwuemeka",
-      "now_cost": 4.8
+      "now_cost": 4.7
     },
     "162": {
       "web_name": "Colwill",
-      "now_cost": 4.6
+      "now_cost": 4.4
     },
     "163": {
       "web_name": "Cucurella",
-      "now_cost": 5.0
+      "now_cost": 5.1
     },
     "164": {
       "web_name": "D.D.Fofana",
@@ -758,19 +878,15 @@
     },
     "165": {
       "web_name": "Deivid",
-      "now_cost": 5.0
+      "now_cost": 4.9
     },
     "166": {
       "web_name": "Dewsbury-Hall",
-      "now_cost": 5.6
-    },
-    "167": {
-      "web_name": "Disasi",
-      "now_cost": 4.4
+      "now_cost": 5.5
     },
     "168": {
       "web_name": "Enzo",
-      "now_cost": 4.9
+      "now_cost": 4.7
     },
     "169": {
       "web_name": "Gallagher",
@@ -786,11 +902,11 @@
     },
     "172": {
       "web_name": "James",
-      "now_cost": 4.9
+      "now_cost": 4.8
     },
     "173": {
       "web_name": "Kellyman",
-      "now_cost": 4.4
+      "now_cost": 4.3
     },
     "174": {
       "web_name": "Lavia",
@@ -806,27 +922,27 @@
     },
     "177": {
       "web_name": "Madueke",
-      "now_cost": 6.5
+      "now_cost": 6.1
     },
     "178": {
       "web_name": "Marc Guiu",
-      "now_cost": 4.9
+      "now_cost": 4.7
     },
     "179": {
       "web_name": "Mudryk",
-      "now_cost": 6.2
+      "now_cost": 6.1
     },
     "180": {
       "web_name": "N.Jackson",
-      "now_cost": 7.9
+      "now_cost": 7.7
     },
     "181": {
       "web_name": "Nkunku",
-      "now_cost": 6.0
+      "now_cost": 5.7
     },
     "182": {
       "web_name": "Palmer",
-      "now_cost": 10.8
+      "now_cost": 11.1
     },
     "183": {
       "web_name": "Petrovi\u0107",
@@ -834,23 +950,23 @@
     },
     "184": {
       "web_name": "Renato Veiga",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "185": {
       "web_name": "S\u00e1nchez",
-      "now_cost": 4.7
+      "now_cost": 4.6
     },
     "187": {
       "web_name": "Tosin",
-      "now_cost": 4.4
+      "now_cost": 4.2
     },
     "189": {
       "web_name": "W.Fofana",
-      "now_cost": 4.5
+      "now_cost": 4.3
     },
     "386": {
       "web_name": "Sancho",
-      "now_cost": 6.4
+      "now_cost": 6.2
     },
     "560": {
       "web_name": "Neto",
@@ -862,19 +978,51 @@
     },
     "581": {
       "web_name": "J\u00f8rgensen",
-      "now_cost": 4.3
+      "now_cost": 4.2
     },
     "621": {
       "web_name": "Jo\u00e3o F\u00e9lix",
-      "now_cost": 6.1
+      "now_cost": 5.9
+    },
+    "695": {
+      "web_name": "Rak-Sakyi",
+      "now_cost": 4.5
+    },
+    "696": {
+      "web_name": "George",
+      "now_cost": 4.5
+    },
+    "697": {
+      "web_name": "Acheampong",
+      "now_cost": 4.0
+    },
+    "740": {
+      "web_name": "Maresca",
+      "now_cost": 1.5
+    },
+    "771": {
+      "web_name": "Amougou",
+      "now_cost": 4.5
+    },
+    "774": {
+      "web_name": "Anselmino",
+      "now_cost": 4.0
+    },
+    "781": {
+      "web_name": "Mheuka",
+      "now_cost": 4.5
+    },
+    "782": {
+      "web_name": "Samuels-Smith",
+      "now_cost": 4.0
     },
     "11": {
       "web_name": "Nketiah",
       "now_cost": 5.9
     },
-    "159": {
-      "web_name": "Chalobah",
-      "now_cost": 4.4
+    "160": {
+      "web_name": "Chilwell",
+      "now_cost": 4.6
     },
     "190": {
       "web_name": "Ahamada",
@@ -894,7 +1042,7 @@
     },
     "196": {
       "web_name": "Clyne",
-      "now_cost": 4.4
+      "now_cost": 4.3
     },
     "197": {
       "web_name": "Ebiowei",
@@ -906,7 +1054,7 @@
     },
     "200": {
       "web_name": "Gu\u00e9hi",
-      "now_cost": 4.4
+      "now_cost": 4.6
     },
     "201": {
       "web_name": "Henderson",
@@ -914,7 +1062,7 @@
     },
     "202": {
       "web_name": "Holding",
-      "now_cost": 4.3
+      "now_cost": 4.2
     },
     "203": {
       "web_name": "Hughes",
@@ -922,7 +1070,7 @@
     },
     "205": {
       "web_name": "Kamada",
-      "now_cost": 5.2
+      "now_cost": 5.1
     },
     "206": {
       "web_name": "Lerma",
@@ -930,7 +1078,7 @@
     },
     "207": {
       "web_name": "Mateta",
-      "now_cost": 7.3
+      "now_cost": 7.4
     },
     "208": {
       "web_name": "M.Fran\u00e7a",
@@ -938,15 +1086,15 @@
     },
     "209": {
       "web_name": "Matthews",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "210": {
       "web_name": "Mitchell",
-      "now_cost": 4.9
+      "now_cost": 4.8
     },
     "211": {
       "web_name": "Mu\u00f1oz",
-      "now_cost": 4.8
+      "now_cost": 4.9
     },
     "212": {
       "web_name": "Ozoh",
@@ -958,7 +1106,7 @@
     },
     "214": {
       "web_name": "Schlupp",
-      "now_cost": 4.8
+      "now_cost": 4.6
     },
     "215": {
       "web_name": "Ward",
@@ -966,19 +1114,19 @@
     },
     "216": {
       "web_name": "Wharton",
-      "now_cost": 4.8
+      "now_cost": 4.7
     },
     "445": {
       "web_name": "Turner",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "585": {
       "web_name": "I.Sarr",
-      "now_cost": 5.8
+      "now_cost": 5.5
     },
     "644": {
       "web_name": "Umeh-Chibueze",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "645": {
       "web_name": "Devenny",
@@ -1000,13 +1148,25 @@
       "web_name": "Kporha",
       "now_cost": 4.0
     },
+    "676": {
+      "web_name": "Marsh",
+      "now_cost": 4.5
+    },
+    "730": {
+      "web_name": "Esse",
+      "now_cost": 4.9
+    },
+    "741": {
+      "web_name": "Glasner",
+      "now_cost": 0.8
+    },
     "156": {
       "web_name": "Broja",
       "now_cost": 5.4
     },
     "217": {
       "web_name": "A.Doucoure",
-      "now_cost": 5.2
+      "now_cost": 5.1
     },
     "218": {
       "web_name": "Beto",
@@ -1018,7 +1178,7 @@
     },
     "220": {
       "web_name": "Calvert-Lewin",
-      "now_cost": 6.0
+      "now_cost": 5.4
     },
     "221": {
       "web_name": "Coleman",
@@ -1026,15 +1186,15 @@
     },
     "222": {
       "web_name": "Gana",
-      "now_cost": 4.9
+      "now_cost": 4.8
     },
     "223": {
       "web_name": "Garner",
-      "now_cost": 5.0
+      "now_cost": 4.9
     },
     "224": {
       "web_name": "Harrison",
-      "now_cost": 5.3
+      "now_cost": 5.2
     },
     "225": {
       "web_name": "Holgate",
@@ -1042,15 +1202,15 @@
     },
     "226": {
       "web_name": "Iroegbunam",
-      "now_cost": 4.5
+      "now_cost": 4.3
     },
     "227": {
       "web_name": "J.Virginia",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "228": {
       "web_name": "Keane",
-      "now_cost": 4.1
+      "now_cost": 3.9
     },
     "229": {
       "web_name": "Maupay",
@@ -1058,11 +1218,11 @@
     },
     "230": {
       "web_name": "McNeil",
-      "now_cost": 5.8
+      "now_cost": 5.1
     },
     "231": {
       "web_name": "Mykolenko",
-      "now_cost": 4.3
+      "now_cost": 4.4
     },
     "232": {
       "web_name": "Ndiaye",
@@ -1074,7 +1234,7 @@
     },
     "235": {
       "web_name": "Pickford",
-      "now_cost": 4.8
+      "now_cost": 5.1
     },
     "236": {
       "web_name": "Tarkowski",
@@ -1088,17 +1248,21 @@
       "web_name": "Young",
       "now_cost": 4.5
     },
+    "450": {
+      "web_name": "Alcaraz",
+      "now_cost": 4.9
+    },
     "577": {
       "web_name": "Lindstr\u00f8m",
-      "now_cost": 5.2
+      "now_cost": 5.0
     },
     "582": {
       "web_name": "O'Brien",
-      "now_cost": 4.7
+      "now_cost": 4.5
     },
     "603": {
       "web_name": "Armstrong",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "614": {
       "web_name": "Metcalfe",
@@ -1116,25 +1280,45 @@
       "web_name": "Mangala",
       "now_cost": 5.0
     },
+    "678": {
+      "web_name": "Bates",
+      "now_cost": 4.5
+    },
+    "724": {
+      "web_name": "Sherif",
+      "now_cost": 4.5
+    },
+    "742": {
+      "web_name": "Moyes",
+      "now_cost": 0.5
+    },
+    "773": {
+      "web_name": "Heath",
+      "now_cost": 4.5
+    },
+    "775": {
+      "web_name": "Coby Ebere",
+      "now_cost": 4.5
+    },
     "10": {
       "web_name": "Nelson",
       "now_cost": 5.0
     },
     "19": {
       "web_name": "Smith Rowe",
-      "now_cost": 5.7
+      "now_cost": 5.2
     },
     "191": {
       "web_name": "Andersen",
-      "now_cost": 4.3
+      "now_cost": 4.2
     },
     "239": {
       "web_name": "Adama",
-      "now_cost": 5.1
+      "now_cost": 4.6
     },
     "240": {
       "web_name": "Andreas",
-      "now_cost": 5.3
+      "now_cost": 4.9
     },
     "241": {
       "web_name": "Bassey",
@@ -1142,7 +1326,7 @@
     },
     "242": {
       "web_name": "Benda",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "243": {
       "web_name": "Cairney",
@@ -1154,7 +1338,7 @@
     },
     "245": {
       "web_name": "Diop",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "246": {
       "web_name": "Harris",
@@ -1162,7 +1346,7 @@
     },
     "247": {
       "web_name": "Iwobi",
-      "now_cost": 5.5
+      "now_cost": 5.7
     },
     "248": {
       "web_name": "Leno",
@@ -1170,7 +1354,7 @@
     },
     "249": {
       "web_name": "Luki\u0107",
-      "now_cost": 4.9
+      "now_cost": 4.8
     },
     "250": {
       "web_name": "Mbabu",
@@ -1178,11 +1362,11 @@
     },
     "251": {
       "web_name": "Muniz",
-      "now_cost": 5.7
+      "now_cost": 5.5
     },
     "252": {
       "web_name": "Ra\u00fal",
-      "now_cost": 5.7
+      "now_cost": 5.6
     },
     "253": {
       "web_name": "Ream",
@@ -1190,11 +1374,11 @@
     },
     "254": {
       "web_name": "Reed",
-      "now_cost": 4.8
+      "now_cost": 4.7
     },
     "255": {
       "web_name": "Robinson",
-      "now_cost": 4.7
+      "now_cost": 5.1
     },
     "256": {
       "web_name": "Stansfield",
@@ -1202,7 +1386,7 @@
     },
     "257": {
       "web_name": "Tete",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "258": {
       "web_name": "Vinicius",
@@ -1210,11 +1394,11 @@
     },
     "259": {
       "web_name": "Wilson",
-      "now_cost": 5.3
+      "now_cost": 5.2
     },
     "579": {
       "web_name": "Sessegnon",
-      "now_cost": 4.3
+      "now_cost": 4.1
     },
     "586": {
       "web_name": "J.Cuenca",
@@ -1226,15 +1410,31 @@
     },
     "605": {
       "web_name": "Godo",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "622": {
       "web_name": "Berge",
       "now_cost": 5.0
     },
+    "690": {
+      "web_name": "Amissah",
+      "now_cost": 4.0
+    },
+    "753": {
+      "web_name": "Silva",
+      "now_cost": 1.1
+    },
+    "772": {
+      "web_name": "Willian",
+      "now_cost": 5.0
+    },
+    "121": {
+      "web_name": "Enciso",
+      "now_cost": 5.4
+    },
     "260": {
       "web_name": "Al-Hamadi",
-      "now_cost": 4.9
+      "now_cost": 4.7
     },
     "261": {
       "web_name": "Baggott",
@@ -1250,11 +1450,11 @@
     },
     "264": {
       "web_name": "Burns",
-      "now_cost": 4.9
+      "now_cost": 4.8
     },
     "265": {
       "web_name": "Chaplin",
-      "now_cost": 5.2
+      "now_cost": 5.1
     },
     "266": {
       "web_name": "H.Clarke",
@@ -1262,11 +1462,11 @@
     },
     "267": {
       "web_name": "Davis",
-      "now_cost": 4.5
+      "now_cost": 4.3
     },
     "268": {
       "web_name": "Delap",
-      "now_cost": 5.7
+      "now_cost": 5.6
     },
     "269": {
       "web_name": "Edmundson",
@@ -1274,7 +1474,7 @@
     },
     "270": {
       "web_name": "Greaves",
-      "now_cost": 4.1
+      "now_cost": 3.9
     },
     "271": {
       "web_name": "Harness",
@@ -1290,11 +1490,11 @@
     },
     "274": {
       "web_name": "Hutchinson",
-      "now_cost": 5.3
+      "now_cost": 5.2
     },
     "275": {
       "web_name": "Johnson",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "276": {
       "web_name": "Ladapo",
@@ -1302,11 +1502,11 @@
     },
     "277": {
       "web_name": "Luongo",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "278": {
       "web_name": "Morsy",
-      "now_cost": 4.9
+      "now_cost": 4.8
     },
     "279": {
       "web_name": "Ndaba",
@@ -1314,7 +1514,7 @@
     },
     "280": {
       "web_name": "Slicker",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "281": {
       "web_name": "Taylor",
@@ -1322,11 +1522,11 @@
     },
     "282": {
       "web_name": "Tuanzebe",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "283": {
       "web_name": "Walton",
-      "now_cost": 4.4
+      "now_cost": 4.3
     },
     "284": {
       "web_name": "Woolfenden",
@@ -1334,19 +1534,23 @@
     },
     "359": {
       "web_name": "Phillips",
-      "now_cost": 4.9
+      "now_cost": 4.8
     },
     "568": {
       "web_name": "Muric",
       "now_cost": 4.4
     },
+    "569": {
+      "web_name": "Jaden",
+      "now_cost": 5.3
+    },
     "583": {
       "web_name": "Townsend",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "611": {
       "web_name": "Szmodics",
-      "now_cost": 5.8
+      "now_cost": 5.7
     },
     "619": {
       "web_name": "Cajuste",
@@ -1358,15 +1562,27 @@
     },
     "631": {
       "web_name": "J.Clarke",
-      "now_cost": 5.5
+      "now_cost": 5.4
     },
     "632": {
       "web_name": "Ogbene",
-      "now_cost": 5.0
+      "now_cost": 4.8
+    },
+    "715": {
+      "web_name": "Godfrey",
+      "now_cost": 4.0
+    },
+    "743": {
+      "web_name": "McKenna",
+      "now_cost": 0.5
+    },
+    "764": {
+      "web_name": "Palmer",
+      "now_cost": 4.5
     },
     "117": {
       "web_name": "Buonanotte",
-      "now_cost": 5.0
+      "now_cost": 4.6
     },
     "192": {
       "web_name": "J.Ayew",
@@ -1374,7 +1590,7 @@
     },
     "198": {
       "web_name": "Edouard",
-      "now_cost": 5.3
+      "now_cost": 5.1
     },
     "285": {
       "web_name": "B.Soumar\u00e9",
@@ -1402,7 +1618,7 @@
     },
     "291": {
       "web_name": "Faes",
-      "now_cost": 4.2
+      "now_cost": 3.9
     },
     "292": {
       "web_name": "Golding",
@@ -1410,19 +1626,19 @@
     },
     "293": {
       "web_name": "Hermansen",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "294": {
       "web_name": "Iversen",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "295": {
       "web_name": "Justin",
-      "now_cost": 4.6
+      "now_cost": 4.1
     },
     "296": {
       "web_name": "Kristiansen",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "297": {
       "web_name": "Marcal",
@@ -1430,15 +1646,15 @@
     },
     "298": {
       "web_name": "Mavididi",
-      "now_cost": 5.3
+      "now_cost": 5.0
     },
     "299": {
       "web_name": "McAteer",
-      "now_cost": 4.8
+      "now_cost": 4.7
     },
     "300": {
       "web_name": "Ndidi",
-      "now_cost": 5.0
+      "now_cost": 4.9
     },
     "301": {
       "web_name": "Okoli",
@@ -1446,7 +1662,7 @@
     },
     "302": {
       "web_name": "Ricardo",
-      "now_cost": 4.3
+      "now_cost": 4.1
     },
     "303": {
       "web_name": "Souttar",
@@ -1462,31 +1678,31 @@
     },
     "306": {
       "web_name": "Vardy",
-      "now_cost": 5.7
+      "now_cost": 5.4
     },
     "307": {
       "web_name": "Vestergaard",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "308": {
       "web_name": "Ward",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "309": {
       "web_name": "Winks",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "501": {
       "web_name": "Skipp",
-      "now_cost": 4.9
+      "now_cost": 4.7
     },
     "570": {
       "web_name": "A.Fatawu",
-      "now_cost": 5.4
+      "now_cost": 5.1
     },
     "606": {
       "web_name": "Alves",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "616": {
       "web_name": "Nelson",
@@ -1494,15 +1710,31 @@
     },
     "635": {
       "web_name": "El Khannouss",
-      "now_cost": 4.9
+      "now_cost": 4.8
+    },
+    "694": {
+      "web_name": "Cartwright",
+      "now_cost": 4.5
+    },
+    "708": {
+      "web_name": "Wilson-Brown",
+      "now_cost": 4.0
+    },
+    "726": {
+      "web_name": "Coulibaly",
+      "now_cost": 4.0
+    },
+    "754": {
+      "web_name": "Van Nistelrooy",
+      "now_cost": 0.5
     },
     "310": {
       "web_name": "A.Becker",
-      "now_cost": 5.4
+      "now_cost": 5.5
     },
     "311": {
       "web_name": "Alexander-Arnold",
-      "now_cost": 7.1
+      "now_cost": 7.4
     },
     "312": {
       "web_name": "Bajcetic",
@@ -1518,11 +1750,11 @@
     },
     "316": {
       "web_name": "Darwin",
-      "now_cost": 7.1
+      "now_cost": 7.0
     },
     "317": {
       "web_name": "Diogo J.",
-      "now_cost": 7.4
+      "now_cost": 7.2
     },
     "318": {
       "web_name": "Doak",
@@ -1534,15 +1766,15 @@
     },
     "320": {
       "web_name": "Endo",
-      "now_cost": 4.8
+      "now_cost": 4.6
     },
     "321": {
       "web_name": "Gakpo",
-      "now_cost": 7.1
+      "now_cost": 7.5
     },
     "322": {
       "web_name": "Gomez",
-      "now_cost": 4.8
+      "now_cost": 4.7
     },
     "323": {
       "web_name": "Gravenberch",
@@ -1554,19 +1786,19 @@
     },
     "325": {
       "web_name": "Kelleher",
-      "now_cost": 4.4
+      "now_cost": 4.0
     },
     "326": {
       "web_name": "Konat\u00e9",
-      "now_cost": 5.3
+      "now_cost": 5.2
     },
     "327": {
       "web_name": "Luis D\u00edaz",
-      "now_cost": 7.9
+      "now_cost": 7.5
     },
     "328": {
       "web_name": "M.Salah",
-      "now_cost": 12.6
+      "now_cost": 13.7
     },
     "329": {
       "web_name": "Mac Allister",
@@ -1574,7 +1806,7 @@
     },
     "330": {
       "web_name": "McConnell",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "331": {
       "web_name": "Morton",
@@ -1586,7 +1818,7 @@
     },
     "333": {
       "web_name": "Quansah",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "334": {
       "web_name": "R.Williams",
@@ -1594,11 +1826,11 @@
     },
     "335": {
       "web_name": "Robertson",
-      "now_cost": 6.0
+      "now_cost": 5.9
     },
     "336": {
       "web_name": "Szoboszlai",
-      "now_cost": 6.4
+      "now_cost": 6.3
     },
     "337": {
       "web_name": "Tsimikas",
@@ -1606,7 +1838,7 @@
     },
     "339": {
       "web_name": "Virgil",
-      "now_cost": 6.0
+      "now_cost": 6.4
     },
     "636": {
       "web_name": "Chiesa",
@@ -1616,9 +1848,29 @@
       "web_name": "Jaros",
       "now_cost": 4.0
     },
+    "669": {
+      "web_name": "Davies",
+      "now_cost": 4.0
+    },
+    "688": {
+      "web_name": "Nyoni",
+      "now_cost": 4.5
+    },
+    "692": {
+      "web_name": "Nallo",
+      "now_cost": 4.0
+    },
+    "709": {
+      "web_name": "Danns",
+      "now_cost": 4.5
+    },
+    "744": {
+      "web_name": "Slot",
+      "now_cost": 1.5
+    },
     "340": {
       "web_name": "Akanji",
-      "now_cost": 5.5
+      "now_cost": 5.3
     },
     "341": {
       "web_name": "Ak\u00e9",
@@ -1626,7 +1878,7 @@
     },
     "342": {
       "web_name": "Bernardo",
-      "now_cost": 6.5
+      "now_cost": 6.1
     },
     "343": {
       "web_name": "Bobb",
@@ -1634,23 +1886,23 @@
     },
     "344": {
       "web_name": "Carson",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "345": {
       "web_name": "De Bruyne",
-      "now_cost": 9.4
+      "now_cost": 9.3
     },
     "346": {
       "web_name": "Doku",
-      "now_cost": 6.3
+      "now_cost": 6.2
     },
     "347": {
       "web_name": "Ederson M.",
-      "now_cost": 5.5
+      "now_cost": 5.3
     },
     "348": {
       "web_name": "Foden",
-      "now_cost": 9.2
+      "now_cost": 9.3
     },
     "349": {
       "web_name": "Grealish",
@@ -1658,11 +1910,11 @@
     },
     "350": {
       "web_name": "Gvardiol",
-      "now_cost": 6.1
+      "now_cost": 5.9
     },
     "351": {
       "web_name": "Haaland",
-      "now_cost": 15.4
+      "now_cost": 14.7
     },
     "352": {
       "web_name": "J.Alvarez",
@@ -1674,11 +1926,11 @@
     },
     "354": {
       "web_name": "Kova\u010di\u0107",
-      "now_cost": 5.6
+      "now_cost": 5.4
     },
     "355": {
       "web_name": "Lewis",
-      "now_cost": 4.8
+      "now_cost": 4.4
     },
     "356": {
       "web_name": "Matheus N.",
@@ -1686,19 +1938,19 @@
     },
     "357": {
       "web_name": "McAtee",
-      "now_cost": 4.7
+      "now_cost": 4.6
     },
     "358": {
       "web_name": "Ortega Moreno",
-      "now_cost": 5.3
+      "now_cost": 5.2
     },
     "360": {
       "web_name": "Rodrigo",
-      "now_cost": 6.3
+      "now_cost": 6.2
     },
     "361": {
       "web_name": "R\u00faben",
-      "now_cost": 5.5
+      "now_cost": 5.4
     },
     "362": {
       "web_name": "Stones",
@@ -1706,27 +1958,71 @@
     },
     "363": {
       "web_name": "Walker",
-      "now_cost": 5.3
+      "now_cost": 5.1
     },
     "571": {
-      "web_name": "S\u00e1vio",
-      "now_cost": 6.5
+      "web_name": "Savinho",
+      "now_cost": 6.2
     },
     "607": {
       "web_name": "O\u2019Reilly",
-      "now_cost": 5.0
+      "now_cost": 4.9
     },
     "625": {
       "web_name": "G\u00fcndogan",
-      "now_cost": 6.5
+      "now_cost": 6.3
     },
     "626": {
       "web_name": "Kabor\u00e9",
       "now_cost": 4.5
     },
+    "671": {
+      "web_name": "Wright",
+      "now_cost": 4.5
+    },
+    "672": {
+      "web_name": "Simpson-Pusey",
+      "now_cost": 4.0
+    },
+    "675": {
+      "web_name": "Wilson-Esbrand",
+      "now_cost": 4.0
+    },
+    "698": {
+      "web_name": "Mubama",
+      "now_cost": 4.5
+    },
+    "703": {
+      "web_name": "Alleyne",
+      "now_cost": 4.0
+    },
+    "704": {
+      "web_name": "Brits",
+      "now_cost": 4.0
+    },
+    "732": {
+      "web_name": "Khusanov",
+      "now_cost": 5.0
+    },
+    "733": {
+      "web_name": "Vitor Reis",
+      "now_cost": 4.5
+    },
+    "736": {
+      "web_name": "Guardiola",
+      "now_cost": 1.5
+    },
+    "755": {
+      "web_name": "Marmoush",
+      "now_cost": 7.1
+    },
+    "765": {
+      "web_name": "N.Gonzalez",
+      "now_cost": 6.0
+    },
     "364": {
       "web_name": "Amad",
-      "now_cost": 5.0
+      "now_cost": 5.4
     },
     "365": {
       "web_name": "Antony",
@@ -1734,23 +2030,23 @@
     },
     "366": {
       "web_name": "B.Fernandes",
-      "now_cost": 8.2
+      "now_cost": 8.3
     },
     "367": {
       "web_name": "Bayindir",
-      "now_cost": 4.4
+      "now_cost": 4.3
     },
     "368": {
       "web_name": "Casemiro",
-      "now_cost": 4.8
+      "now_cost": 4.7
     },
     "369": {
       "web_name": "Dalot",
-      "now_cost": 5.1
+      "now_cost": 5.0
     },
     "370": {
       "web_name": "Eriksen",
-      "now_cost": 5.4
+      "now_cost": 5.2
     },
     "371": {
       "web_name": "Evans",
@@ -1758,7 +2054,7 @@
     },
     "372": {
       "web_name": "Garnacho",
-      "now_cost": 6.2
+      "now_cost": 5.9
     },
     "373": {
       "web_name": "Hannibal",
@@ -1766,7 +2062,7 @@
     },
     "374": {
       "web_name": "Heaton",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "375": {
       "web_name": "H\u00f8jlund",
@@ -1790,7 +2086,7 @@
     },
     "380": {
       "web_name": "Martinez",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "381": {
       "web_name": "McTominay",
@@ -1808,17 +2104,13 @@
       "web_name": "Pellistri",
       "now_cost": 5.0
     },
-    "385": {
-      "web_name": "Rashford",
-      "now_cost": 6.9
-    },
     "387": {
       "web_name": "Shaw",
       "now_cost": 4.9
     },
     "389": {
       "web_name": "Zirkzee",
-      "now_cost": 6.7
+      "now_cost": 6.5
     },
     "572": {
       "web_name": "Yoro",
@@ -1826,11 +2118,11 @@
     },
     "593": {
       "web_name": "De Ligt",
-      "now_cost": 5.0
+      "now_cost": 4.9
     },
     "594": {
       "web_name": "Mazraoui",
-      "now_cost": 4.6
+      "now_cost": 4.3
     },
     "613": {
       "web_name": "Collyer",
@@ -1844,9 +2136,57 @@
       "web_name": "Ugarte",
       "now_cost": 4.9
     },
+    "658": {
+      "web_name": "Heaven",
+      "now_cost": 4.0
+    },
     "667": {
       "web_name": "Fletcher",
       "now_cost": 4.5
+    },
+    "670": {
+      "web_name": "Amass",
+      "now_cost": 4.0
+    },
+    "673": {
+      "web_name": "Fitzgerald",
+      "now_cost": 4.5
+    },
+    "691": {
+      "web_name": "Kukonki",
+      "now_cost": 4.0
+    },
+    "745": {
+      "web_name": "Amorim",
+      "now_cost": 0.8
+    },
+    "761": {
+      "web_name": "Harrison",
+      "now_cost": 4.0
+    },
+    "766": {
+      "web_name": "Dorgu",
+      "now_cost": 4.5
+    },
+    "776": {
+      "web_name": "Obi",
+      "now_cost": 4.5
+    },
+    "777": {
+      "web_name": "Fredricson",
+      "now_cost": 4.0
+    },
+    "778": {
+      "web_name": "Moorhouse",
+      "now_cost": 4.5
+    },
+    "779": {
+      "web_name": "Kon\u00e9",
+      "now_cost": 4.5
+    },
+    "783": {
+      "web_name": "Graczyk",
+      "now_cost": 4.0
     },
     "390": {
       "web_name": "A.Murphy",
@@ -1854,11 +2194,11 @@
     },
     "391": {
       "web_name": "Almir\u00f3n",
-      "now_cost": 5.6
+      "now_cost": 5.4
     },
     "392": {
       "web_name": "Barnes",
-      "now_cost": 6.5
+      "now_cost": 5.9
     },
     "393": {
       "web_name": "Botman",
@@ -1866,7 +2206,7 @@
     },
     "394": {
       "web_name": "Bruno G.",
-      "now_cost": 6.2
+      "now_cost": 6.1
     },
     "395": {
       "web_name": "Burn",
@@ -1878,23 +2218,23 @@
     },
     "398": {
       "web_name": "Gordon",
-      "now_cost": 7.3
+      "now_cost": 7.5
     },
     "399": {
       "web_name": "Hall",
-      "now_cost": 4.3
+      "now_cost": 5.0
     },
     "400": {
       "web_name": "Hayden",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "401": {
       "web_name": "Isak",
-      "now_cost": 8.3
+      "now_cost": 9.5
     },
     "402": {
       "web_name": "J.Murphy",
-      "now_cost": 5.2
+      "now_cost": 5.1
     },
     "403": {
       "web_name": "Joelinton",
@@ -1902,15 +2242,15 @@
     },
     "404": {
       "web_name": "Kelly",
-      "now_cost": 4.4
+      "now_cost": 4.2
     },
     "405": {
       "web_name": "Krafth",
-      "now_cost": 4.4
+      "now_cost": 4.3
     },
     "406": {
       "web_name": "Kuol",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "407": {
       "web_name": "Lascelles",
@@ -1926,7 +2266,7 @@
     },
     "410": {
       "web_name": "Longstaff",
-      "now_cost": 4.7
+      "now_cost": 4.5
     },
     "411": {
       "web_name": "Miley",
@@ -1934,15 +2274,15 @@
     },
     "412": {
       "web_name": "Odysseas",
-      "now_cost": 4.4
+      "now_cost": 4.3
     },
     "413": {
       "web_name": "Pope",
-      "now_cost": 5.0
+      "now_cost": 4.9
     },
     "414": {
       "web_name": "Ruddy",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "415": {
       "web_name": "Sch\u00e4r",
@@ -1950,7 +2290,7 @@
     },
     "416": {
       "web_name": "Targett",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "417": {
       "web_name": "Tonali",
@@ -1958,7 +2298,7 @@
     },
     "418": {
       "web_name": "Trippier",
-      "now_cost": 5.7
+      "now_cost": 5.6
     },
     "419": {
       "web_name": "White",
@@ -1966,7 +2306,7 @@
     },
     "420": {
       "web_name": "Willock",
-      "now_cost": 4.8
+      "now_cost": 4.7
     },
     "421": {
       "web_name": "Wilson",
@@ -1978,15 +2318,19 @@
     },
     "590": {
       "web_name": "Osula",
-      "now_cost": 5.0
+      "now_cost": 4.9
+    },
+    "746": {
+      "web_name": "Howe",
+      "now_cost": 1.5
     },
     "26": {
       "web_name": "Alex Moreno",
-      "now_cost": 4.4
+      "now_cost": 4.2
     },
     "422": {
       "web_name": "Aina",
-      "now_cost": 4.5
+      "now_cost": 5.4
     },
     "423": {
       "web_name": "Anderson",
@@ -1994,11 +2338,11 @@
     },
     "424": {
       "web_name": "Awoniyi",
-      "now_cost": 5.7
+      "now_cost": 5.5
     },
     "425": {
       "web_name": "Boly",
-      "now_cost": 4.3
+      "now_cost": 4.2
     },
     "426": {
       "web_name": "Bowler",
@@ -2006,15 +2350,15 @@
     },
     "427": {
       "web_name": "C.Miguel",
-      "now_cost": 4.3
+      "now_cost": 4.1
     },
     "428": {
       "web_name": "Da Silva Moreira",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "429": {
       "web_name": "Danilo",
-      "now_cost": 4.8
+      "now_cost": 4.7
     },
     "430": {
       "web_name": "Dennis",
@@ -2026,15 +2370,15 @@
     },
     "432": {
       "web_name": "Elanga",
-      "now_cost": 5.2
+      "now_cost": 5.3
     },
     "433": {
       "web_name": "Gibbs-White",
-      "now_cost": 6.3
+      "now_cost": 6.5
     },
     "434": {
       "web_name": "Hudson-Odoi",
-      "now_cost": 5.4
+      "now_cost": 5.2
     },
     "435": {
       "web_name": "Mighten",
@@ -2042,7 +2386,7 @@
     },
     "436": {
       "web_name": "Murillo",
-      "now_cost": 4.5
+      "now_cost": 4.7
     },
     "437": {
       "web_name": "N.Williams",
@@ -2058,7 +2402,7 @@
     },
     "440": {
       "web_name": "Omobamidele",
-      "now_cost": 4.3
+      "now_cost": 4.2
     },
     "441": {
       "web_name": "Panzo",
@@ -2066,15 +2410,15 @@
     },
     "442": {
       "web_name": "Sangar\u00e9",
-      "now_cost": 4.4
+      "now_cost": 4.3
     },
     "443": {
       "web_name": "Sels",
-      "now_cost": 4.5
+      "now_cost": 5.0
     },
     "444": {
       "web_name": "Toffolo",
-      "now_cost": 4.3
+      "now_cost": 4.2
     },
     "446": {
       "web_name": "Ui-jo",
@@ -2082,7 +2426,7 @@
     },
     "447": {
       "web_name": "Wood",
-      "now_cost": 6.3
+      "now_cost": 7.2
     },
     "448": {
       "web_name": "Worrall",
@@ -2090,15 +2434,11 @@
     },
     "449": {
       "web_name": "Yates",
-      "now_cost": 4.9
-    },
-    "531": {
-      "web_name": "Ward-Prowse",
-      "now_cost": 6.2
+      "now_cost": 4.8
     },
     "573": {
       "web_name": "Milenkovi\u0107",
-      "now_cost": 4.5
+      "now_cost": 4.8
     },
     "596": {
       "web_name": "Jota Silva",
@@ -2112,29 +2452,37 @@
       "web_name": "Morato",
       "now_cost": 4.5
     },
+    "706": {
+      "web_name": "Abbott",
+      "now_cost": 4.0
+    },
+    "721": {
+      "web_name": "Hennessey",
+      "now_cost": 4.0
+    },
+    "747": {
+      "web_name": "Nuno",
+      "now_cost": 1.1
+    },
     "14": {
       "web_name": "Ramsdale",
       "now_cost": 4.4
     },
     "27": {
       "web_name": "Archer",
-      "now_cost": 5.0
+      "now_cost": 4.9
     },
     "188": {
       "web_name": "Ugochukwu",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "397": {
       "web_name": "Fraser",
       "now_cost": 4.8
     },
-    "450": {
-      "web_name": "Alcaraz",
-      "now_cost": 4.9
-    },
     "451": {
       "web_name": "Amo-Ameyaw",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "452": {
       "web_name": "Aribo",
@@ -2142,11 +2490,11 @@
     },
     "453": {
       "web_name": "Armstrong",
-      "now_cost": 5.2
+      "now_cost": 5.1
     },
     "454": {
       "web_name": "Bazunu",
-      "now_cost": 4.4
+      "now_cost": 4.3
     },
     "455": {
       "web_name": "Bednarek",
@@ -2158,7 +2506,7 @@
     },
     "457": {
       "web_name": "Bree",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "458": {
       "web_name": "Charles",
@@ -2186,7 +2534,7 @@
     },
     "464": {
       "web_name": "Larios",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "465": {
       "web_name": "Lis",
@@ -2206,7 +2554,7 @@
     },
     "469": {
       "web_name": "McCarthy",
-      "now_cost": 4.4
+      "now_cost": 4.3
     },
     "470": {
       "web_name": "Onuachu",
@@ -2222,19 +2570,19 @@
     },
     "473": {
       "web_name": "Stewart",
-      "now_cost": 4.6
+      "now_cost": 4.4
     },
     "474": {
       "web_name": "Sugawara",
-      "now_cost": 4.5
+      "now_cost": 4.2
     },
     "475": {
       "web_name": "Taylor",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "476": {
       "web_name": "Walker-Peters",
-      "now_cost": 4.4
+      "now_cost": 4.3
     },
     "477": {
       "web_name": "Wood",
@@ -2242,27 +2590,47 @@
     },
     "515": {
       "web_name": "Cornet",
-      "now_cost": 4.8
+      "now_cost": 4.7
     },
     "518": {
       "web_name": "Downes",
-      "now_cost": 4.9
+      "now_cost": 4.7
     },
     "584": {
       "web_name": "Brereton D\u00edaz",
-      "now_cost": 5.1
+      "now_cost": 4.8
     },
     "608": {
       "web_name": "Dibling",
-      "now_cost": 4.6
+      "now_cost": 4.5
     },
     "623": {
       "web_name": "M.Fernandes",
       "now_cost": 5.0
     },
+    "693": {
+      "web_name": "O'Brien-Whitmarsh",
+      "now_cost": 4.5
+    },
+    "718": {
+      "web_name": "Welington",
+      "now_cost": 4.0
+    },
+    "719": {
+      "web_name": "Kayi Sanda",
+      "now_cost": 4.0
+    },
+    "734": {
+      "web_name": "Gr\u00f8nb\u00e6k",
+      "now_cost": 4.9
+    },
+    "748": {
+      "web_name": "Juri\u0107",
+      "now_cost": 0.5
+    },
     "82": {
       "web_name": "Solanke",
-      "now_cost": 7.7
+      "now_cost": 7.3
     },
     "478": {
       "web_name": "A.Phillips",
@@ -2274,15 +2642,15 @@
     },
     "480": {
       "web_name": "Bentancur",
-      "now_cost": 5.0
+      "now_cost": 4.9
     },
     "481": {
       "web_name": "Bergvall",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "482": {
       "web_name": "Bissouma",
-      "now_cost": 4.9
+      "now_cost": 4.8
     },
     "483": {
       "web_name": "Bryan",
@@ -2290,7 +2658,7 @@
     },
     "484": {
       "web_name": "Davies",
-      "now_cost": 4.4
+      "now_cost": 4.3
     },
     "485": {
       "web_name": "Devine",
@@ -2306,11 +2674,11 @@
     },
     "488": {
       "web_name": "Forster",
-      "now_cost": 4.4
+      "now_cost": 4.3
     },
     "489": {
       "web_name": "Gray",
-      "now_cost": 4.7
+      "now_cost": 4.6
     },
     "490": {
       "web_name": "H\u00f8jbjerg",
@@ -2318,11 +2686,11 @@
     },
     "491": {
       "web_name": "Johnson",
-      "now_cost": 6.7
+      "now_cost": 6.2
     },
     "492": {
       "web_name": "Kulusevski",
-      "now_cost": 6.2
+      "now_cost": 6.3
     },
     "493": {
       "web_name": "Lo Celso",
@@ -2330,15 +2698,15 @@
     },
     "494": {
       "web_name": "Maddison",
-      "now_cost": 7.6
+      "now_cost": 7.4
     },
     "495": {
       "web_name": "Pedro Porro",
-      "now_cost": 5.5
+      "now_cost": 5.4
     },
     "496": {
       "web_name": "Reguil\u00f3n",
-      "now_cost": 4.3
+      "now_cost": 4.2
     },
     "497": {
       "web_name": "Richarlison",
@@ -2346,15 +2714,15 @@
     },
     "498": {
       "web_name": "Romero",
-      "now_cost": 5.1
+      "now_cost": 4.9
     },
     "499": {
       "web_name": "P.M.Sarr",
-      "now_cost": 4.9
+      "now_cost": 4.8
     },
     "500": {
       "web_name": "Scarlett",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "502": {
       "web_name": "Solomon",
@@ -2362,7 +2730,7 @@
     },
     "503": {
       "web_name": "Son",
-      "now_cost": 9.9
+      "now_cost": 9.7
     },
     "504": {
       "web_name": "Spence",
@@ -2370,11 +2738,11 @@
     },
     "505": {
       "web_name": "Udogie",
-      "now_cost": 4.9
+      "now_cost": 4.8
     },
     "506": {
       "web_name": "Van de Ven",
-      "now_cost": 4.7
+      "now_cost": 4.5
     },
     "507": {
       "web_name": "Veliz",
@@ -2382,7 +2750,7 @@
     },
     "508": {
       "web_name": "Vicario",
-      "now_cost": 5.0
+      "now_cost": 4.8
     },
     "509": {
       "web_name": "Werner",
@@ -2390,7 +2758,7 @@
     },
     "510": {
       "web_name": "Whiteman",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "609": {
       "web_name": "Lankshear",
@@ -2404,6 +2772,58 @@
       "web_name": "Odobert",
       "now_cost": 5.3
     },
+    "683": {
+      "web_name": "Olusesi",
+      "now_cost": 4.5
+    },
+    "684": {
+      "web_name": "Hardy",
+      "now_cost": 4.0
+    },
+    "689": {
+      "web_name": "Williams-Barnett",
+      "now_cost": 4.5
+    },
+    "699": {
+      "web_name": "Dorrington",
+      "now_cost": 4.0
+    },
+    "700": {
+      "web_name": "King",
+      "now_cost": 4.0
+    },
+    "716": {
+      "web_name": "Kinsky",
+      "now_cost": 4.4
+    },
+    "717": {
+      "web_name": "Yang",
+      "now_cost": 4.5
+    },
+    "729": {
+      "web_name": "Ajayi",
+      "now_cost": 4.5
+    },
+    "749": {
+      "web_name": "Postecoglou",
+      "now_cost": 1.1
+    },
+    "760": {
+      "web_name": "Cassanova",
+      "now_cost": 4.0
+    },
+    "767": {
+      "web_name": "Danso",
+      "now_cost": 4.5
+    },
+    "768": {
+      "web_name": "Tel",
+      "now_cost": 6.0
+    },
+    "123": {
+      "web_name": "Ferguson",
+      "now_cost": 5.5
+    },
     "388": {
       "web_name": "Wan-Bissaka",
       "now_cost": 4.4
@@ -2414,23 +2834,23 @@
     },
     "512": {
       "web_name": "Antonio",
-      "now_cost": 5.4
+      "now_cost": 5.3
     },
     "513": {
       "web_name": "Areola",
-      "now_cost": 4.4
+      "now_cost": 4.2
     },
     "514": {
       "web_name": "Bowen",
-      "now_cost": 7.4
+      "now_cost": 7.3
     },
     "516": {
       "web_name": "Coufal",
-      "now_cost": 4.4
+      "now_cost": 4.1
     },
     "517": {
       "web_name": "Cresswell",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "519": {
       "web_name": "Earthy",
@@ -2442,35 +2862,35 @@
     },
     "521": {
       "web_name": "Fabianski",
-      "now_cost": 4.0
+      "now_cost": 4.1
     },
     "522": {
       "web_name": "Foderingham",
-      "now_cost": 4.4
+      "now_cost": 4.3
     },
     "523": {
       "web_name": "Ings",
-      "now_cost": 5.0
+      "now_cost": 4.9
     },
     "524": {
       "web_name": "Kilman",
-      "now_cost": 4.5
+      "now_cost": 4.3
     },
     "525": {
       "web_name": "Kudus",
-      "now_cost": 6.3
+      "now_cost": 6.2
     },
     "526": {
       "web_name": "L.Guilherme",
-      "now_cost": 4.8
+      "now_cost": 4.6
     },
     "527": {
       "web_name": "L.Paquet\u00e1",
-      "now_cost": 5.9
+      "now_cost": 5.7
     },
     "528": {
       "web_name": "Mavropanos",
-      "now_cost": 4.5
+      "now_cost": 4.3
     },
     "529": {
       "web_name": "N.Aguerd",
@@ -2478,7 +2898,11 @@
     },
     "530": {
       "web_name": "Sou\u010dek",
-      "now_cost": 5.0
+      "now_cost": 4.9
+    },
+    "531": {
+      "web_name": "Ward-Prowse",
+      "now_cost": 6.1
     },
     "532": {
       "web_name": "Zouma",
@@ -2486,15 +2910,15 @@
     },
     "576": {
       "web_name": "Irving",
-      "now_cost": 4.9
+      "now_cost": 4.7
     },
     "587": {
       "web_name": "Summerville",
-      "now_cost": 5.7
+      "now_cost": 5.5
     },
     "588": {
       "web_name": "G.Rodr\u00edguez",
-      "now_cost": 4.9
+      "now_cost": 4.8
     },
     "589": {
       "web_name": "F\u00fcllkrug",
@@ -2502,7 +2926,7 @@
     },
     "591": {
       "web_name": "Todibo",
-      "now_cost": 4.4
+      "now_cost": 4.2
     },
     "643": {
       "web_name": "Casey",
@@ -2512,13 +2936,29 @@
       "web_name": "C.Soler",
       "now_cost": 5.0
     },
+    "677": {
+      "web_name": "Scarles",
+      "now_cost": 4.0
+    },
+    "686": {
+      "web_name": "Mayers",
+      "now_cost": 4.0
+    },
+    "701": {
+      "web_name": "Orford",
+      "now_cost": 4.5
+    },
+    "750": {
+      "web_name": "Potter",
+      "now_cost": 0.5
+    },
     "204": {
       "web_name": "Johnstone",
-      "now_cost": 4.4
+      "now_cost": 4.2
     },
     "533": {
       "web_name": "A\u00eft-Nouri",
-      "now_cost": 4.4
+      "now_cost": 4.7
     },
     "534": {
       "web_name": "B.Traore",
@@ -2526,11 +2966,11 @@
     },
     "535": {
       "web_name": "Bellegarde",
-      "now_cost": 5.0
+      "now_cost": 4.9
     },
     "536": {
       "web_name": "Bentley",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "537": {
       "web_name": "Chiquinho",
@@ -2550,19 +2990,19 @@
     },
     "541": {
       "web_name": "Cunha",
-      "now_cost": 6.5
+      "now_cost": 6.9
     },
     "542": {
       "web_name": "Dawson",
-      "now_cost": 4.4
+      "now_cost": 4.3
     },
     "543": {
       "web_name": "Doherty",
-      "now_cost": 4.4
+      "now_cost": 4.3
     },
     "544": {
       "web_name": "Doyle",
-      "now_cost": 4.8
+      "now_cost": 4.7
     },
     "545": {
       "web_name": "F\u00e1bio Silva",
@@ -2574,7 +3014,7 @@
     },
     "547": {
       "web_name": "Gonzalez",
-      "now_cost": 4.5
+      "now_cost": 4.4
     },
     "548": {
       "web_name": "Guedes",
@@ -2606,7 +3046,7 @@
     },
     "555": {
       "web_name": "Kalajd\u017ei\u0107",
-      "now_cost": 4.9
+      "now_cost": 4.8
     },
     "556": {
       "web_name": "King",
@@ -2614,11 +3054,11 @@
     },
     "557": {
       "web_name": "Mario Jr.",
-      "now_cost": 5.0
+      "now_cost": 4.8
     },
     "558": {
       "web_name": "Mosquera",
-      "now_cost": 4.0
+      "now_cost": 3.8
     },
     "559": {
       "web_name": "N.Semedo",
@@ -2626,7 +3066,7 @@
     },
     "561": {
       "web_name": "Pedro Lima",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "562": {
       "web_name": "Podence",
@@ -2634,7 +3074,7 @@
     },
     "563": {
       "web_name": "R.Gomes",
-      "now_cost": 5.2
+      "now_cost": 5.1
     },
     "564": {
       "web_name": "S.Bueno",
@@ -2642,11 +3082,11 @@
     },
     "565": {
       "web_name": "Sarabia",
-      "now_cost": 5.1
+      "now_cost": 5.0
     },
     "566": {
       "web_name": "Strand Larsen",
-      "now_cost": 5.5
+      "now_cost": 5.2
     },
     "567": {
       "web_name": "Toti",
@@ -2654,7 +3094,7 @@
     },
     "637": {
       "web_name": "Meupiyou",
-      "now_cost": 4.0
+      "now_cost": 3.9
     },
     "642": {
       "web_name": "Andr\u00e9",
@@ -2662,12 +3102,36 @@
     },
     "655": {
       "web_name": "Forbs",
-      "now_cost": 5.5
+      "now_cost": 5.4
     },
     "664": {
       "web_name": "Pond",
+      "now_cost": 3.9
+    },
+    "682": {
+      "web_name": "Edozie",
+      "now_cost": 4.5
+    },
+    "711": {
+      "web_name": "Okoduwa",
       "now_cost": 4.0
+    },
+    "720": {
+      "web_name": "Agbadou",
+      "now_cost": 4.0
+    },
+    "751": {
+      "web_name": "Pereira",
+      "now_cost": 0.8
+    },
+    "769": {
+      "web_name": "Djiga",
+      "now_cost": 4.5
+    },
+    "770": {
+      "web_name": "Munetsi",
+      "now_cost": 5.0
     }
   },
-  "current_gameweek": 8
+  "current_gameweek": 26
 }

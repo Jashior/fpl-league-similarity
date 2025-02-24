@@ -1,0 +1,580 @@
+Player data and current gameweek saved to ./src/assets/player_data.json
+Fetching league name for league ID 7639...
+League names saved to ./src/assets/available_leagues.json
+Processing league 7639
+26
+False
+Processing Gameweek 26
+gameweek: 26, current_gameweek: 26, current_gameweek_finished: False
+Using cached data for current gameweek 26
+Data saved to './src/assets/fpl_team_similarity_7639_gw26.json'
+❯ Building...
+✔ Building...
+Initial chunk files   | Names         |  Raw size | Estimated transfer size
+main-76USJ7PN.js      | main          | 644.41 kB |               147.22 kB
+styles-Q6NEDTQW.css   | styles        |  91.50 kB |                 6.83 kB
+polyfills-FFHMD2TL.js | polyfills     |  34.52 kB |                11.28 kB
+chunk-JKOY2XUY.js     | -             | 899 bytes |               899 bytes
+
+                      | Initial total | 771.34 kB |               166.23 kB
+
+Lazy chunk files      | Names         |  Raw size | Estimated transfer size
+chunk-MMLIUHHQ.js     | index         |   1.04 MB |               281.49 kB
+
+Application bundle generation complete. [20.037 seconds]
+
+▲ [WARNING] bundle initial exceeded maximum budget. Budget 512.00 kB was not met by 259.34 kB with a total of 771.34 kB.
+
+
+▲ [WARNING] 254 rules skipped due to selector errors:
+  [tuiAppearance][data-appearance=accent]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=accent]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=accent]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=accent]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=floating]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=floating]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=floating]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=floating]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=glass]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=glass]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=glass]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=glass]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiTheme=dark] [tuiAppearance][data-appearance=glass]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiTheme=dark][tuiAppearance][data-appearance=glass]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiTheme=dark] [tuiAppearance][data-appearance=glass]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiTheme=dark][tuiAppearance][data-appearance=glass]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiTheme=dark] [tuiAppearance][data-appearance=glass]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiTheme=dark][tuiAppearance][data-appearance=glass]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiTheme=dark] [tuiAppearance][data-appearance=glass]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiTheme=dark][tuiAppearance][data-appearance=glass]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=icon]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=icon]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=icon]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=icon]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=whiteblock]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=floating]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=whiteblock]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=floating]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=whiteblock]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=floating]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=whiteblock]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=floating]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=whiteblock]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=floating]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=whiteblock]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=floating]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=whiteblock]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=floating]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=whiteblock]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=floating]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=link]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=link]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=link]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=link]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=opposite]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=opposite]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=opposite]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=opposite]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=outline]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=whiteblock]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=outline][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=whiteblock][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=outline]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=whiteblock]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=outline][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=whiteblock][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=outline]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=whiteblock]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=outline][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=whiteblock][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=outline]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=whiteblock]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=outline][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=whiteblock][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=outline]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=whiteblock]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=outline]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=whiteblock]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=outline]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=whiteblock]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=outline]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=whiteblock]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=primary]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=primary]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=primary]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=primary]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=error]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=error]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=error]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=error]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=success]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=success]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=success]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=success]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=warning]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=warning]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=warning]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=warning]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=info]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=info]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=info]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=info]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=neutral]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=neutral]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=neutral]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=neutral]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=textfield]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=textfield]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiTheme=dark] [tuiAppearance][data-appearance=textfield]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiTheme=dark][tuiAppearance][data-appearance=textfield]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiTheme=dark] [tuiAppearance][data-appearance=textfield]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiTheme=dark][tuiAppearance][data-appearance=textfield]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+
+
+Output location: /home/dev/fpl-league-similarity/dist/fpl-league-similarity
+
+Use --update-env to update environment variables
+[PM2] Applying action reloadProcessId on app [fpl-league-similarity](ids: [ 8 ])
+[PM2] [fpl-league-similarity](8) ✓
+Player data and current gameweek saved to ./src/assets/player_data.json
+Fetching league name for league ID 7639...
+League names saved to ./src/assets/available_leagues.json
+Processing league 7639
+26
+False
+Processing Gameweek 26
+gameweek: 26, current_gameweek: 26, current_gameweek_finished: False
+Using cached data for current gameweek 26
+Data saved to './src/assets/fpl_team_similarity_7639_gw26.json'
+❯ Building...
+✔ Building...
+Initial chunk files   | Names         |  Raw size | Estimated transfer size
+main-76USJ7PN.js      | main          | 644.41 kB |               147.22 kB
+styles-Q6NEDTQW.css   | styles        |  91.50 kB |                 6.83 kB
+polyfills-FFHMD2TL.js | polyfills     |  34.52 kB |                11.28 kB
+chunk-JKOY2XUY.js     | -             | 899 bytes |               899 bytes
+
+                      | Initial total | 771.34 kB |               166.23 kB
+
+Lazy chunk files      | Names         |  Raw size | Estimated transfer size
+chunk-MMLIUHHQ.js     | index         |   1.04 MB |               281.49 kB
+
+Application bundle generation complete. [21.173 seconds]
+
+▲ [WARNING] bundle initial exceeded maximum budget. Budget 512.00 kB was not met by 259.34 kB with a total of 771.34 kB.
+
+
+▲ [WARNING] 254 rules skipped due to selector errors:
+  [tuiAppearance][data-appearance=accent]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=accent]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=accent]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=accent]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=floating]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=floating]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=floating]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=floating]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=glass]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=glass]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=glass]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=glass]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiTheme=dark] [tuiAppearance][data-appearance=glass]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiTheme=dark][tuiAppearance][data-appearance=glass]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiTheme=dark] [tuiAppearance][data-appearance=glass]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiTheme=dark][tuiAppearance][data-appearance=glass]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiTheme=dark] [tuiAppearance][data-appearance=glass]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiTheme=dark][tuiAppearance][data-appearance=glass]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiTheme=dark] [tuiAppearance][data-appearance=glass]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiTheme=dark][tuiAppearance][data-appearance=glass]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=icon]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=icon]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=icon]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=icon]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=whiteblock]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=floating]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=whiteblock]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=floating]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=whiteblock]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=floating]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=whiteblock]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=floating]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=whiteblock]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=floating]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=whiteblock]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=floating]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=whiteblock]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=floating]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=whiteblock]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=floating]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=link]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=link]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=link]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=link]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=opposite]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=opposite]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=opposite]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=opposite]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=outline]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=whiteblock]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=outline][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=whiteblock][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=outline]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=whiteblock]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=outline][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=whiteblock][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=outline]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=whiteblock]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=outline][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=whiteblock][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=outline]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=whiteblock]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=outline][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=whiteblock][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=outline]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=whiteblock]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=outline]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=whiteblock]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=outline]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=whiteblock]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=outline]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=whiteblock]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=primary]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=primary]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=primary]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=primary]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode]):not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode])[data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode]):not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=checked][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=checked][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][type=checkbox]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][type=checkbox]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][type=checkbox]:not([data-mode])[data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=invalid]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=secondary]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=secondary][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=destructive][data-mode~=invalid]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=flat]:not([data-mode]):-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=flat][data-mode~=checked]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=error]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=error]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=error]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=error]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=success]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=success]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=success]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=success]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=warning]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=warning]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=warning]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=warning]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=info]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=info]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=info]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=info]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=neutral]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=neutral]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=neutral]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=neutral]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiAppearance][data-appearance=textfield]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiAppearance][data-appearance=textfield]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiTheme=dark] [tuiAppearance][data-appearance=textfield]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiTheme=dark][tuiAppearance][data-appearance=textfield]:-webkit-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-webkit-any
+  [tuiTheme=dark] [tuiAppearance][data-appearance=textfield]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+  [tuiTheme=dark][tuiAppearance][data-appearance=textfield]:-moz-any(a,button,select,textarea,input,label):not([data-state]) -> Unknown pseudo-class :-moz-any
+
+
+Output location: /home/dev/fpl-league-similarity/dist/fpl-league-similarity
+
+Use --update-env to update environment variables
+[PM2] Applying action reloadProcessId on app [fpl-league-similarity](ids: [ 8 ])
+[PM2] [fpl-league-similarity](8) ✓
