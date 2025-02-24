@@ -127,9 +127,9 @@ export class PointDistributionGraphComponent {
         })
     );
 
-    const maxCount = Math.max(
-      ...Array.from(pointsMap.values()).map((arr) => arr.length)
-    );
+    const maxCount =
+      Math.max(...Array.from(pointsMap.values()).map((arr) => arr.length)) *
+      1.5;
 
     const xAxisMin = Math.floor(minPoints / 5) * 5;
     const xAxisMax = Math.ceil(maxPoints / 5) * 5;

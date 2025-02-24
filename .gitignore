@@ -5,6 +5,7 @@
 /graphs/*
 !graphs/.gitkeep
 /venv
+env/
 
 # Log
 *.log

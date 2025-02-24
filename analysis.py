@@ -236,7 +236,7 @@ def fetch_all_team_picks(managers, league_id, gameweek, current_gameweek, curren
 
 def process_picks(picks):
     """
-    Processes team picks data to extract relevant information.
+    Processes team picks data to extract relevant information, subtracting transfer cost for true GW points.
 
     Args:
         picks (dict): The JSON response containing team picks data.
@@ -248,6 +248,8 @@ def process_picks(picks):
             - int: Vice-captain player ID.
             - int: Total points for the team.
             - int: Rank of the team.
+            - int: GW points (true points, with event_transfers_cost subtracted).
+            - int: GW rank.
     """
     if 'picks' in picks:  # Check if 'picks' key exists
         team = [pick['element'] for pick in picks['picks']]
@@ -255,13 +257,15 @@ def process_picks(picks):
         vice_captain = picks['picks'][picks['picks'].index(next((pick for pick in picks['picks'] if pick['is_vice_captain']), None))]['element']
         total_points = picks['entry_history']['total_points']  # Extract total_points
         rank = picks['entry_history']['overall_rank']  # Extract rank
-        gw_points = picks['entry_history']['points']  # Extract points for the current gameweek
-        gw_rank = picks['entry_history']['rank']  # Extract gw rank
-        return team, captain, vice_captain, total_points, rank, gw_points, gw_rank  # Return additional data
+        gw_points_raw = picks['entry_history']['points']  # Extract raw GW points
+        gw_transfers_cost = picks['entry_history']['event_transfers_cost']  # Extract transfer cost
+        gw_points_true = gw_points_raw - gw_transfers_cost  # True GW points (subtract transfer penalty)
+        gw_rank = picks['entry_history']['rank']  # Extract GW rank
+        return team, captain, vice_captain, total_points, rank, gw_points_true, gw_rank  # Return true GW points
     else:
         print(picks)
         print(f"Warning: 'picks' key missing for this manager. Returning None values.")
-        return None, None, None, None, None  # Return None for missing data
+        return None, None, None, None, None, None, None  # Return None for missing data
 
 def create_weighted_vector(team, all_player_ids, player_prices, captain, vice_captain):
   """

@@ -53,7 +53,7 @@ export class DataService {
   private loadingCounter = 0;
   private loadingSubject = new BehaviorSubject<boolean>(false);
   private highlightedManagersSubject = new BehaviorSubject<number[]>([]);
-  private highlightedPlayersSubject = new BehaviorSubject<number[]>([351]);
+  private highlightedPlayersSubject = new BehaviorSubject<number[]>([]);
 
   loading$: Observable<boolean> = this.loadingSubject.asObservable();
 
