@@ -12,6 +12,7 @@ import { EChartsOption } from 'echarts';
 import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
 import { DataService, ManagerData } from '../services/data.service';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { Platform } from '@angular/cdk/platform';
 
 @Component({
   selector: 'app-point-distribution-graph',
@@ -30,6 +31,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 })
 export class PointDistributionGraphComponent {
   private dataService: DataService = inject(DataService);
+  private platform: Platform = inject(Platform);
 
   managerData: Signal<ManagerData[]> = toSignal(this.dataService.managerData$, {
     initialValue: [],
@@ -84,8 +86,8 @@ export class PointDistributionGraphComponent {
             );
 
           // Adjust sizes based on device type
-          const normalSize = isMobile ? 6 : 10;
-          const highlightedSize = isMobile ? 9 : 15;
+          const normalSize = isMobile ? 5 : 10;
+          const highlightedSize = isMobile ? 8 : 15;
 
           return {
             value: [points, index],
@@ -127,9 +129,12 @@ export class PointDistributionGraphComponent {
         })
     );
 
-    const maxCount =
-      Math.max(...Array.from(pointsMap.values()).map((arr) => arr.length)) *
-      1.5;
+    var maxCount = Math.max(
+      ...Array.from(pointsMap.values()).map((arr) => arr.length)
+    );
+    if (!(this.platform.IOS || this.platform.ANDROID)) {
+      maxCount = maxCount * 1.5;
+    }
 
     const xAxisMin = Math.floor(minPoints / 5) * 5;
     const xAxisMax = Math.ceil(maxPoints / 5) * 5;
