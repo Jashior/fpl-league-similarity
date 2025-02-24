@@ -6,6 +6,10 @@
 !graphs/.gitkeep
 /venv
 
+# Log
+*.log
+*.gz
+
 # Compiled output
 /dist
 /tmp
