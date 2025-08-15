@@ -263,6 +263,7 @@ def process_picks(picks):
             - int: Rank of the team.
             - int: GW points (true points, with event_transfers_cost subtracted).
             - int: GW rank.
+            - str: Active chip.
     """
     if 'picks' in picks:  # Check if 'picks' key exists
         team = [pick['element'] for pick in picks['picks']]
@@ -274,13 +275,14 @@ def process_picks(picks):
         gw_transfers_cost = picks['entry_history']['event_transfers_cost']  # Extract transfer cost
         gw_points_true = gw_points_raw - gw_transfers_cost  # True GW points (subtract transfer penalty)
         gw_rank = picks['entry_history']['rank']  # Extract GW rank
-        return team, captain, vice_captain, total_points, rank, gw_points_true, gw_rank  # Return true GW points
+        active_chip = picks.get('active_chip') # Get active chip
+        return team, captain, vice_captain, total_points, rank, gw_points_true, gw_rank, active_chip  # Return true GW points
     else:
         print(picks)
         print(f"Warning: 'picks' key missing for this manager. Returning None values.")
-        return None, None, None, None, None, None, None  # Return None for missing data
+        return None, None, None, None, None, None, None, None  # Return None for missing data
 
-def create_weighted_vector(team, all_player_ids, player_prices, captain, vice_captain):
+def create_weighted_vector(team, all_player_ids, player_prices, captain, vice_captain, active_chip):
   """
   Creates a weighted vector for a team based on player prices and position,
   using a scaled price weighting between ~3.5 and ~16,
@@ -292,25 +294,35 @@ def create_weighted_vector(team, all_player_ids, player_prices, captain, vice_ca
       player_prices: A dictionary mapping player IDs to their prices.
       captain: The player ID of the captain.
       vice_captain: The player ID of the vice-captain.
+      active_chip: The active chip for the gameweek.
 
   Returns:
       A NumPy array representing the weighted vector.
   """
 
   vector = np.zeros(len(all_player_ids))
-  bench_weights = [1, 0.05, 0.25, 0.1, 0.05]  # Weights for starting 11 and bench positions
+  bench_weights = [0.05, 0.25, 0.1, 0.05]  # Weights for bench positions (GK, 1st, 2nd, 3rd)
   for i, player_id in enumerate(team):
       if player_id in all_player_ids:
           index = all_player_ids.index(player_id)
           price_weight = player_prices.get(player_id, 4.0)  # Default to 4.5 if price not found
           # Linear Scaling up to 15
           scaled_price = (price_weight) / (15)
-          position_weight = 1 if i < 11 else bench_weights[i - 11]
-          # Add extra weighting for captain
+          
+          # Determine position weight, accounting for bench boost
+          if active_chip == 'bboost' or i < 11:
+              position_weight = 1
+          else:
+              position_weight = bench_weights[i - 11]
+
+          # Add extra weighting for captain/triple captain
           if player_id == captain:
-              position_weight *= 1.5  # Increase captain's weight by 100%
+              if active_chip == '3xc':
+                  position_weight *= 3.0  # Triple Captain weight
+              else:
+                  position_weight *= 2.0  # Standard captain weight
           elif player_id == vice_captain:
-              position_weight *= 1.05 # Increase vice-captain's weight by 10%
+              position_weight *= 1.01 # Negligible vice-captain weight
           vector[index] = scaled_price * position_weight
   return vector
 
@@ -388,7 +400,7 @@ for league_id in league_ids:
     all_player_ids = list(all_player_ids)
 
     # Pass player_prices when creating weighted_teams
-    weighted_teams = np.array([create_weighted_vector(team[0], all_player_ids, player_prices, team[1], team[2]) for team in processed_picks if team is not None])
+    weighted_teams = np.array([create_weighted_vector(team[0], all_player_ids, player_prices, team[1], team[2], team[7]) for team in processed_picks if team is not None])
 
     # If no teams have data, skip the rest of the processing for this gameweek
     if weighted_teams.size == 0:
@@ -419,6 +431,7 @@ for league_id in league_ids:
         'rank': [pick[4] for pick in processed_picks if pick is not None],  # Extract rank
         'gw_points': [pick[5] for pick in processed_picks if pick is not None],
         'gw_rank': [pick[6] for pick in processed_picks if pick is not None],
+        'active_chip': [pick[7] for pick in processed_picks if pick is not None],
         'players_owned': [pick[0] for pick in processed_picks if pick is not None],  # Add players owned
         'pca_x': pca_result[:, 0],
         'pca_y': pca_result[:, 1],
