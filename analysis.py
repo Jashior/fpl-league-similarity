@@ -18,7 +18,7 @@ CACHE_DIRECTORY = './cache'
 
 # Main execution
 # league_ids = [7639, 8497]
-league_ids = [7639]
+league_ids = [36590]
 # league_ids = [8497]
 
 def fetch_player_data(json_file=f'{DATA_DIRECTORY}/player_data.json'):
@@ -82,7 +82,7 @@ def fetch_league_standings(league_id, page=1):
     Returns:
         dict: The JSON response containing league standings data.
     """
-    url = f"https://fantasy.premierleague.com/api/leagues-classic/{league_id}/standings/?page_standings={page}"
+    url = f"https://fantasy.premierleague.com/api/leagues-classic/{league_id}/standings/?page_standings={page}&page_new_entries={page}"
     response = requests.get(url)
     return response.json()
 
@@ -104,6 +104,7 @@ def fetch_team_picks(team_id, gameweek):
 def extract_manager_data(standings_data):
     """
     Extracts manager data from league standings data.
+    If standings are empty, it tries to extract from new_entries.
 
     Args:
         standings_data (dict): The JSON response containing league standings data.
@@ -112,12 +113,21 @@ def extract_manager_data(standings_data):
         list: A list of dictionaries, each containing manager information.
     """
     managers = []
-    for result in standings_data['standings']['results']:
-        managers.append({
-            'name': result['player_name'],
-            'team_name': result['entry_name'],
-            'team_id': result['entry'],
-        })
+    if standings_data.get('standings', {}).get('results'):
+        for result in standings_data['standings']['results']:
+            managers.append({
+                'name': result['player_name'],
+                'team_name': result['entry_name'],
+                'team_id': result['entry'],
+            })
+    elif standings_data.get('new_entries', {}).get('results'):
+        print("No standings found, using new entries to populate managers.")
+        for result in standings_data['new_entries']['results']:
+            managers.append({
+                'name': f"{result['player_first_name']} {result['player_last_name']}",
+                'team_name': result['entry_name'],
+                'team_id': result['entry'],
+            })
     return managers
 
 def fetch_all_managers(league_id, cache_file=f'{CACHE_DIRECTORY}/managers.json'):
@@ -143,8 +153,11 @@ def fetch_all_managers(league_id, cache_file=f'{CACHE_DIRECTORY}/managers.json')
         print(f"Fetching page {page} of league standings...")
         data = fetch_league_standings(league_id, page)
         managers = extract_manager_data(data)
+
+        # If the current page returned no managers, we assume we're done.
         if not managers:
             break
+
         all_managers.extend(managers)
         page += 1
         time.sleep(1)  # Delay to avoid overloading the server
@@ -376,6 +389,11 @@ for league_id in league_ids:
 
     # Pass player_prices when creating weighted_teams
     weighted_teams = np.array([create_weighted_vector(team[0], all_player_ids, player_prices, team[1], team[2]) for team in processed_picks if team is not None])
+
+    # If no teams have data, skip the rest of the processing for this gameweek
+    if weighted_teams.size == 0:
+        print(f"No data to process for Gameweek {gameweek}. Skipping.")
+        continue
 
     # Calculate the number of managers with data
     num_managers_with_data = len(processed_picks) - processed_picks.count(None)
