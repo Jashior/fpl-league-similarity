@@ -266,7 +266,7 @@ def process_picks(picks):
             - str: Active chip.
     """
     if 'picks' in picks:  # Check if 'picks' key exists
-        team = [pick['element'] for pick in picks['picks']]
+        team = [(pick['element'], pick['position']) for pick in picks['picks']] # Extract player ID and position
         captain = picks['picks'][picks['picks'].index(next((pick for pick in picks['picks'] if pick['is_captain']), None))]['element']
         vice_captain = picks['picks'][picks['picks'].index(next((pick for pick in picks['picks'] if pick['is_vice_captain']), None))]['element']
         total_points = picks['entry_history']['total_points']  # Extract total_points
@@ -289,7 +289,7 @@ def create_weighted_vector(team, all_player_ids, player_prices, captain, vice_ca
   and adding extra weight to the captain.
 
   Args:
-      team: A list of player IDs representing the team.
+      team: A list of (player_id, position) tuples representing the team.
       all_player_ids: A list of all player IDs.
       player_prices: A dictionary mapping player IDs to their prices.
       captain: The player ID of the captain.
@@ -302,7 +302,7 @@ def create_weighted_vector(team, all_player_ids, player_prices, captain, vice_ca
 
   vector = np.zeros(len(all_player_ids))
   bench_weights = [0.05, 0.25, 0.1, 0.05]  # Weights for bench positions (GK, 1st, 2nd, 3rd)
-  for i, player_id in enumerate(team):
+  for player_id, position in team:
       if player_id in all_player_ids:
           index = all_player_ids.index(player_id)
           price_weight = player_prices.get(player_id, 4.0)  # Default to 4.5 if price not found
@@ -310,10 +310,10 @@ def create_weighted_vector(team, all_player_ids, player_prices, captain, vice_ca
           scaled_price = (price_weight) / (15)
           
           # Determine position weight, accounting for bench boost
-          if active_chip == 'bboost' or i < 11:
+          if active_chip == 'bboost' or position <= 11:
               position_weight = 1
           else:
-              position_weight = bench_weights[i - 11]
+              position_weight = bench_weights[position - 12]
 
           # Add extra weighting for captain/triple captain
           if player_id == captain:
@@ -395,7 +395,7 @@ for league_id in league_ids:
     all_player_ids = set()
     for team in processed_picks:
         if team is not None:  # Only include teams with data
-            team_list = team[0]  # The team is the first element of the tuple
+            team_list = [player[0] for player in team[0]]  # Extract only player IDs from (id, pos) tuples
             all_player_ids.update(team_list)
     all_player_ids = list(all_player_ids)
 
@@ -419,6 +419,11 @@ for league_id in league_ids:
     tsne = TSNE(n_components=2, perplexity=perplexity, max_iter=10000)
     tsne_result = tsne.fit_transform(weighted_teams)
 
+    # Add a small amount of jitter to prevent points from overlapping perfectly
+    jitter_strength = 0.01
+    pca_result += np.random.rand(*pca_result.shape) * jitter_strength - (jitter_strength / 2)
+    tsne_result += np.random.rand(*tsne_result.shape) * jitter_strength - (jitter_strength / 2)
+
 
     # Create the DataFrame, filling missing values with None
     results_df = pd.DataFrame({
@@ -432,7 +437,7 @@ for league_id in league_ids:
         'gw_points': [pick[5] for pick in processed_picks if pick is not None],
         'gw_rank': [pick[6] for pick in processed_picks if pick is not None],
         'active_chip': [pick[7] for pick in processed_picks if pick is not None],
-        'players_owned': [pick[0] for pick in processed_picks if pick is not None],  # Add players owned
+        'players_owned': [[player[0] for player in pick[0]] for pick in processed_picks if pick is not None],  # Add players owned
         'pca_x': pca_result[:, 0],
         'pca_y': pca_result[:, 1],
         'tsne_x': tsne_result[:, 0],
