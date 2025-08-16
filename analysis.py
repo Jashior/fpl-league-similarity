@@ -306,8 +306,9 @@ def create_weighted_vector(team, all_player_ids, player_prices, captain, vice_ca
       if player_id in all_player_ids:
           index = all_player_ids.index(player_id)
           price_weight = player_prices.get(player_id, 4.0)  # Default to 4.5 if price not found
-          # Linear Scaling up to 15
-          scaled_price = (price_weight) / (15)
+          # Non-linear scaling to emphasize price differences at the higher end.
+          # Using a power of 2 to make the function grow quadratically.
+          scaled_price = (price_weight / 15.0) ** 2
           
           # Determine position weight, accounting for bench boost
           if active_chip == 'bboost' or position <= 11:
@@ -318,9 +319,9 @@ def create_weighted_vector(team, all_player_ids, player_prices, captain, vice_ca
           # Add extra weighting for captain/triple captain
           if player_id == captain:
               if active_chip == '3xc':
-                  position_weight *= 3.0  # Triple Captain weight
+                  position_weight *= 2.0  # Triple Captain weight
               else:
-                  position_weight *= 2.0  # Standard captain weight
+                  position_weight *= 1.5  # Standard captain weight
           
           vector[index] = scaled_price * position_weight
   return vector
