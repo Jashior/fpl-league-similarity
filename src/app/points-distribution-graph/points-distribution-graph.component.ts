@@ -74,7 +74,9 @@ export class PointDistributionGraphComponent {
     const scatterData = Array.from(pointsMap.entries()).flatMap(
       ([points, managers]) =>
         managers.map((manager, index) => {
-          const isHighlighted = highlightedManagers.includes(manager.team_id);
+          const isHighlighted = manager.team_ids.some((id) =>
+            highlightedManagers.includes(id)
+          );
           const hasHighlightedPlayers = highlightedPlayers.some((playerId) =>
             manager.players_owned.includes(playerId)
           );
@@ -86,15 +88,13 @@ export class PointDistributionGraphComponent {
             );
 
           // Adjust sizes based on device type
-          const normalSize = isMobile ? 5 : 10;
-          const highlightedSize = isMobile ? 8 : 15;
+          const baseSize = isMobile ? 5 : 10;
+          const symbolSize = baseSize + manager.manager_count * 1.5; // Scale size by manager count
 
           return {
             value: [points, index],
-            name: manager.manager_name,
-            team_id: manager.team_id,
+            name: manager.manager_names[0], // Display first manager name for label
             manager: manager,
-            captain: manager.captain,
             itemStyle: {
               color: isHighlighted
                 ? '#ffffff'
@@ -102,22 +102,24 @@ export class PointDistributionGraphComponent {
                 ? '#3bda55'
                 : '#5470C6',
             },
-            symbolSize: isHighlighted ? highlightedSize : normalSize,
+            symbolSize: isHighlighted ? symbolSize + 2 : symbolSize,
             label: {
-              show: isHighlighted,
+              show: isHighlighted || manager.manager_count > 1,
               position: 'top',
-              formatter: '{b}',
-              textStyle: {
-                color: '#ffffff',
-                fontSize: 12,
-                fontWeight: 'bold',
-                textShadowColor: 'rgba(0, 0, 0, 0.8)',
-                textShadowBlur: 3,
-                textShadowOffsetX: 1,
-                textShadowOffsetY: 1,
-                backgroundColor: 'rgba(0, 0, 0, 1)',
-                padding: [2, 4],
-                borderRadius: 2,
+              formatter: manager.manager_count > 1 ? `{b|Group of ${manager.manager_count}}` : '{b}',
+              rich: {
+                b: {
+                  color: '#ffffff',
+                  fontSize: 12,
+                  fontWeight: 'bold',
+                  textShadowColor: 'rgba(0, 0, 0, 0.8)',
+                  textShadowBlur: 3,
+                  textShadowOffsetX: 1,
+                  textShadowOffsetY: 1,
+                  backgroundColor: 'rgba(0, 0, 0, 1)',
+                  padding: [2, 4],
+                  borderRadius: 2,
+                },
               },
             },
             labelLayout: {
@@ -153,13 +155,14 @@ export class PointDistributionGraphComponent {
         formatter: (params: any) => {
           const manager = params.data.manager;
           const gameweek = this.currentGameweek();
-          const teamLink = `https://fantasy.premierleague.com/entry/${params.data.team_id}/event/${gameweek}`;
           const isMobile = this.isMobileDevice();
 
           const commonStyles = `
             .tooltip-container { 
               font-size: ${isMobile ? '11px' : '14px'};
               position: relative;
+              max-height: 200px;
+              overflow-y: auto;
             }
             .tooltip-container b { 
               font-size: ${isMobile ? '12px' : '14px'}; 
@@ -184,14 +187,32 @@ export class PointDistributionGraphComponent {
             }
           `;
 
+          let managerHtml = '';
+          if (manager.manager_count > 1) {
+            managerHtml = `<div class="row"><b>Group of ${manager.manager_count} managers</b></div><hr/><ul class="manager-list">`;
+            manager.manager_names.slice(0, 5).forEach((name: string, index: number) => {
+              managerHtml += `<li><small>${name} (${manager.team_names[index]})</small></li>`;
+            });
+            if (manager.manager_count > 5) {
+              managerHtml += `<li><small>...and ${manager.manager_count - 5} more</small></li>`;
+            }
+            managerHtml += '</ul>';
+          } else {
+            managerHtml = `
+              <div class="row"><b>${manager.manager_names[0]}</b></div>
+              <hr/>
+              <div class="row"><small>${manager.team_names[0]}</small></div>
+            `;
+          }
+
+          const teamLink = `https://fantasy.premierleague.com/entry/${manager.team_ids[0]}/event/${gameweek}`;
+
           return `
           <style>${commonStyles}</style>
           <div class="tooltip-container">
-            <div class="row"><b>${manager.manager_name}</b></div>
-            <hr/>
-            <div class="row"><small>${manager.team_name}</small></div>
+            ${managerHtml}
             <div class="row"><span class="label">Captain</span>: ${this.getCaptainFromId(
-              params.data.captain
+              manager.captain
             )}</div>
             <div class="row"><span class="label">Rank</span>: ${this.formatNumber(
               manager.rank
@@ -205,7 +226,7 @@ export class PointDistributionGraphComponent {
             <div class="row"><span class="label">GW Rank</span>: ${this.formatNumber(
               manager.gw_rank
             )}</div>
-            <a href="${teamLink}" target="_blank" class="link">➡️View Team</a>
+            <a href="${teamLink}" target="_blank" class="link">➡️View First Team in Group</a>
           </div>
         `;
         },
@@ -240,14 +261,13 @@ export class PointDistributionGraphComponent {
           type: 'scatter',
           data: scatterData,
           symbolSize: (data: any) => data.symbolSize,
+          itemStyle: {
+            color: (params: any) => params.data.itemStyle.color,
+          },
           label: {
             show: (params: any) => params.data.label.show,
-            position: 'right',
-            formatter: '{b}',
-            textStyle: {
-              color: '#ffffff',
-              fontSize: 12,
-            },
+            rich: (params: any) => params.data.label.rich,
+            formatter: (params: any) => params.data.label.formatter,
           },
           emphasis: {
             itemStyle: {
@@ -265,11 +285,10 @@ export class PointDistributionGraphComponent {
   });
 
   onChartClick(event: any) {
-    if (event.data && event.data.manager) {
-      const teamId = event.data.manager.team_id;
+    if (event.data && event.data.manager && event.data.manager.team_ids) {
       const isMobile = this.isMobileDevice();
       if (!isMobile) {
-        const url = `https://fantasy.premierleague.com/entry/${teamId}/event/${this.currentGameweek()}`;
+        const url = `https://fantasy.premierleague.com/entry/${event.data.manager.team_ids[0]}/event/${this.currentGameweek()}`;
         window.open(url, '_blank');
       } else {
       }
@@ -291,3 +310,4 @@ export class PointDistributionGraphComponent {
     return this.dataService.getNameFromId(id);
   }
 }
+

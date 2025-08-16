@@ -389,60 +389,85 @@ for league_id in league_ids:
     # Fetch team picks for all managers
     all_picks = fetch_all_team_picks(managers, league_id, gameweek, current_gameweek, current_gameweek_finished)
 
-    processed_picks = [pick for pick in [process_picks(picks) for picks in all_picks]]
+    # --- Main Processing Block ---
 
-    # Create a set of all unique player IDs (updated each gameweek)
-    all_player_ids = set()
-    for team in processed_picks:
-        if team is not None:  # Only include teams with data
-            team_list = [player[0] for player in team[0]]  # Extract only player IDs from (id, pos) tuples
-            all_player_ids.update(team_list)
-    all_player_ids = list(all_player_ids)
+    # 1. Process all picks and align with manager info
+    processed_picks = [process_picks(picks) for picks in all_picks]
+    valid_teams_with_info = []
+    for i, pick_data in enumerate(processed_picks):
+        if pick_data is not None:
+            valid_teams_with_info.append({
+                'manager': managers[i],
+                'pick_data': pick_data
+            })
 
-    # Pass player_prices when creating weighted_teams
-    weighted_teams = np.array([create_weighted_vector(team[0], all_player_ids, player_prices, team[1], team[2], team[7]) for team in processed_picks if team is not None])
-
-    # If no teams have data, skip the rest of the processing for this gameweek
-    if weighted_teams.size == 0:
-        print(f"No data to process for Gameweek {gameweek}. Skipping.")
+    if not valid_teams_with_info:
+        print(f"No valid team data to process for Gameweek {gameweek}. Skipping.")
         continue
 
-    # Calculate the number of managers with data
-    num_managers_with_data = len(processed_picks) - processed_picks.count(None)
+    # 2. Create a list of all unique player IDs from all teams
+    all_player_ids = set()
+    for team_info in valid_teams_with_info:
+        team_list = [player[0] for player in team_info['pick_data'][0]]
+        all_player_ids.update(team_list)
+    all_player_ids = list(all_player_ids)
 
+    # 3. Calculate the high-dimensional vector for each team
+    for team_info in valid_teams_with_info:
+        pick = team_info['pick_data']
+        team_info['vector'] = create_weighted_vector(pick[0], all_player_ids, player_prices, pick[1], pick[2], pick[7])
+
+    # 4. Group identical teams based on their vector
+    grouped_teams = {}
+    for team_info in valid_teams_with_info:
+        vector_key = tuple(team_info['vector'])
+        if vector_key not in grouped_teams:
+            grouped_teams[vector_key] = []
+        grouped_teams[vector_key].append(team_info)
+
+    # 5. Aggregate the data for each group of identical teams
+    aggregated_data = []
+    unique_vectors = []
+    for vector_key, group in grouped_teams.items():
+        unique_vectors.append(np.array(vector_key))
+        first_team_info = group[0]
+        pick_data = first_team_info['pick_data']
+        
+        aggregated_data.append({
+            'manager_names': [info['manager']['name'] for info in group],
+            'team_names': [info['manager']['team_name'] for info in group],
+            'team_ids': [info['manager']['team_id'] for info in group],
+            'manager_count': len(group),
+            'captain': pick_data[1],
+            'vice_captain': pick_data[2],
+            'total_points': pick_data[3],
+            'rank': pick_data[4],
+            'gw_points': pick_data[5],
+            'gw_rank': pick_data[6],
+            'active_chip': pick_data[7],
+            'players_owned': [player[0] for player in pick_data[0]],
+        })
+
+    # 6. Run dimensionality reduction on the unique vectors
+    unique_vectors_np = np.array(unique_vectors)
+    
     # Using PCA to reduce dimensions
     pca = PCA(n_components=2)
-    pca_result = pca.fit_transform(weighted_teams)
+    pca_result = pca.fit_transform(unique_vectors_np)
 
     # Using t-SNE to reduce dimensions
-    perplexity = min(num_managers_with_data - 1, 10)
+    perplexity = min(len(unique_vectors_np) - 1, 10)
     tsne = TSNE(n_components=2, perplexity=perplexity, max_iter=10000)
-    tsne_result = tsne.fit_transform(weighted_teams)
+    tsne_result = tsne.fit_transform(unique_vectors_np)
 
-    # Add a small amount of jitter to prevent points from overlapping perfectly
-    jitter_strength = 0.01
-    pca_result += np.random.rand(*pca_result.shape) * jitter_strength - (jitter_strength / 2)
-    tsne_result += np.random.rand(*tsne_result.shape) * jitter_strength - (jitter_strength / 2)
+    # 7. Combine aggregated data with coordinates into a final DataFrame
+    for i, record in enumerate(aggregated_data):
+        record['pca_x'] = pca_result[i, 0]
+        record['pca_y'] = pca_result[i, 1]
+        record['tsne_x'] = tsne_result[i, 0]
+        record['tsne_y'] = tsne_result[i, 1]
 
-
-    # Create the DataFrame, filling missing values with None
-    results_df = pd.DataFrame({
-        'manager_name': [m['name'] for m in managers][:num_managers_with_data],
-        'team_name': [m['team_name'] for m in managers][:num_managers_with_data],
-        'team_id': [m['team_id'] for m in managers][:num_managers_with_data],
-        'captain': [pick[1] for pick in processed_picks if pick is not None],  # Extract captain IDs
-        'vice_captain': [pick[2] for pick in processed_picks if pick is not None],  # Extract vice-captain IDs
-        'total_points': [pick[3] for pick in processed_picks if pick is not None],  # Extract total_points
-        'rank': [pick[4] for pick in processed_picks if pick is not None],  # Extract rank
-        'gw_points': [pick[5] for pick in processed_picks if pick is not None],
-        'gw_rank': [pick[6] for pick in processed_picks if pick is not None],
-        'active_chip': [pick[7] for pick in processed_picks if pick is not None],
-        'players_owned': [[player[0] for player in pick[0]] for pick in processed_picks if pick is not None],  # Add players owned
-        'pca_x': pca_result[:, 0],
-        'pca_y': pca_result[:, 1],
-        'tsne_x': tsne_result[:, 0],
-        'tsne_y': tsne_result[:, 1]
-    })
+    results_df = pd.DataFrame(aggregated_data)
 
     # Convert DataFrame to JSON
     results_json = results_df.to_json(orient='records', indent=4)

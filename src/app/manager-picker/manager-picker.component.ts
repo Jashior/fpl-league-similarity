@@ -24,7 +24,6 @@ import {
   CdkVirtualForOf,
   CdkVirtualScrollViewport,
 } from '@angular/cdk/scrolling';
-import { takeUntil } from 'rxjs';
 
 @Component({
   standalone: true,
@@ -50,7 +49,7 @@ import { takeUntil } from 'rxjs';
             type="button"
             [value]="item"
           >
-            {{ item.manager_name }}
+            {{ stringify(item) }}
           </button>
         </tui-data-list>
       </cdk-virtual-scroll-viewport>
@@ -91,19 +90,28 @@ export class ManagerPickerComponent implements OnInit {
 
   protected readonly stringify: TuiStringHandler<ManagerData> = (
     manager: ManagerData
-  ) => manager.manager_name;
+  ) => {
+    if (manager.manager_count > 1) {
+      return `Group of ${manager.manager_count} managers`;
+    }
+    return manager.manager_names[0];
+  };
 
   protected filteredItems: Signal<ManagerData[]> = computed(() => {
     const search = this.searchQuery().toLowerCase();
-    return this.managers().filter(({ manager_name }) =>
-      manager_name.toLowerCase().includes(search)
+    if (!search) {
+      return this.managers();
+    }
+    return this.managers().filter(({ manager_names }) =>
+      manager_names.some(name => name.toLowerCase().includes(search))
     );
   });
 
   constructor() {
     effect(() => {
+      const highlightedIds = this.highlightedManagerIds();
       const highlightedManagers: ManagerData[] = this.managers().filter(
-        (manager) => this.highlightedManagerIds().includes(manager.team_id)
+        (manager) => manager.team_ids.some(id => highlightedIds.includes(id))
       );
       this.managerControl.setValue(highlightedManagers, { emitEvent: false });
     });
@@ -121,9 +129,8 @@ export class ManagerPickerComponent implements OnInit {
     this.managerControl.valueChanges
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((newValue) => {
-        this.dataService.setHighlightedManagers(
-          newValue.map((manager) => manager.team_id)
-        );
+        const allTeamIds = newValue.flatMap(manager => manager.team_ids);
+        this.dataService.setHighlightedManagers(allTeamIds);
       });
   }
 }

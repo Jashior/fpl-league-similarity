@@ -19,9 +19,10 @@ export interface PlayerDataResponse {
 }
 
 export interface ManagerData {
-  manager_name: string;
-  team_name: string;
-  team_id: number;
+  manager_names: string[];
+  team_names: string[];
+  team_ids: number[];
+  manager_count: number;
   captain: number;
   vice_captain: number;
   total_points: number;
@@ -33,6 +34,7 @@ export interface ManagerData {
   pca_y: number;
   tsne_x: number;
   tsne_y: number;
+  active_chip: string | null;
 }
 
 export interface League {
