@@ -65,8 +65,8 @@ export class GraphComponent {
         );
 
         const isMobile = this.isMobileDevice();
-        const baseSize = isMobile ? 6 : 8;
-        const symbolSize = baseSize + manager.manager_count * 0.5; // Scale size by manager count
+        const baseSize = isMobile ? 12 : 16;
+        const symbolSize = baseSize;
 
         if (isHighlightedManager) {
           return {

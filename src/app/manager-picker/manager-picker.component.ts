@@ -25,6 +25,11 @@ import {
   CdkVirtualScrollViewport,
 } from '@angular/cdk/scrolling';
 
+interface ManagerPickerItem {
+  displayName: string;
+  managerData: ManagerData;
+}
+
 @Component({
   standalone: true,
   selector: 'app-manager-picker',
@@ -47,9 +52,9 @@ import {
             *cdkVirtualFor="let item of filteredItems()"
             tuiOption
             type="button"
-            [value]="item"
+            [value]="item.managerData"
           >
-            {{ stringify(item) }}
+            {{ item.displayName }}
           </button>
         </tui-data-list>
       </cdk-virtual-scroll-viewport>
@@ -97,13 +102,22 @@ export class ManagerPickerComponent implements OnInit {
     return manager.manager_names[0];
   };
 
-  protected filteredItems: Signal<ManagerData[]> = computed(() => {
+  private allPickerItems: Signal<ManagerPickerItem[]> = computed(() => {
+    return this.managers().flatMap(manager =>
+      manager.manager_names.map((name, i) => ({
+        displayName: `${name} (${manager.team_names[i]})`,
+        managerData: manager,
+      }))
+    );
+  });
+
+  protected filteredItems: Signal<ManagerPickerItem[]> = computed(() => {
     const search = this.searchQuery().toLowerCase();
     if (!search) {
-      return this.managers();
+      return this.allPickerItems();
     }
-    return this.managers().filter(({ manager_names }) =>
-      manager_names.some(name => name.toLowerCase().includes(search))
+    return this.allPickerItems().filter(item =>
+      item.displayName.toLowerCase().includes(search)
     );
   });
 
