@@ -68,12 +68,8 @@ export class GraphComponent {
         );
 
         const isMobile = this.isMobileDevice();
-        const baseSize = isMobile ? 8 : 10;
+        const baseSize = isMobile ? 6 : 10;
         const symbolSize = baseSize * Math.sqrt(manager.manager_count);
-
-        const jitter = 0.25;
-        const x = manager.tsne_x + (Math.random() - 0.5) * jitter;
-        const y = manager.tsne_y + (Math.random() - 0.5) * jitter;
 
         const ownsHighlightedPlayers = (() => {
           if (highlightedPlayers.length === 0) return false;
@@ -90,7 +86,8 @@ export class GraphComponent {
         })();
 
         const baseColor = ownsHighlightedPlayers ? '#3bda55' : '#5470C6';
-        const borderColor = ownsHighlightedPlayers ? '#83d890' : '#849de9';
+        const borderColor = ownsHighlightedPlayers ? '#b8e7bf' : '#849de9';
+        const borderWidth = ownsHighlightedPlayers ? 2 : 1;
 
         const emphasis = {
           itemStyle: {
@@ -112,7 +109,7 @@ export class GraphComponent {
 
         if (isHighlightedManager) {
           return {
-            value: [x, y],
+            value: [manager.tsne_x, manager.tsne_y],
             name: manager.manager_names.join(', '),
             manager: manager,
             itemStyle: {
@@ -139,13 +136,13 @@ export class GraphComponent {
           };
         } else {
           return {
-            value: [x, y],
+            value: [manager.tsne_x, manager.tsne_y],
             manager: manager,
             name: manager.manager_names.join(', '),
             itemStyle: {
               color: baseColor,
-              borderWidth: 2, // Increased width
-              borderColor: borderColor, // Dynamic color
+              borderWidth: borderWidth,
+              borderColor: borderColor,
             },
             symbolSize: symbolSize,
             label: {
