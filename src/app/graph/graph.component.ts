@@ -42,7 +42,10 @@ export class GraphComponent {
     { initialValue: [] }
   );
 
-  playerFilterLogic: Signal<'AND' | 'OR'> = toSignal(this.dataService.playerFilterLogic$, { initialValue: 'OR' });
+  playerFilterLogic: Signal<'AND' | 'OR'> = toSignal(
+    this.dataService.playerFilterLogic$,
+    { initialValue: 'OR' }
+  );
 
   currentGameweek: Signal<number> = toSignal(
     this.dataService.currentGameweek$,
@@ -65,12 +68,51 @@ export class GraphComponent {
         );
 
         const isMobile = this.isMobileDevice();
-        const baseSize = isMobile ? 12 : 16;
-        const symbolSize = baseSize;
+        const baseSize = isMobile ? 8 : 10;
+        const symbolSize = baseSize * Math.sqrt(manager.manager_count);
+
+        const jitter = 0.25;
+        const x = manager.tsne_x + (Math.random() - 0.5) * jitter;
+        const y = manager.tsne_y + (Math.random() - 0.5) * jitter;
+
+        const ownsHighlightedPlayers = (() => {
+          if (highlightedPlayers.length === 0) return false;
+          if (this.playerFilterLogic() === 'AND') {
+            return highlightedPlayers.every((playerId) =>
+              manager.players_owned.includes(playerId)
+            );
+          } else {
+            // OR logic
+            return highlightedPlayers.some((playerId) =>
+              manager.players_owned.includes(playerId)
+            );
+          }
+        })();
+
+        const baseColor = ownsHighlightedPlayers ? '#3bda55' : '#5470C6';
+        const borderColor = ownsHighlightedPlayers ? '#83d890' : '#849de9';
+
+        const emphasis = {
+          itemStyle: {
+            shadowBlur: 10,
+            shadowColor: 'rgba(255, 255, 255, 1)',
+            shadowOffsetX: 0,
+            shadowOffsetY: 0,
+            color: 'rgba(255, 255, 255, 0.3)',
+            borderWidth: 3,
+            borderColor: 'rgba(255, 255, 255, 1)',
+          },
+          scale: manager.manager_count > 5 ? 1 : 1.1, // Conditional scaling
+          label: {
+            show: false,
+            fontSize: 16,
+            formatter: '{b}',
+          },
+        };
 
         if (isHighlightedManager) {
           return {
-            value: [manager.tsne_x, manager.tsne_y],
+            value: [x, y],
             name: manager.manager_names.join(', '),
             manager: manager,
             itemStyle: {
@@ -78,7 +120,7 @@ export class GraphComponent {
               borderWidth: manager.manager_count > 1 ? 5 : 2,
               borderColor: '#ffffff',
             },
-            symbolSize: symbolSize + 2, // Make highlighted even bigger
+            symbolSize: symbolSize + 5, // Make highlighted even bigger
             label: {
               show: true,
               position: 'top',
@@ -93,33 +135,24 @@ export class GraphComponent {
               textBorderWidth: 1,
             },
             z: 100 - manager.manager_count,
-            zlevel: 100 - manager.manager_count,
+            emphasis: emphasis,
           };
         } else {
-          const ownsHighlightedPlayers = (() => {
-            if (highlightedPlayers.length === 0) return false;
-            if (this.playerFilterLogic() === 'AND') {
-              return highlightedPlayers.every(playerId => manager.players_owned.includes(playerId));
-            } else { // OR logic
-              return highlightedPlayers.some(playerId => manager.players_owned.includes(playerId));
-            }
-          })();
-
           return {
-            value: [manager.tsne_x, manager.tsne_y],
+            value: [x, y],
             manager: manager,
             name: manager.manager_names.join(', '),
             itemStyle: {
-              color: ownsHighlightedPlayers ? '#3bda55' : '#5470C6',
-              borderWidth: 1,
-              borderColor: '#CCCCCC',
+              color: baseColor,
+              borderWidth: 2, // Increased width
+              borderColor: borderColor, // Dynamic color
             },
             symbolSize: symbolSize,
             label: {
               show: false,
             },
             z: 100 - manager.manager_count,
-            zlevel: 100 - manager.manager_count,
+            emphasis: emphasis,
           };
         }
       });
@@ -249,22 +282,6 @@ export class GraphComponent {
               show: (params: any) => params.data.label.show,
               rich: (params: any) => params.data.label.rich,
               formatter: (params: any) => params.data.label.formatter,
-            },
-            emphasis: {
-              itemStyle: {
-                shadowBlur: 10,
-                shadowColor: 'rgba(255, 255, 255, 1)',
-                shadowOffsetX: 0,
-                shadowOffsetY: 0,
-                color: 'rgba(255, 255, 255, 0.3)',
-                borderWidth: 3,
-                borderColor: 'rgba(255, 255, 255, 1)',
-              },
-              scale: 1.1,
-              label: {
-                show: true,
-                fontSize: 16,
-              },
             },
           },
         ],
