@@ -42,6 +42,8 @@ export class GraphComponent {
     { initialValue: [] }
   );
 
+  playerFilterLogic: Signal<'AND' | 'OR'> = toSignal(this.dataService.playerFilterLogic$, { initialValue: 'OR' });
+
   currentGameweek: Signal<number> = toSignal(
     this.dataService.currentGameweek$,
     { initialValue: 0 }
@@ -64,7 +66,7 @@ export class GraphComponent {
 
         const isMobile = this.isMobileDevice();
         const baseSize = isMobile ? 6 : 8;
-        const symbolSize = baseSize + manager.manager_count * 2.5; // Scale size by manager count
+        const symbolSize = baseSize + manager.manager_count * 0.5; // Scale size by manager count
 
         if (isHighlightedManager) {
           return {
@@ -94,9 +96,14 @@ export class GraphComponent {
             zlevel: 100 - manager.manager_count,
           };
         } else {
-          const ownsHighlightedPlayers = manager.players_owned.some(
-            (playerId) => highlightedPlayers.includes(playerId)
-          );
+          const ownsHighlightedPlayers = (() => {
+            if (highlightedPlayers.length === 0) return false;
+            if (this.playerFilterLogic() === 'AND') {
+              return highlightedPlayers.every(playerId => manager.players_owned.includes(playerId));
+            } else { // OR logic
+              return highlightedPlayers.some(playerId => manager.players_owned.includes(playerId));
+            }
+          })();
 
           return {
             value: [manager.tsne_x, manager.tsne_y],

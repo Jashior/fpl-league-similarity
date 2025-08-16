@@ -10,12 +10,16 @@ import {
   WritableSignal,
 } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TuiStringHandler } from '@taiga-ui/cdk';
 import {
   TuiMultiSelectModule,
   TuiTextfieldControllerModule,
 } from '@taiga-ui/legacy';
+
+import { TuiSwitch } from '@taiga-ui/kit';
+
+
 import { DataService, PlayerData } from '../services/data.service';
 import { TuiLet } from '@taiga-ui/cdk';
 import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
@@ -54,6 +58,20 @@ import {
         </tui-data-list>
       </cdk-virtual-scroll-viewport>
     </tui-multi-select>
+    <div style="margin-top: 10px;">
+      <label class="flex items-center space-x-2">
+        <span>Filter Logic: </span>
+        <input
+          tuiSwitch
+          type="checkbox"
+          onLabel="AND"
+          offLabel="OR"
+          [ngModel]="playerFilterLogicControl.value === 'AND'"
+          (ngModelChange)="playerFilterLogicControl.setValue($event ? 'AND' : 'OR')"
+        />
+        <span>{{ playerFilterLogicControl.value }}</span>
+      </label>
+    </div>
     <br />
   `,
   imports: [
@@ -62,9 +80,11 @@ import {
     CdkVirtualScrollViewport,
     AsyncPipe,
     ReactiveFormsModule,
+    FormsModule,
     TuiMultiSelectModule,
     TuiTextfieldControllerModule,
     TuiLet,
+    TuiSwitch,
   ],
   styleUrl: './player-picker.component.scss',
 })
@@ -91,6 +111,8 @@ export class PlayerPickerComponent implements OnInit {
     nonNullable: true,
   });
 
+  protected readonly playerFilterLogicControl = new FormControl<'AND' | 'OR'>('OR', { nonNullable: true });
+
   protected readonly stringify: TuiStringHandler<PlayerData> = (
     player: PlayerData
   ) => player.web_name;
@@ -113,6 +135,11 @@ export class PlayerPickerComponent implements OnInit {
 
   ngOnInit() {
     this.handlePlayerControlChanges();
+    this.playerFilterLogicControl.valueChanges
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((newValue) => {
+        this.dataService.setPlayerFilterLogic(newValue);
+      });
   }
 
   protected onSearch(search: string | null): void {

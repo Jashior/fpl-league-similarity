@@ -56,6 +56,7 @@ export class DataService {
   private loadingSubject = new BehaviorSubject<boolean>(false);
   private highlightedManagersSubject = new BehaviorSubject<number[]>([]);
   private highlightedPlayersSubject = new BehaviorSubject<number[]>([]);
+  private playerFilterLogicSubject = new BehaviorSubject<'AND' | 'OR'>('OR');
 
   loading$: Observable<boolean> = this.loadingSubject.asObservable();
 
@@ -76,6 +77,7 @@ export class DataService {
     this.highlightedManagersSubject.asObservable();
   highlightedPlayers$: Observable<number[]> =
     this.highlightedPlayersSubject.asObservable();
+  playerFilterLogic$: Observable<'AND' | 'OR'> = this.playerFilterLogicSubject.asObservable();
 
   constructor() {
     this.loadPlayerData();
@@ -207,5 +209,9 @@ export class DataService {
       this.playerDataSubject.getValue().find((player) => player.id === id)
         ?.web_name || ''
     );
+  }
+
+  setPlayerFilterLogic(logic: 'AND' | 'OR'): void {
+    this.playerFilterLogicSubject.next(logic);
   }
 }
