@@ -313,7 +313,7 @@ def create_weighted_vector(team, all_player_ids, player_prices, captain, vice_ca
           if active_chip == 'bboost' or position <= 11:
               position_weight = 1
           else:
-              position_weight = bench_weights[position - 12]
+              position_weight = 0.1 # Uniform weight for all bench players
 
           # Add extra weighting for captain/triple captain
           if player_id == captain:
@@ -321,8 +321,7 @@ def create_weighted_vector(team, all_player_ids, player_prices, captain, vice_ca
                   position_weight *= 3.0  # Triple Captain weight
               else:
                   position_weight *= 2.0  # Standard captain weight
-          elif player_id == vice_captain:
-              position_weight *= 1.01 # Negligible vice-captain weight
+          
           vector[index] = scaled_price * position_weight
   return vector
 

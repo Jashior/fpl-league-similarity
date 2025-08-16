@@ -63,8 +63,8 @@ export class GraphComponent {
         );
 
         const isMobile = this.isMobileDevice();
-        const baseSize = isMobile ? 6 : 12;
-        const symbolSize = baseSize + manager.manager_count * 1.5; // Scale size by manager count
+        const baseSize = isMobile ? 6 : 8;
+        const symbolSize = baseSize + manager.manager_count * 2.5; // Scale size by manager count
 
         if (isHighlightedManager) {
           return {
@@ -73,26 +73,25 @@ export class GraphComponent {
             manager: manager,
             itemStyle: {
               color: '#ffffff',
+              borderWidth: manager.manager_count > 1 ? 5 : 2,
+              borderColor: '#ffffff',
             },
             symbolSize: symbolSize + 2, // Make highlighted even bigger
             label: {
               show: true,
-              position: 'insideTop',
-              formatter: manager.manager_count > 1 ? `{b|Group of ${manager.manager_count}}` : '{b}',
-              rich: {
-                b: {
-                  color: '#fff',
-                  fontSize: 12,
-                  fontWeight: 'bold',
-                  textShadowColor: 'rgba(0, 0, 0, 0.8)',
-                  textShadowBlur: 3,
-                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                  padding: [2, 4],
-                  borderRadius: 2,
-                }
-              }
+              position: 'top',
+              formatter:
+                manager.manager_count > 1
+                  ? `{b|Group of ${manager.manager_count}}`
+                  : '{b}',
+              color: '#FFFFFF',
+              fontSize: 12,
+              fontWeight: 'bold',
+              textBorderColor: '#000000',
+              textBorderWidth: 1,
             },
-            z: 2,
+            z: 100 - manager.manager_count,
+            zlevel: 100 - manager.manager_count,
           };
         } else {
           const ownsHighlightedPlayers = manager.players_owned.some(
@@ -105,11 +104,15 @@ export class GraphComponent {
             name: manager.manager_names.join(', '),
             itemStyle: {
               color: ownsHighlightedPlayers ? '#3bda55' : '#5470C6',
+              borderWidth: 1,
+              borderColor: '#CCCCCC',
             },
             symbolSize: symbolSize,
             label: {
               show: false,
             },
+            z: 100 - manager.manager_count,
+            zlevel: 100 - manager.manager_count,
           };
         }
       });
@@ -154,26 +157,24 @@ export class GraphComponent {
                 color: #5470C6;
                 font-size: ${isMobile ? '10px' : '12px'};
                 text-decoration: italic;
+                display: block; /* Added for clickability */
+                cursor: pointer; /* Added for clickability */
               }
               .tooltip-container .label {
                 text-decoration: underline;
                 text-decoration-style: dotted;
                 opacity: 0.9;
               }
-              .tooltip-container .manager-list {
-                padding-left: 10px;
-              }
             `;
 
             let managerHtml = '';
             if (manager.manager_count > 1) {
               managerHtml = `<div class="row"><b>Group of ${manager.manager_count} managers</b></div><hr/><ul class="manager-list">`;
-              manager.manager_names.slice(0, 5).forEach((name: string, index: number) => {
-                managerHtml += `<li><small>${name} (${manager.team_names[index]})</small></li>`;
+              manager.manager_names.forEach((name: string, index: number) => {
+                const teamId = manager.team_ids[index];
+                const teamLink = `https://fantasy.premierleague.com/entry/${teamId}/event/${gameweek}`;
+                managerHtml += `<li><small><a href="${teamLink}" target="_blank" class="link">${name} (${manager.team_names[index]})</a></small></li>`;
               });
-              if (manager.manager_count > 5) {
-                managerHtml += `<li><small>...and ${manager.manager_count - 5} more</small></li>`;
-              }
               managerHtml += '</ul>';
             } else {
               managerHtml = `
@@ -192,6 +193,10 @@ export class GraphComponent {
               <div class="row"><span class="label">Captain</span>: ${this.getCaptainFromId(
                 manager.captain
               )}</div>
+              ${
+                manager.manager_count > 1
+                  ? ''
+                  : `
               <div class="row"><span class="label">Rank</span>: ${this.formatNumber(
                 manager.rank
               )}</div>
@@ -204,7 +209,13 @@ export class GraphComponent {
               <div class="row"><span class="label">GW Rank</span>: ${this.formatNumber(
                 manager.gw_rank
               )}</div>
-              <a href="${teamLink}" target="_blank" class="link">➡️View First Team in Group</a>
+              `
+              }
+              ${
+                manager.manager_count === 1
+                  ? `<a href="${teamLink}" target="_blank" class="link">➡️View Team</a>`
+                  : ''
+              }
             </div>
           `;
           },
@@ -235,12 +246,18 @@ export class GraphComponent {
             emphasis: {
               itemStyle: {
                 shadowBlur: 10,
-                shadowColor: 'rgba(255, 251, 0, 1)',
+                shadowColor: 'rgba(255, 255, 255, 1)',
                 shadowOffsetX: 0,
                 shadowOffsetY: 0,
-                color: 'rgba(255, 251, 0, 1)',
+                color: 'rgba(255, 255, 255, 0.3)',
+                borderWidth: 3,
+                borderColor: 'rgba(255, 255, 255, 1)',
               },
-              scale: 1.3,
+              scale: 1.1,
+              label: {
+                show: true,
+                fontSize: 16,
+              },
             },
           },
         ],
@@ -283,7 +300,9 @@ export class GraphComponent {
     if (event.data && event.data.manager && event.data.manager.team_ids) {
       const isMobile = this.isMobileDevice();
       if (!isMobile) {
-        const url = `https://fantasy.premierleague.com/entry/${event.data.manager.team_ids[0]}/event/${this.currentGameweek()}`;
+        const url = `https://fantasy.premierleague.com/entry/${
+          event.data.manager.team_ids[0]
+        }/event/${this.currentGameweek()}`;
         window.open(url, '_blank');
       } else {
         //
@@ -301,4 +320,3 @@ export class GraphComponent {
     return this.dataService.getNameFromId(id);
   }
 }
-

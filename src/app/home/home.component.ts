@@ -40,7 +40,7 @@ import { TuiLink } from '@taiga-ui/core';
           <app-gameweek-picker class="mb-4"></app-gameweek-picker>
           <app-manager-picker></app-manager-picker>
           <app-player-picker></app-player-picker>
-          <div class="mb-2">
+          <!-- <div class="mb-2">
             <div class="flex items-center space-x-2">
               <span>Show Points Distribution Graph: </span>
               <input
@@ -49,7 +49,7 @@ import { TuiLink } from '@taiga-ui/core';
                 [(ngModel)]="isPointDistribution"
               />
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="flex justify-center mt-4 mb-2">
           <a
